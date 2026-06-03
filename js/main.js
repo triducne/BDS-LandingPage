@@ -1,6 +1,6 @@
 console.log("TRÍ ĐỨC REALTY READY");
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx0O70nSBqo2LwAEy_-I0uSemt0FGziopP8I6z4thd17xKYcSW3METLDpshxwiQzxAF2A/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbybHD85YZ8EvpRLEGyGAkCYfBALElrH338ca5JwNN84HsFjNCQ4MAr5-NscEDFUkGxdjg/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
 
