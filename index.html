@@ -29,10 +29,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="homepage">
 
 <!-- NAVBAR -->
 
@@ -85,27 +85,16 @@ data-bs-target="#menu">
 
 <section class="hero">
 
-<div class="container">
+<div class="hero-text">
+<p class="hero-label">TRÍ ĐỨC REALTY</p>
 
-<div class="hero-content">
+<h1>BẤT ĐỘNG SẢN TÂY - NAM SÀI GÒN</h1>
 
-<h1>
-CHUYÊN TƯ VẤN BẤT ĐỘNG SẢN KHU TÂY & NAM TP.HCM
-</h1>
+<p class="hero-subtitle">Giải pháp đầu tư thông minh với dự án uy tín, sổ đỏ rõ ràng và vị trí kết nối trung tâm.</p>
 
-<p>
-The Win City • Destino Centro • Vlasta Premier • The Peak Garden
-</p>
-
-<a href="#contact"
-class="btn btn-warning btn-lg">
-
-NHẬN TƯ VẤN MIỄN PHÍ
-
-</a>
-
+<div class="hero-actions">
+<a href="#projects" class="btn btn-gold hero-btn">XEM DỰ ÁN NỔI BẬT</a>
 </div>
-
 </div>
 
 </section>
@@ -132,22 +121,24 @@ class="avatar">
 
 <div class="col-md-8">
 
+<div class="about-panel">
+<div class="about-copy">
 <h3>TRÍ ĐỨC REALTY</h3>
 
-<p>
-Chuyên tư vấn căn hộ, đất nền và nhà phố khu Tây & Nam TP.HCM.
-</p>
+<p>Chuyên tư vấn căn hộ, đất nền và nhà phố khu Tây & Nam TP.HCM.</p>
 
-<p>
-Hỗ trợ pháp lý, vay ngân hàng, phân tích đầu tư và dòng tiền.
-</p>
+<p>Hỗ trợ pháp lý, vay ngân hàng, phân tích đầu tư và dòng tiền.</p>
+</div>
 
+<div class="about-features">
 <ul>
 <li>Phân tích đầu tư chuyên sâu</li>
 <li>Hỗ trợ vay vốn ngân hàng</li>
 <li>Kiểm tra pháp lý dự án</li>
 <li>Đồng hành sau bán hàng</li>
 </ul>
+</div>
+</div>
 
 </div>
 
@@ -206,12 +197,14 @@ DỰ ÁN NỔI BẬT
 <div class="col-md-3">
 
 <a href="thewincity.html"
-class="text-decoration-none text-dark">
+class="text-decoration-none text-white">
 
 <div class="card project">
 
-<img src="images/wincity.jpg"
-alt="The Win City">
+<div class="project-img-container">
+    <div class="project-img-blur" style="background-image: url('images/wincity.jpg')"></div>
+    <img src="images/wincity.jpg" alt="The Win City" class="project-img-main">
+</div>
 
 <div class="card-body">
 
@@ -232,12 +225,14 @@ Từ 1,3 tỷ/căn
 <div class="col-md-3">
 
 <a href="destino.html"
-class="text-decoration-none text-dark">
+class="text-decoration-none text-white">
 
 <div class="card project">
 
-<img src="images/destino.jpg"
-alt="Destino Centro">
+<div class="project-img-container">
+    <div class="project-img-blur" style="background-image: url('images/destino.jpg')"></div>
+    <img src="images/destino.jpg" alt="Destino Centro" class="project-img-main">
+</div>
 
 <div class="card-body">
 
@@ -258,12 +253,14 @@ Từ 1,1 tỷ/căn
 <div class="col-md-3">
 
 <a href="peakgarden.html"
-class="text-decoration-none text-dark">
+class="text-decoration-none text-white">
 
 <div class="card project">
 
-<img src="images/peakgarden.jpg"
-alt="The Peak Garden">
+<div class="project-img-container">
+    <div class="project-img-blur" style="background-image: url('images/peakgarden.jpg')"></div>
+    <img src="images/peakgarden.jpg" alt="The Peak Garden" class="project-img-main">
+</div>
 
 <div class="card-body">
 
@@ -284,12 +281,14 @@ Từ 4 tỷ/căn
 <div class="col-md-3">
 
 <a href="vlasta.html"
-class="text-decoration-none text-dark">
+class="text-decoration-none text-white">
 
 <div class="card project">
 
-<img src="images/vlasta.jpg"
-alt="Vlasta Premier">
+<div class="project-img-container">
+    <div class="project-img-blur" style="background-image: url('images/vlasta.jpg')"></div>
+    <img src="images/vlasta.jpg" alt="Vlasta Premier" class="project-img-main">
+</div>
 
 <div class="card-body">
 
@@ -412,8 +411,8 @@ Dự án quan tâm
 </select>
 
 <button
-type="submit"
-class="btn btn-warning w-100">
+                type="submit"
+                class="btn-gold w-100">
 
 NHẬN TƯ VẤN MIỄN PHÍ
 
@@ -438,22 +437,15 @@ NHẬN TƯ VẤN MIỄN PHÍ
 <!-- FLOATING -->
 
 <div class="floating">
+    <a href="tel:0876914621" class="floating-btn">
+        <i class="fa-solid fa-phone"></i>
+        <span>Gọi ngay</span>
+    </a>
 
-<a href="tel:0876914621"
-class="phone">
-
-<i class="fa-solid fa-phone"></i>
-
-</a>
-
-<a href="https://zalo.me/0876914621"
-target="_blank"
-class="zalo">
-
-Z
-
-</a>
-
+    <a href="https://zalo.me/0876914621" target="_blank" class="floating-btn">
+        <i class="fa-brands fa-rocketchat"></i>
+        <span>Chat Zalo</span>
+    </a>
 </div>
 
 <!-- FOOTER -->
@@ -478,3 +470,6 @@ Z
 
 </body>
 </html>
+
+
+

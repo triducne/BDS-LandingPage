@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -23,16 +22,17 @@ rel="stylesheet">
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/project.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
 
 </head>
 
-<body>
+<body class="thewincity">
 
 <!-- NAVBAR -->
 
@@ -64,8 +64,38 @@ Trang chủ
 </li>
 
 <li class="nav-item">
-<a href="index.html#projects" class="nav-link">
-Dự án khác
+<a href="#overview" class="nav-link">
+Tổng quan
+</a>
+</li>
+
+<li class="nav-item">
+<a href="#location" class="nav-link">
+Vị trí
+</a>
+</li>
+
+<li class="nav-item">
+<a href="#amenities" class="nav-link">
+Tiện ích
+</a>
+</li>
+
+<li class="nav-item">
+<a href="#plan" class="nav-link">
+Mặt bằng
+</a>
+</li>
+
+<li class="nav-item">
+<a href="#apartment" class="nav-link">
+Căn hộ mẫu
+</a>
+</li>	
+
+<li class="nav-item">	
+<a href="#legal" class="nav-link">
+Pháp lý
 </a>
 </li>
 
@@ -87,26 +117,86 @@ Dự án khác
 
 <section class="hero">
 
-<div class="container hero-content">
+	<div class="hero-content">
 
-<h1>THE WIN CITY</h1>
+		<div class="hero-copy">
 
-<p>
-Đại đô thị hiện đại tại cửa ngõ phía Tây TP.HCM
-</p>
+			<p class="hero-label">WELCOME TO</p>
 
-<a href="#form"
-class="btn btn-gold hero-btn">
+			<h1 class="hero-title">THE WIN CITY</h1>
 
-NHẬN BẢNG GIÁ MỚI NHẤT
+			<p class="hero-subtitle">
+				Đại đô thị tích hợp 16ha tại cửa ngõ phía Tây TP.HCM, sở hữu hệ tiện ích hoàn chỉnh, <span class="hero-highlight">kết nối nhanh về trung tâm</span> và các khu công nghiệp trọng điểm.
+			</p>
 
-</a>
+			<div class="hero-actions">
+				<a href="#form" class="btn btn-primary hero-btn">NHẬN BẢNG GIÁ MỚI NHẤT</a>
+				<a href="#location" class="btn btn-secondary hero-btn">XEM VỊ TRÍ DỰ ÁN <i class="fa-solid fa-arrow-right"></i></a>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="hero-image" aria-hidden="true"></div>
+
+</section>
+
+<section class="section bg-light hero-highlights">
+
+<div class="container">
+
+<div class="hero-quick">
+	<div class="quick-card">
+		<i class="fa-solid fa-city"></i>
+		<div>
+			<strong>16ha</strong>
+			<span>Quy mô đô thị</span>
+		</div>
+	</div>
+	<div class="quick-card">
+		<i class="fa-solid fa-road"></i>
+		<div>
+			<strong>3 phút</strong>
+			<span>Đến KCN Cầu Tràm</span>
+		</div>
+	</div>
+	<div class="quick-card">
+		<i class="fa-solid fa-shield-halved"></i>
+		<div>
+			<strong>Sở hữu lâu dài</strong>
+			<span>Pháp lý rõ ràng</span>
+		</div>
+	</div>
+	<div class="quick-card">
+		<i class="fa-solid fa-layer-group"></i>
+		<div>
+			<strong>2.000+ căn</strong>
+			<span>Đơn vị nhà ở</span>
+		</div>
+	</div>
+	<div class="quick-card">
+		<i class="fa-solid fa-gem"></i>
+		<div>
+			<strong>Tiện ích khép kín</strong>
+			<span>Hệ thống đồng bộ</span>
+		</div>
+	</div>
+	<div class="quick-card">
+		<i class="fa-solid fa-tree-city"></i>
+		<div>
+			<strong>Không gian xanh</strong>
+			<span>Công viên nội khu</span>
+		</div>
+	</div>
+</div>
 
 </div>
 
 </section>
+
 <!-- TỔNG QUAN -->
-<section class="section">
+<section id="overview" class="section">
 
 <div class="container">
 
@@ -181,9 +271,34 @@ The Win City được quy hoạch theo mô hình đô thị tích hợp,
 
 </section>
 
+<section id="location" class="section bg-light location">
+
+<div class="container">
+
+<h2 class="title">
+VỊ TRÍ DỰ ÁN
+</h2>
+
+<img src="images/wincity-location.jpg"
+alt="Vị trí The Win City"
+class="unified-img">
+
+<div class="text-center mt-4">
+
+<p>
+Kết nối thuận tiện đến TP.HCM, Quốc lộ 1A,
+Vành Đai 3 và các khu công nghiệp lớn.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
 <!-- TIỆN ÍCH -->
 
-<section class="section bg-light">
+<section id="amenities" class="section bg-light">
 
 <div class="container">
 
@@ -191,40 +306,54 @@ The Win City được quy hoạch theo mô hình đô thị tích hợp,
 TIỆN ÍCH NỔI BẬT
 </h2>
 
+<div class="row g-4 mb-4">
+
+<div class="col-md-6">
+
+<div class="info-box amenity-card">
+
+<h4>TIỆN ÍCH NỘI KHU</h4>
+
+<ul class="mt-3">
+<li>Hồ bơi resort cao cấp</li>
+<li>Công viên nội khu rộng lớn</li>
+<li>Trường học & y tế liền kề</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<div class="info-box amenity-card">
+
+<h4>TIỆN ÍCH NGOẠI KHU</h4>
+
+<ul class="mt-3">
+<li>Trung tâm thương mại đẳng cấp</li>
+<li>Giao thông kết nối Quốc lộ 1A, Vành đai 3</li>
+<li>Gần khu công nghiệp và dịch vụ khu Tây</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
 <div id="amenitiesCarousel"
 class="carousel slide"
 data-bs-ride="carousel">
-
-<!-- DẤU CHẤM CHUYỂN SLIDE -->
-
-<div class="carousel-indicators">
-
-<button type="button"
-data-bs-target="#amenitiesCarousel"
-data-bs-slide-to="0"
-class="active"></button>
-
-<button type="button"
-data-bs-target="#amenitiesCarousel"
-data-bs-slide-to="1"></button>
-
-<button type="button"
-data-bs-target="#amenitiesCarousel"
-data-bs-slide-to="2"></button>
-
-<button type="button"
-data-bs-target="#amenitiesCarousel"
-data-bs-slide-to="3"></button>
-
-</div>
 
 <div class="carousel-inner rounded-4 shadow">
 
 <div class="carousel-item active">
 
-<img src="images/amenity-1.jpg"
-class="d-block w-100 amenity-slider"
-alt="Hồ bơi">
+<div class="carousel-img-container">
+    <div class="carousel-img-blur" style="background-image: url('images/amenity-1.jpg')"></div>
+    <img src="images/amenity-1.jpg" class="carousel-img-main" alt="Hồ bơi">
+</div>
 
 <div class="carousel-caption">
 <h4>Hồ Bơi Resort</h4>
@@ -235,9 +364,10 @@ alt="Hồ bơi">
 
 <div class="carousel-item">
 
-<img src="images/amenity-2.jpg"
-class="d-block w-100 amenity-slider"
-alt="Công viên">
+<div class="carousel-img-container">
+    <div class="carousel-img-blur" style="background-image: url('images/amenity-2.jpg')"></div>
+    <img src="images/amenity-2.jpg" class="carousel-img-main" alt="Công viên">
+</div>
 
 <div class="carousel-caption">
 <h4>Công Viên Trung Tâm</h4>
@@ -248,9 +378,10 @@ alt="Công viên">
 
 <div class="carousel-item">
 
-<img src="images/amenity-3.jpg"
-class="d-block w-100 amenity-slider"
-alt="Trường học">
+<div class="carousel-img-container">
+    <div class="carousel-img-blur" style="background-image: url('images/amenity-3.jpg')"></div>
+    <img src="images/amenity-3.jpg" class="carousel-img-main" alt="Trường học">
+</div>
 
 <div class="carousel-caption">
 <h4>Trường Học Nội Khu</h4>
@@ -261,9 +392,10 @@ alt="Trường học">
 
 <div class="carousel-item">
 
-<img src="images/amenity-4.jpg"
-class="d-block w-100 amenity-slider"
-alt="TTTM">
+<div class="carousel-img-container">
+    <div class="carousel-img-blur" style="background-image: url('images/amenity-4.jpg')"></div>
+    <img src="images/amenity-4.jpg" class="carousel-img-main" alt="TTTM">
+</div>
 
 <div class="carousel-caption">
 <h4>Trung Tâm Thương Mại</h4>
@@ -292,6 +424,18 @@ data-bs-slide="next">
 
 </button>
 
+<div class="carousel-tracker">
+    <div class="carousel-progress-bar-track">
+        <div class="carousel-progress-bar-fill" id="amenitiesCarousel-progress"></div>
+    </div>
+    <div class="carousel-counter mt-2 text-center" id="amenitiesCarousel-counter">1 / 4</div>
+</div>
+
+<div class="carousel-thumbnails">
+<button type="button" class="carousel-thumb-btn active" data-bs-target="#amenitiesCarousel" data-bs-slide-to="0" aria-label="Hồ Bơi Resort" style="background-image:url('images/amenity-1.jpg')"></button>
+<button type="button" class="carousel-thumb-btn" data-bs-target="#amenitiesCarousel" data-bs-slide-to="1" aria-label="Công Viên Trung Tâm" style="background-image:url('images/amenity-2.jpg')"></button>
+<button type="button" class="carousel-thumb-btn" data-bs-target="#amenitiesCarousel" data-bs-slide-to="2" aria-label="Trường Học Nội Khu" style="background-image:url('images/amenity-3.jpg')"></button>
+<button type="button" class="carousel-thumb-btn" data-bs-target="#amenitiesCarousel" data-bs-slide-to="3" aria-label="Trung Tâm Thương Mại" style="background-image:url('images/amenity-4.jpg')"></button>
 </div>
 
 </div>
@@ -300,7 +444,7 @@ data-bs-slide="next">
 
 <!-- MẶT BẰNG -->
 
-<section class="section plan">
+<section id="plan" class="section plan">
 
 <div class="container">
 
@@ -309,31 +453,197 @@ MẶT BẰNG DỰ ÁN
 </h2>
 
 <img src="images/wincity-masterplan.jpg"
-alt="Mặt bằng The Win City">
+alt="Mặt bằng The Win City"
+class="unified-img">
 
 </div>
 
 </section>
 
-<!-- VỊ TRÍ -->
+<!-- CĂN HỘ MẪU -->
 
-<section class="section bg-light location">
+<section id="apartment" class="section bg-light">
 
 <div class="container">
 
 <h2 class="title">
-VỊ TRÍ DỰ ÁN
+MẶT BẰNG & THIẾT KẾ CĂN HỘ MẪU
 </h2>
 
-<img src="images/wincity-location.jpg"
-alt="Vị trí The Win City">
+<div id="apartmentCarousel"
+class="carousel slide"
+data-bs-ride="carousel">
 
-<div class="text-center mt-4">
+<div class="carousel-inner rounded-4 shadow">
+
+<div class="carousel-item active">
+
+<div class="carousel-img-container">
+    <div class="carousel-img-blur" style="background-image: url('images/apartment-studio.jpg')"></div>
+    <img src="images/apartment-studio.jpg" class="carousel-img-main" alt="Căn Studio">
+</div>
+
+<div class="carousel-caption">
+<h4>CĂN STUDIO</h4>
+<p>Phù hợp cho cá nhân, học sinh.</p>
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<div class="carousel-img-container">
+    <div class="carousel-img-blur" style="background-image: url('images/apartment-1pn-1wc.jpg')"></div>
+    <img src="images/apartment-1pn-1wc.jpg" class="carousel-img-main" alt="Căn 1PN 1WC">
+</div>
+
+<div class="carousel-caption">
+<h4>CĂN 1PN 1WC</h4>
+<p>Thoải mái cho gia đình nhỏ.</p>
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<div class="carousel-img-container">
+    <div class="carousel-img-blur" style="background-image: url('images/apartment-1pn-plus.jpg')"></div>
+    <img src="images/apartment-1pn-plus.jpg" class="carousel-img-main" alt="Căn 1PN +">
+</div>
+
+<div class="carousel-caption">
+<h4>CĂN 1PN +</h4>
+<p>Không gian thoáng đãng.</p>
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<div class="carousel-img-container">
+    <div class="carousel-img-blur" style="background-image: url('images/apartment-2pn-1wc.jpg')"></div>
+    <img src="images/apartment-2pn-1wc.jpg" class="carousel-img-main" alt="Căn 2PN 1WC">
+</div>
+
+<div class="carousel-caption">
+<h4>CĂN 2PN 1WC</h4>
+<p>Đủ không gian cho gia đình.</p>
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<div class="carousel-img-container">
+    <div class="carousel-img-blur" style="background-image: url('images/apartment-2pn-2wc.jpg')"></div>
+    <img src="images/apartment-2pn-2wc.jpg" class="carousel-img-main" alt="Căn 2PN 2WC">
+</div>
+
+<div class="carousel-caption">
+<h4>CĂN 2PN 2WC</h4>
+<p>Tiện nghi đầy đủ, hiện đại.</p>
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<div class="carousel-img-container">
+    <div class="carousel-img-blur" style="background-image: url('images/apartment-3pn.jpg')"></div>
+    <img src="images/apartment-3pn.jpg" class="carousel-img-main" alt="Căn 3PN">
+</div>
+
+<div class="carousel-caption">
+<h4>CĂN 3PN</h4>
+<p>Rộng rãi cho gia đình lớn.</p>
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<div class="carousel-img-container">
+    <div class="carousel-img-blur" style="background-image: url('images/apartment-dual-key.jpg')"></div>
+    <img src="images/apartment-dual-key.jpg" class="carousel-img-main" alt="Căn Dual Key">
+</div>
+
+<div class="carousel-caption">
+<h4>CĂN DUAL KEY 3PN</h4>
+<p>Lựa chọn tối ưu cho nhà đầu tư.</p>
+</div>
+
+</div>
+
+</div>
+
+<button class="carousel-control-prev"
+type="button"
+data-bs-target="#apartmentCarousel"
+data-bs-slide="prev">
+
+<span class="carousel-control-prev-icon"></span>
+
+</button>
+
+<button class="carousel-control-next"
+type="button"
+data-bs-target="#apartmentCarousel"
+data-bs-slide="next">
+
+<span class="carousel-control-next-icon"></span>
+
+</button>
+
+<div class="carousel-tracker">
+    <div class="carousel-progress-bar-track">
+        <div class="carousel-progress-bar-fill" id="apartmentCarousel-progress"></div>
+    </div>
+    <div class="carousel-counter mt-2 text-center" id="apartmentCarousel-counter">1 / 7</div>
+</div>
+
+<div class="carousel-thumbnails">
+<button type="button" class="carousel-thumb-btn active" data-bs-target="#apartmentCarousel" data-bs-slide-to="0" aria-label="Căn Studio" style="background-image:url('images/apartment-studio.jpg')"></button>
+<button type="button" class="carousel-thumb-btn" data-bs-target="#apartmentCarousel" data-bs-slide-to="1" aria-label="Căn 1PN +" style="background-image:url('images/apartment-1pn-plus.jpg')"></button>
+<button type="button" class="carousel-thumb-btn" data-bs-target="#apartmentCarousel" data-bs-slide-to="2" aria-label="Căn 1PN 1WC" style="background-image:url('images/apartment-1pn-1wc.jpg')"></button>
+<button type="button" class="carousel-thumb-btn" data-bs-target="#apartmentCarousel" data-bs-slide-to="3" aria-label="Căn 2PN 1WC" style="background-image:url('images/apartment-2pn-1wc.jpg')"></button>
+<button type="button" class="carousel-thumb-btn" data-bs-target="#apartmentCarousel" data-bs-slide-to="4" aria-label="Căn 2PN 2WC" style="background-image:url('images/apartment-2pn-2wc.jpg')"></button>
+<button type="button" class="carousel-thumb-btn" data-bs-target="#apartmentCarousel" data-bs-slide-to="5" aria-label="Căn 3PN" style="background-image:url('images/apartment-3pn.jpg')"></button>
+<button type="button" class="carousel-thumb-btn" data-bs-target="#apartmentCarousel" data-bs-slide-to="6" aria-label="Căn Dual Key 3PN" style="background-image:url('images/apartment-dual-key.jpg')"></button>
+</div>
+
+</div>
+
+</section>
+
+<section id="legal" class="section bg-light">
+
+<div class="container">
+
+<h2 class="title">
+PHÁP LÝ DỰ ÁN
+</h2>
+
+<div class="row justify-content-center">
+
+<div class="col-lg-10">
+
+<div class="info-box">
 
 <p>
-Kết nối thuận tiện đến TP.HCM, Quốc lộ 1A,
-Vành Đai 3 và các khu công nghiệp lớn.
+Dự án The Win City được triển khai với đầy đủ pháp lý rõ ràng,
+đảm bảo quyền lợi khách hàng và bàn giao theo tiến độ cam kết.
 </p>
+
+<ul class="mt-3">
+<li>Giấy phép xây dựng và quy hoạch chính thức.</li>
+<li>Sổ hồng lâu dài cho từng căn hộ.</li>
+<li>Hợp đồng mua bán minh bạch, rõ ràng.</li>
+<li>Đủ điều kiện mở bán theo quy định pháp luật.</li>
+</ul>
+
+</div>
+
+</div>
 
 </div>
 
@@ -406,19 +716,14 @@ NHẬN BẢNG GIÁ NGAY
 
 <div class="floating">
 
-<a href="tel:0876914621"
-class="phone">
-
+<a href="tel:0876914621" class="floating-btn">
 <i class="fa-solid fa-phone"></i>
-
+<span>Gọi ngay</span>
 </a>
 
-<a href="https://zalo.me/0876914621"
-target="_blank"
-class="zalo">
-
-Z
-
+<a href="https://zalo.me/0876914621" class="floating-btn">
+<i class="fa-solid fa-comments"></i>
+<span>Chat Zalo</span>
 </a>
 
 </div>
@@ -453,4 +758,3 @@ Zalo: 0876 914 621
 
 </body>
 </html>
-```

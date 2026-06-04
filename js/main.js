@@ -102,4 +102,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    const syncCarouselThumbnails = (carouselId) => {
+        const carouselEl = document.getElementById(carouselId);
+        if (!carouselEl) return;
+
+        const thumbs = carouselEl.querySelectorAll('.carousel-thumb-btn');
+        const carouselInstance = (window.bootstrap && window.bootstrap.Carousel)
+            ? window.bootstrap.Carousel.getOrCreateInstance(carouselEl)
+            : null;
+
+        const setActiveThumb = (index) => {
+            thumbs.forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === index);
+            });
+        };
+
+        if (carouselInstance) {
+            carouselEl.addEventListener('slid.bs.carousel', (event) => {
+                setActiveThumb(event.to);
+            });
+        }
+
+        const indicatorButtons = carouselEl.querySelectorAll('[data-bs-slide-to]');
+
+        thumbs.forEach((thumb, index) => {
+            thumb.addEventListener('click', (event) => {
+                event.preventDefault();
+                if (carouselInstance && typeof carouselInstance.to === 'function') {
+                    carouselInstance.to(index);
+                } else if (indicatorButtons[index]) {
+                    indicatorButtons[index].click();
+                }
+                setActiveThumb(index);
+            });
+        });
+    };
+
+    const syncCarouselTracker = (carouselId) => {
+        const carouselEl = document.getElementById(carouselId);
+        if (!carouselEl) return;
+
+        const items = carouselEl.querySelectorAll('.carousel-item');
+        const total = items.length;
+        const progressFill = document.getElementById(`${carouselId}-progress`);
+        const counter = document.getElementById(`${carouselId}-counter`);
+
+        const updateTracker = (index) => {
+            if (progressFill) {
+                const percentage = ((index + 1) / total) * 100;
+                progressFill.style.width = `${percentage}%`;
+            }
+            if (counter) {
+                counter.innerText = `${index + 1} / ${total}`;
+            }
+        };
+
+        // Initialize progress
+        updateTracker(0);
+
+        carouselEl.addEventListener('slid.bs.carousel', (event) => {
+            updateTracker(event.to);
+        });
+    };
+
+    syncCarouselThumbnails('amenitiesCarousel');
+    syncCarouselThumbnails('apartmentCarousel');
+
+    syncCarouselTracker('amenitiesCarousel');
+    syncCarouselTracker('apartmentCarousel');
+
 });
