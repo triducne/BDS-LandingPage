@@ -15,6 +15,15 @@ content="bất động sản, The Win City, Destino Centro, Vlasta Premier, The 
 
 <meta name="author"
 content="Trí Đức Realty">
+<meta name="theme-color" content="#111111">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TRÍ ĐỨC REALTY | Chuyên tư vấn bất động sản khu Tây & Nam TP.HCM">
+<meta property="og:description" content="Trí Đức Realty chuyên tư vấn căn hộ, nhà phố và đất nền khu Tây & Nam TP.HCM.">
+<meta property="og:image" content="images/wincity.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TRÍ ĐỨC REALTY | Chuyên tư vấn bất động sản khu Tây & Nam TP.HCM">
+<meta name="twitter:description" content="Trí Đức Realty chuyên tư vấn căn hộ, nhà phố và đất nền khu Tây & Nam TP.HCM.">
+<meta name="twitter:image" content="images/wincity.jpg">
 
 <link rel="icon" href="favicon.ico">
 
@@ -47,7 +56,10 @@ TRÍ ĐỨC REALTY
 <button class="navbar-toggler"
 type="button"
 data-bs-toggle="collapse"
-data-bs-target="#menu">
+data-bs-target="#menu"
+aria-controls="menu"
+aria-expanded="false"
+aria-label="Toggle navigation">
 
 <span class="navbar-toggler-icon"></span>
 
@@ -113,7 +125,7 @@ GIỚI THIỆU
 
 <div class="col-md-4 text-center">
 
-<img src="images/avatar.jpg"
+<img loading="lazy" src="images/avatar.jpg"
 alt="Trí Đức Realty"
 class="avatar">
 
@@ -203,7 +215,7 @@ class="text-decoration-none text-white">
 
 <div class="project-img-container">
     <div class="project-img-blur" style="background-image: url('images/wincity.jpg')"></div>
-    <img src="images/wincity.jpg" alt="The Win City" class="project-img-main">
+    <img loading="lazy" src="images/wincity.jpg" alt="The Win City" class="project-img-main">
 </div>
 
 <div class="card-body">
@@ -231,7 +243,7 @@ class="text-decoration-none text-white">
 
 <div class="project-img-container">
     <div class="project-img-blur" style="background-image: url('images/destino.jpg')"></div>
-    <img src="images/destino.jpg" alt="Destino Centro" class="project-img-main">
+    <img loading="lazy" src="images/destino.jpg" alt="Destino Centro" class="project-img-main">
 </div>
 
 <div class="card-body">
@@ -259,7 +271,7 @@ class="text-decoration-none text-white">
 
 <div class="project-img-container">
     <div class="project-img-blur" style="background-image: url('images/peakgarden.jpg')"></div>
-    <img src="images/peakgarden.jpg" alt="The Peak Garden" class="project-img-main">
+    <img loading="lazy" src="images/peakgarden.jpg" alt="The Peak Garden" class="project-img-main">
 </div>
 
 <div class="card-body">
@@ -287,7 +299,7 @@ class="text-decoration-none text-white">
 
 <div class="project-img-container">
     <div class="project-img-blur" style="background-image: url('images/vlasta.jpg')"></div>
-    <img src="images/vlasta.jpg" alt="Vlasta Premier" class="project-img-main">
+    <img loading="lazy" src="images/vlasta.jpg" alt="Vlasta Premier" class="project-img-main">
 </div>
 
 <div class="card-body">
@@ -386,17 +398,20 @@ Dự án hạ tầng trọng điểm của TP.HCM.
 
 <input type="text"
 id="name"
+name="name"
 class="form-control mb-3"
 placeholder="Họ và tên"
 required>
 
 <input type="tel"
 id="phone"
+name="phone"
 class="form-control mb-3"
 placeholder="Số điện thoại"
 required>
 
 <select id="project"
+name="project"
 class="form-select mb-3">
 
 <option value="">
@@ -420,7 +435,7 @@ NHẬN TƯ VẤN MIỄN PHÍ
 
 </form>
 
-<div id="message"></div>
+<div id="message" role="status" aria-live="polite" class="form-text mt-3"></div>
 
 <p class="text-center mt-4">
 
@@ -442,7 +457,7 @@ NHẬN TƯ VẤN MIỄN PHÍ
         <span>Gọi ngay</span>
     </a>
 
-    <a href="https://zalo.me/0876914621" target="_blank" class="floating-btn">
+    <a href="https://zalo.me/0876914621" target="_blank" rel="noopener noreferrer" class="floating-btn">
         <i class="fa-brands fa-rocketchat"></i>
         <span>Chat Zalo</span>
     </a>
@@ -470,6 +485,7 @@ NHẬN TƯ VẤN MIỄN PHÍ
 
 </body>
 </html>
+
 
 
 

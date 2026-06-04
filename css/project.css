@@ -48,6 +48,10 @@ body.thewincity{
 
 .thewincity .nav-link{
     color: var(--accent) !important;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.85rem 0.95rem;
+    letter-spacing: 0.02em;
 }
 
 .thewincity .nav-link:hover{
@@ -345,8 +349,9 @@ a,
 .btn-primary:hover,
 .btn-gold:hover{
     background:var(--gold-dark);
-    transform:translateY(-2px);
-    box-shadow:0 20px 60px rgba(212,175,55,.28);
+    transform:translateY(-2px) scale(1.02);
+    box-shadow:0 20px 60px rgba(212,175,55,.34);
+    animation: pulse-glow 0.9s ease 1;
 }
 
 .btn-secondary{
@@ -361,6 +366,166 @@ a,
 .btn-secondary:hover{
     background:rgba(212,175,55,.16);
     color:#fff;
+}
+
+.form-check-label{
+    color:#f2efe9;
+    font-size:0.95rem;
+}
+
+.spec-table{
+    width:100%;
+    background:#050403;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid rgba(212,175,55,.25);
+}
+
+
+.spec-table,
+.spec-table th,
+.spec-table td,
+.spec-table thead,
+.spec-table tbody{
+    background:transparent;
+}
+
+.spec-table thead{
+    background:#111;
+}
+
+.spec-table th,
+.spec-table td{
+    color:#f6e7a9 !important;
+    border-top:1px solid rgba(212,175,55,.14);
+    padding:16px 12px;
+}
+
+.spec-table th{
+    color:var(--gold) !important;
+    font-weight:700;
+}
+
+.spec-table tbody tr:hover{
+    background:rgba(255,255,255,.03);
+}
+
+/* Make the right-hand column (diện tích) bright white for contrast */
+.spec-table tbody td:last-child{
+    color:#ffffff !important;
+}
+
+.spec-table tbody tr:last-child td{
+    border-bottom:none;
+}
+
+.map-card{
+    overflow:hidden;
+    border-radius:24px;
+    border:1px solid rgba(212,175,55,.16);
+    box-shadow:0 25px 70px rgba(0,0,0,.18);
+    background:#050403;
+}
+
+.map-card iframe{
+    width:100%;
+    min-height:420px;
+    border:none;
+    display:block;
+    background:transparent;
+    border-radius:24px;
+}
+
+.map-fullwidth{
+    margin-bottom:30px;
+}
+
+.info-card{
+    background:rgba(255,255,255,.04);
+    padding:24px;
+    border-radius:20px;
+    border:1px solid rgba(212,175,55,.12);
+    box-shadow:0 18px 35px rgba(0,0,0,.18);
+    min-height:260px;
+}
+
+.card-title{
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+.info-card p.lead{
+    margin-bottom:16px;
+}
+
+.info-card ul{
+    margin-bottom:0;
+    padding-left:20px;
+}
+
+.info-card ul li{
+    margin-bottom:12px;
+    line-height:1.75;
+}
+
+#location .row{
+    align-items:stretch;
+}
+
+/* Strong page-scoped overrides to ensure Bootstrap doesn't revert table colors */
+body.thewincity .spec-table,
+body.thewincity .spec-table.table,
+body.thewincity .spec-table thead,
+body.thewincity .spec-table tbody,
+body.thewincity .spec-table th,
+body.thewincity .spec-table td{
+    background:transparent !important;
+}
+
+body.thewincity .spec-table{
+    background:#050403 !important;
+    border:1px solid rgba(212,175,55,.28) !important;
+}
+
+body.thewincity .spec-table th,
+body.thewincity .spec-table td{
+    color:#f6e7a9 !important;
+}
+
+body.thewincity .spec-table tbody td:last-child{
+    color:#ffffff !important;
+}
+
+.partner-logos{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(120px, 1fr));
+    gap:16px;
+}
+
+.partner-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:14px 16px;
+}
+
+.partner-logo i{
+    color:var(--gold);
+    font-size:1.3rem;
+}
+
+.partner-logo span{
+    color:#e8e2d8;
+    font-weight:600;
+}
+
+@keyframes pulse-glow{
+    0%,100%{box-shadow:0 20px 60px rgba(212,175,55,.34);}
+    50%{box-shadow:0 24px 80px rgba(212,175,55,.48);}
 }
 
 .hero-content:hover,
@@ -480,7 +645,27 @@ a,
 }
 
 .info-box ul{
-    padding-left:22px;
+    padding-left:0;
+    list-style:none;
+    margin:0;
+}
+
+.info-box ul li{
+    position: relative;
+    padding-left: 34px;
+    margin-bottom: 14px;
+    color:#e8e2d8;
+    line-height:1.8;
+}
+
+.info-box ul li::before{
+    content:'✓';
+    position:absolute;
+    left:0;
+    top:0.18rem;
+    color:#7fe11a;
+    font-size:1rem;
+    line-height:1;
 }
 
 #legal .info-box{
@@ -505,22 +690,10 @@ a,
     display: grid;
     grid-template-columns: repeat(2, minmax(220px, 1fr));
     gap: 16px 28px;
-    list-style: none;
 }
 
 #legal .info-box ul li{
-    position: relative;
-    padding-left: 22px;
-}
-
-#legal .info-box ul li::before{
-    content: '•';
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--gold);
-    font-size: 1.3rem;
-    line-height: 1;
+    padding-left: 34px;
 }
 
 .info-box li{
@@ -928,6 +1101,116 @@ body.thewincity .section.bg-light .info-box {
     background:none;
     filter: brightness(1.05) saturate(1.08);
     display:block;
+}
+
+/* CONTACT FORM REDESIGN */
+.contact-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(212,175,55,.18);
+    border-radius: 28px;
+    box-shadow: 0 35px 90px rgba(0,0,0,.24);
+    padding: 32px;
+}
+
+.contact-copy .label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.contact-copy .title {
+    font-size: 2.35rem;
+    margin-bottom: 16px;
+}
+
+.contact-copy p {
+    color: rgba(242,239,233,.82);
+    line-height: 1.9;
+    margin-bottom: 24px;
+}
+
+.contact-highlights {
+    display: grid;
+    gap: 16px;
+}
+
+.highlight {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(212,175,55,.12);
+    border-radius: 18px;
+    padding: 18px 18px 16px;
+}
+
+.highlight i {
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-top: 4px;
+}
+
+.highlight strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #f8e7b9;
+}
+
+.highlight p {
+    color: rgba(242,239,233,.78);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.contact-form .form-control {
+    height: 62px;
+    border-radius: 16px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(212,175,55,.18);
+    padding: 0 20px;
+    color: #f2efe9;
+}
+
+.contact-form .form-control:focus {
+    background: rgba(212,175,55,.08);
+    border-color: var(--gold);
+    box-shadow: none;
+    color: #fff;
+}
+
+.contact-form .form-check.custom-check {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(212,175,55,.12);
+    border-radius: 16px;
+    padding: 16px 18px;
+}
+
+.contact-form .form-check-label {
+    color: rgba(242,239,233,.92);
+    margin-left: 0.6rem;
+}
+
+.contact-form .btn-gold {
+    min-height: 72px;
+    border-radius: 16px;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+.contact-form .form-text {
+    color: rgba(242,239,233,.75);
+}
+
+@media (max-width: 767px) {
+    .contact-copy .title {
+        font-size: 2rem;
+    }
 }
 
 /* CONTACT */

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -15,6 +15,15 @@ content="The Win City, căn hộ The Win City, Thắng Lợi Group, bất độn
 
 <meta name="author"
 content="Trí Đức Realty">
+<meta name="theme-color" content="#111111">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Win City | Trí Đức Realty">
+<meta property="og:description" content="The Win City - Đại đô thị hiện đại cửa ngõ phía Tây TP.HCM.">
+<meta property="og:image" content="images/wincity.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Win City | Trí Đức Realty">
+<meta name="twitter:description" content="The Win City - Đại đô thị hiện đại cửa ngõ phía Tây TP.HCM.">
+<meta name="twitter:image" content="images/wincity.jpg">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 rel="stylesheet">
@@ -47,7 +56,10 @@ TRÍ ĐỨC REALTY
 <button class="navbar-toggler"
 type="button"
 data-bs-toggle="collapse"
-data-bs-target="#menu">
+data-bs-target="#menu"
+aria-controls="menu"
+aria-expanded="false"
+aria-label="Toggle navigation">
 
 <span class="navbar-toggler-icon"></span>
 
@@ -150,15 +162,15 @@ Pháp lý
 	<div class="quick-card">
 		<i class="fa-solid fa-city"></i>
 		<div>
-			<strong>16ha</strong>
+			<strong>13,8ha</strong>
 			<span>Quy mô đô thị</span>
 		</div>
 	</div>
 	<div class="quick-card">
 		<i class="fa-solid fa-road"></i>
 		<div>
-			<strong>3 phút</strong>
-			<span>Đến KCN Cầu Tràm</span>
+			<strong>10 phút</strong>
+			<span>Vành Đai 3</span>
 		</div>
 	</div>
 	<div class="quick-card">
@@ -171,14 +183,14 @@ Pháp lý
 	<div class="quick-card">
 		<i class="fa-solid fa-layer-group"></i>
 		<div>
-			<strong>2.000+ căn</strong>
+			<strong>6.000 căn</strong>
 			<span>Đơn vị nhà ở</span>
 		</div>
 	</div>
 	<div class="quick-card">
 		<i class="fa-solid fa-gem"></i>
 		<div>
-			<strong>Tiện ích khép kín</strong>
+			<strong>100+ Tiện ích khép kín</strong>
 			<span>Hệ thống đồng bộ</span>
 		</div>
 	</div>
@@ -186,7 +198,7 @@ Pháp lý
 		<i class="fa-solid fa-tree-city"></i>
 		<div>
 			<strong>Không gian xanh</strong>
-			<span>Công viên nội khu</span>
+			<span>Khu compound khép kín</span>
 		</div>
 	</div>
 </div>
@@ -208,7 +220,7 @@ TỔNG QUAN DỰ ÁN
 
 <div class="col-md-6">
 
-<img src="images/wincity.jpg"
+<img loading="lazy" src="images/wincity.jpg"
 alt="The Win City"
 class="overview-img">
 
@@ -224,42 +236,30 @@ class="overview-img">
 
 <li>
 <strong>Chủ đầu tư:</strong>
-Thắng Lợi Group
+Thắng Lợi Group - Central -An Cường 
 </li>
 
 <li>
 <strong>Vị trí:</strong>
-Cửa ngõ phía Tây TP.HCM
+Mặt tiền Đại lộ Trần Văn Giàu (Tỉnh lộ 10), cửa ngõ TP.HCM – Đức Hòa – Long An.
 </li>
 
 <li>
 <strong>Quy mô:</strong>
-Đại đô thị tích hợp
+Đô thị cao tầng phức hợp 13,8ha 18 tháp, gần 6000 sản phẩm
 </li>
 
 <li>
-<strong>Loại hình:</strong>
-Căn hộ thương mại
+<strong>Mật độ xây dựng</strong>
+29,82% - Không gian xanh và tiện ích chiếm ưu thế hơn 70%
 </li>
 
 <li>
-<strong>Sở hữu:</strong>
-Lâu dài
-</li>
-
-<li>
-<strong>Giá tham khảo:</strong>
-Từ 1,3 tỷ/căn
+<strong>Đơn vị tư vấn quản lý</strong>
+CBRE
 </li>
 
 </ul>
-
-<p class="mt-3">
-
-The Win City được quy hoạch theo mô hình đô thị tích hợp,
-đầy đủ tiện ích thương mại, giáo dục, y tế và không gian xanh.
-
-</p>
 
 </div>
 
@@ -279,17 +279,37 @@ The Win City được quy hoạch theo mô hình đô thị tích hợp,
 VỊ TRÍ DỰ ÁN
 </h2>
 
-<img src="images/wincity-location.jpg"
-alt="Vị trí The Win City"
-class="unified-img">
+<div class="map-fullwidth mb-4">
+    <div class="map-card">
+        <iframe
+            title="Bản đồ vị trí The Win City"
+            src="https://www.google.com/maps?q=10.8026627,106.4878611&amp;z=17&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
 
-<div class="text-center mt-4">
-
-<p>
-Kết nối thuận tiện đến TP.HCM, Quốc lộ 1A,
-Vành Đai 3 và các khu công nghiệp lớn.
-</p>
-
+<div class="row gy-4">
+    <div class="col-md-6">
+        <div class="info-card">
+            <h4 class="card-title">Vị trí</h4>
+            <ul class="mb-0">
+				<li>The Win City nằm mặt tiền Tỉnh Lộ 10 nối dài Trần Văn Giàu</li>
+                <li>Liền kề 39 cụm công nghiệp, tỉ lệ lấp đầy 220.000 chuyên gia dể, thanh khoản tốt</li>
+                <li>Đức Hòa là trung tâm hành chính mới của tỉnh Tây Ninh, địa điểm phát triển tiềm năng</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="info-card">
+            <h4 class="card-title">Kết nối</h4>
+            <ul class="mb-0">
+                <li>Kết nối Quốc lộ 1A, Võ Văn Kiệt nối dài rút ngắn thời gian di chuyển TP.HCM</li>
+                <li>Vành Đai 3 kết nối vùng rút ngắn 1/3 thời gian di chuyển sân bay quốc tế Long Thành</li>
+                <li>Cách trung tâm Hành Chính Đức Hòa vài phút</li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 </div>
@@ -315,9 +335,11 @@ TIỆN ÍCH NỔI BẬT
 <h4>TIỆN ÍCH NỘI KHU</h4>
 
 <ul class="mt-3">
-<li>Hồ bơi resort cao cấp</li>
+<li>Trung tâm thương mại Winmart 42 tầng</li>
+<li>Hồ bơi Maximus chuẩn olympic</li>
 <li>Công viên nội khu rộng lớn</li>
-<li>Trường học & y tế liền kề</li>
+<li>Trường học Winedu liên cấp 1-3</li>
+<li>Bệnh viện WinMart</li>
 </ul>
 
 </div>
@@ -331,9 +353,12 @@ TIỆN ÍCH NỔI BẬT
 <h4>TIỆN ÍCH NGOẠI KHU</h4>
 
 <ul class="mt-3">
-<li>Trung tâm thương mại đẳng cấp</li>
-<li>Giao thông kết nối Quốc lộ 1A, Vành đai 3</li>
-<li>Gần khu công nghiệp và dịch vụ khu Tây</li>
+
+<li>39 cụm công nghiệp và KCN trọng điểm</li>
+<li>Trung tâm hành chính Đức Hòa</li>
+<li>Đại học Tân Tạo</li>
+<li>Bệnh viện Đại học Y Tân Tạo</li>
+<li>Chợ Đức Hòa hiện hữu</li>
 </ul>
 
 </div>
@@ -352,11 +377,11 @@ data-bs-ride="carousel">
 
 <div class="carousel-img-container">
     <div class="carousel-img-blur" style="background-image: url('images/amenity-1.jpg')"></div>
-    <img src="images/amenity-1.jpg" class="carousel-img-main" alt="Hồ bơi">
+    <img loading="lazy" src="images/amenity-1.jpg" class="carousel-img-main" alt="Hồ bơi">
 </div>
 
 <div class="carousel-caption">
-<h4>Hồ Bơi Resort</h4>
+<h4>Hồ Bơi Maximus</h4>
 <p>Không gian thư giãn đẳng cấp.</p>
 </div>
 
@@ -366,7 +391,7 @@ data-bs-ride="carousel">
 
 <div class="carousel-img-container">
     <div class="carousel-img-blur" style="background-image: url('images/amenity-2.jpg')"></div>
-    <img src="images/amenity-2.jpg" class="carousel-img-main" alt="Công viên">
+    <img loading="lazy" src="images/amenity-2.jpg" class="carousel-img-main" alt="Công viên">
 </div>
 
 <div class="carousel-caption">
@@ -380,7 +405,7 @@ data-bs-ride="carousel">
 
 <div class="carousel-img-container">
     <div class="carousel-img-blur" style="background-image: url('images/amenity-3.jpg')"></div>
-    <img src="images/amenity-3.jpg" class="carousel-img-main" alt="Trường học">
+    <img loading="lazy" src="images/amenity-3.jpg" class="carousel-img-main" alt="Trường học">
 </div>
 
 <div class="carousel-caption">
@@ -394,7 +419,7 @@ data-bs-ride="carousel">
 
 <div class="carousel-img-container">
     <div class="carousel-img-blur" style="background-image: url('images/amenity-4.jpg')"></div>
-    <img src="images/amenity-4.jpg" class="carousel-img-main" alt="TTTM">
+    <img loading="lazy" src="images/amenity-4.jpg" class="carousel-img-main" alt="TTTM">
 </div>
 
 <div class="carousel-caption">
@@ -406,7 +431,7 @@ data-bs-ride="carousel">
 
 </div>
 
-<button class="carousel-control-prev"
+<button class="carousel-control-prev" aria-label="Previous slide"
 type="button"
 data-bs-target="#amenitiesCarousel"
 data-bs-slide="prev">
@@ -415,7 +440,7 @@ data-bs-slide="prev">
 
 </button>
 
-<button class="carousel-control-next"
+<button class="carousel-control-next" aria-label="Next slide"
 type="button"
 data-bs-target="#amenitiesCarousel"
 data-bs-slide="next">
@@ -452,12 +477,68 @@ data-bs-slide="next">
 MẶT BẰNG DỰ ÁN
 </h2>
 
-<img src="images/wincity-masterplan.jpg"
+<img loading="lazy" src="images/wincity-masterplan.jpg"
 alt="Mặt bằng The Win City"
 class="unified-img">
 
 </div>
 
+</section>
+
+<section id="specs" class="section">
+<div class="container">
+
+<h2 class="title">
+THÔNG SỐ DỰ ÁN
+</h2>
+
+<div class="row gy-4 align-items-start">
+<div class="col-lg-6">
+<div class="info-box">
+<h4>Diện tích & loại căn hộ</h4>
+<div class="table-responsive">
+<table class="table table-borderless spec-table">
+<thead>
+<tr>
+<th>Loại căn</th>
+<th>Diện tích (m²)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Studio</td><td>28 – 32 m²</td></tr>
+<tr><td>1PN 1WC</td><td>45 – 50 m²</td></tr>
+<tr><td>1PN +</td><td>55 – 65 m²</td></tr>
+<tr><td>2PN 1WC</td><td>68 – 75 m²</td></tr>
+<tr><td>2PN 2WC</td><td>78 – 82 m²</td></tr>
+<tr><td>3PN</td><td>95 – 105 m²</td></tr>
+<tr><td>Dual Key 3PN</td><td>118 – 130 m²</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="info-box">
+<h4>TIẾN ĐỘ & HỖ TRỢ TÀI CHÍNH</h4>
+<ul class="list-unstyled mb-0">
+<li>Dự án đang được triển khai theo đúng tiến độ.</li>
+<li>Giai đoạn đầu dự kiến bàn giao vào Quý I/2028.</li>
+<li>Chủ đầu tư cam kết phát triển đồng bộ tiện ích và hạ tầng.</li>
+<li>Ngân hàng bảo lãnh dự án Agribank.</li>
+<li>Ngân hàng liên kết ACB, VIETCOMBANK, VIETTINBANK, MB BANK hỗ trợ vay đến 70% giá trị căn hộ.</li>
+<li>Chính sách thanh toán linh hoạt theo tiến độ xây dựng, giảm áp lực tài chính.</li>
+<li>Ân hạn nợ gốc theo từng thời điểm.</li>
+<li>Hỗ trợ lãi suất theo chương trình ưu đãi hiện hành.</li>
+<li>Hỗ trợ tư vấn hồ sơ vay nhanh chóng.</li>
+<li>Đồng hành cùng khách hàng an cư và đầu tư hiệu quả.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
 </section>
 
 <!-- CĂN HỘ MẪU -->
@@ -480,7 +561,7 @@ data-bs-ride="carousel">
 
 <div class="carousel-img-container">
     <div class="carousel-img-blur" style="background-image: url('images/apartment-studio.jpg')"></div>
-    <img src="images/apartment-studio.jpg" class="carousel-img-main" alt="Căn Studio">
+    <img loading="lazy" src="images/apartment-studio.jpg" class="carousel-img-main" alt="Căn Studio">
 </div>
 
 <div class="carousel-caption">
@@ -494,7 +575,7 @@ data-bs-ride="carousel">
 
 <div class="carousel-img-container">
     <div class="carousel-img-blur" style="background-image: url('images/apartment-1pn-1wc.jpg')"></div>
-    <img src="images/apartment-1pn-1wc.jpg" class="carousel-img-main" alt="Căn 1PN 1WC">
+    <img loading="lazy" src="images/apartment-1pn-1wc.jpg" class="carousel-img-main" alt="Căn 1PN 1WC">
 </div>
 
 <div class="carousel-caption">
@@ -508,7 +589,7 @@ data-bs-ride="carousel">
 
 <div class="carousel-img-container">
     <div class="carousel-img-blur" style="background-image: url('images/apartment-1pn-plus.jpg')"></div>
-    <img src="images/apartment-1pn-plus.jpg" class="carousel-img-main" alt="Căn 1PN +">
+    <img loading="lazy" src="images/apartment-1pn-plus.jpg" class="carousel-img-main" alt="Căn 1PN +">
 </div>
 
 <div class="carousel-caption">
@@ -522,7 +603,7 @@ data-bs-ride="carousel">
 
 <div class="carousel-img-container">
     <div class="carousel-img-blur" style="background-image: url('images/apartment-2pn-1wc.jpg')"></div>
-    <img src="images/apartment-2pn-1wc.jpg" class="carousel-img-main" alt="Căn 2PN 1WC">
+    <img loading="lazy" src="images/apartment-2pn-1wc.jpg" class="carousel-img-main" alt="Căn 2PN 1WC">
 </div>
 
 <div class="carousel-caption">
@@ -536,7 +617,7 @@ data-bs-ride="carousel">
 
 <div class="carousel-img-container">
     <div class="carousel-img-blur" style="background-image: url('images/apartment-2pn-2wc.jpg')"></div>
-    <img src="images/apartment-2pn-2wc.jpg" class="carousel-img-main" alt="Căn 2PN 2WC">
+    <img loading="lazy" src="images/apartment-2pn-2wc.jpg" class="carousel-img-main" alt="Căn 2PN 2WC">
 </div>
 
 <div class="carousel-caption">
@@ -550,7 +631,7 @@ data-bs-ride="carousel">
 
 <div class="carousel-img-container">
     <div class="carousel-img-blur" style="background-image: url('images/apartment-3pn.jpg')"></div>
-    <img src="images/apartment-3pn.jpg" class="carousel-img-main" alt="Căn 3PN">
+    <img loading="lazy" src="images/apartment-3pn.jpg" class="carousel-img-main" alt="Căn 3PN">
 </div>
 
 <div class="carousel-caption">
@@ -564,7 +645,7 @@ data-bs-ride="carousel">
 
 <div class="carousel-img-container">
     <div class="carousel-img-blur" style="background-image: url('images/apartment-dual-key.jpg')"></div>
-    <img src="images/apartment-dual-key.jpg" class="carousel-img-main" alt="Căn Dual Key">
+    <img loading="lazy" src="images/apartment-dual-key.jpg" class="carousel-img-main" alt="Căn Dual Key">
 </div>
 
 <div class="carousel-caption">
@@ -576,7 +657,7 @@ data-bs-ride="carousel">
 
 </div>
 
-<button class="carousel-control-prev"
+<button class="carousel-control-prev" aria-label="Previous slide"
 type="button"
 data-bs-target="#apartmentCarousel"
 data-bs-slide="prev">
@@ -585,7 +666,7 @@ data-bs-slide="prev">
 
 </button>
 
-<button class="carousel-control-next"
+<button class="carousel-control-next" aria-label="Next slide"
 type="button"
 data-bs-target="#apartmentCarousel"
 data-bs-slide="next">
@@ -630,15 +711,14 @@ PHÁP LÝ DỰ ÁN
 <div class="info-box">
 
 <p>
-Dự án The Win City được triển khai với đầy đủ pháp lý rõ ràng,
-đảm bảo quyền lợi khách hàng và bàn giao theo tiến độ cam kết.
+Dự án The Win City được triển khai với pháp lý đầy đủ và minh bạch, 
 </p>
 
 <ul class="mt-3">
-<li>Giấy phép xây dựng và quy hoạch chính thức.</li>
-<li>Sổ hồng lâu dài cho từng căn hộ.</li>
-<li>Hợp đồng mua bán minh bạch, rõ ràng.</li>
-<li>Đủ điều kiện mở bán theo quy định pháp luật.</li>
+<li>Pháp lý minh bạch, chủ trương đầu tư rõ ràng.</li>
+<li>Quy hoạch 1/500 được phê duyệt chính thức.</li>
+<li>Giấy phép xây dựng đầy đủ.</li>
+<li>Đủ điều kiện mở bán và được ngân hàng bảo lãnh.</li>
 </ul>
 
 </div>
@@ -657,55 +737,68 @@ Dự án The Win City được triển khai với đầy đủ pháp lý rõ rà
 
 <div class="container">
 
-<h2 class="title">
-ĐĂNG KÝ NHẬN BẢNG GIÁ
-</h2>
-
-<div class="row justify-content-center">
-
-<div class="col-md-6">
-
-<form id="leadForm">
-
-<input type="text"
-id="name"
-class="form-control mb-3"
-placeholder="Họ và tên"
-required>
-
-<input type="tel"
-id="phone"
-class="form-control mb-3"
-placeholder="Số điện thoại"
-required>
-
-<input type="hidden"
-id="project"
-value="The Win City">
-
-<button type="submit"
-class="btn btn-gold">
-
-NHẬN BẢNG GIÁ NGAY
-
-</button>
-
-</form>
-
-<div id="message"></div>
-
-<p class="bonus-text">
-
-<span>🎁 Bảng giá mới nhất</span><br>
-
-<span>🎁 Chính sách ưu đãi</span><br>
-
-<span>🎁 Giỏ hàng cập nhật</span>
-
-</p>
-
+<div class="contact-card">
+<div class="row g-4 align-items-center">
+<div class="col-lg-5">
+<div class="contact-copy">
+<span class="label">Đăng ký</span>
+<h2 class="title">Nhận bảng giá The Win City</h2>
+<p>Đăng ký ngay để nhận báo giá chi tiết, tư vấn vay ngân hàng và hỗ trợ thiện chí nhanh chóng.</p>
+<div class="contact-highlights">
+<div class="highlight">
+<i class="fa-solid fa-bolt"></i>
+<div>
+<strong>Nhanh chóng</strong>
+<p>Gọi lại trong vòng 15 phút.</p>
 </div>
-
+</div>
+<div class="highlight">
+<i class="fa-solid fa-hand-holding-dollar"></i>
+<div>
+<strong>Hỗ trợ vay</strong>
+<p>Tư vấn gói vay, lãi suất, trả góp.</p>
+</div>
+</div>
+<div class="highlight">
+<i class="fa-solid fa-user-check"></i>
+<div>
+<strong>Bảo mật</strong>
+<p>Thông tin được bảo mật tuyệt đối.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-7">
+<form id="leadForm" class="contact-form">
+<div class="row g-3">
+<div class="col-md-6">
+<input type="text" id="name" name="name" class="form-control" placeholder="Họ và tên" required>
+</div>
+<div class="col-md-6">
+<input type="tel" id="phone" name="phone" class="form-control" placeholder="Số điện thoại" required>
+</div>
+<div class="col-12">
+<div class="form-check custom-check">
+<input class="form-check-input" type="checkbox" id="contactByZalo" name="contactByZalo">
+<label class="form-check-label" for="contactByZalo">Nhận thông tin qua Zalo</label>
+</div>
+</div>
+<div class="col-12">
+<div class="form-check custom-check">
+<input class="form-check-input" type="checkbox" id="financeAdvice" name="financeAdvice">
+<label class="form-check-label" for="financeAdvice">Cần tư vấn dòng tiền vay ngân hàng</label>
+</div>
+</div>
+<div class="col-12">
+<input type="hidden" id="project" name="project" value="The Win City">
+<button type="submit" class="btn btn-gold btn-lg w-100">NHẬN BẢNG GIÁ NGAY</button>
+</div>
+</div>
+</form>
+<div id="message" role="status" aria-live="polite" class="form-text mt-3"></div>
+</div>
+</div>
 </div>
 
 </div>
@@ -758,3 +851,4 @@ Zalo: 0876 914 621
 
 </body>
 </html>
+
