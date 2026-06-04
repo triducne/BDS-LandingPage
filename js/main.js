@@ -1,5 +1,3 @@
-console.log("TRÍ ĐỨC REALTY READY");
-
 const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbybHD85YZ8EvpRLEGyGAkCYfBALElrH338ca5JwNN84HsFjNCQ4MAr5-NscEDFUkGxdjg/exec";
 
@@ -165,10 +163,122 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    // Initialize single-frame payment tabs
+    const initPaymentTabs = () => {
+        const frame = document.querySelector('.payment-frame');
+        if (!frame) return;
+
+        const tabs = frame.querySelectorAll('.tab-btn');
+        const panels = frame.querySelectorAll('.pay-panel');
+
+        const activate = (targetId) => {
+            tabs.forEach(t => t.classList.toggle('active', t.dataset.target === targetId));
+            panels.forEach(p => p.classList.toggle('active', p.id === targetId));
+            // smooth scroll into view on small screens
+            const activePanel = frame.querySelector(`#${targetId}`);
+            if (activePanel) {
+                activePanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        };
+
+        tabs.forEach(t => {
+            t.addEventListener('click', (e) => {
+                const target = t.dataset.target;
+                if (!target) return;
+                activate(target);
+            });
+        });
+    };
+
+
     syncCarouselThumbnails('amenitiesCarousel');
     syncCarouselThumbnails('apartmentCarousel');
+    syncCarouselThumbnails('paymentCarousel');
 
     syncCarouselTracker('amenitiesCarousel');
     syncCarouselTracker('apartmentCarousel');
+    syncCarouselTracker('paymentCarousel');
+
+    const initProjectsCarousel = () => {
+        const section = document.getElementById('projects');
+        if (!section) return;
+
+        const track = section.querySelector('.project-carousel-track');
+        const prev = section.querySelector('.carousel-nav-prev');
+        const next = section.querySelector('.carousel-nav-next');
+        const dotsContainer = section.querySelector('.carousel-dots');
+        const cards = Array.from(section.querySelectorAll('.project-card-slide'));
+
+        if (!track || !prev || !next || cards.length === 0) return;
+
+        const groupSize = 2;
+        const pages = Math.max(1, Math.ceil(cards.length / groupSize));
+        let activePage = 0;
+
+        const createDots = () => {
+            if (!dotsContainer) return;
+            dotsContainer.innerHTML = '';
+            for (let page = 0; page < pages; page++) {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = page === 0 ? 'active' : '';
+                dot.addEventListener('click', () => {
+                    scrollToPage(page);
+                });
+                dotsContainer.appendChild(dot);
+            }
+        };
+
+        const updateDots = () => {
+            if (!dotsContainer) return;
+            Array.from(dotsContainer.children).forEach((dot, index) => {
+                dot.classList.toggle('active', index === activePage);
+            });
+        };
+
+        const updateButtons = () => {
+            prev.disabled = activePage <= 0;
+            next.disabled = activePage >= pages - 1;
+        };
+
+        const scrollToPage = (page, smooth = true) => {
+            activePage = Math.max(0, Math.min(page, pages - 1));
+            const index = activePage * groupSize;
+            const card = cards[index];
+            if (card) {
+                card.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', inline: 'start', block: 'nearest' });
+            }
+            updateButtons();
+            updateDots();
+        };
+
+        prev.addEventListener('click', () => scrollToPage(activePage - 1));
+        next.addEventListener('click', () => scrollToPage(activePage + 1));
+
+        let pendingScroll = false;
+        track.addEventListener('scroll', () => {
+            if (pendingScroll) return;
+            pendingScroll = true;
+            requestAnimationFrame(() => {
+                const pageWidth = track.clientWidth;
+                const newPage = Math.round(track.scrollLeft / pageWidth);
+                if (newPage !== activePage) {
+                    activePage = Math.max(0, Math.min(newPage, pages - 1));
+                    updateButtons();
+                    updateDots();
+                }
+                pendingScroll = false;
+            });
+        }, { passive: true });
+
+        createDots();
+        scrollToPage(0, false);
+        updateButtons();
+    };
+
+    initProjectsCarousel();
+
+    // init single-panel payment switcher
+    initPaymentTabs();
 
 });

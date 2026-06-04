@@ -204,16 +204,18 @@ class="avatar">
 DỰ ÁN NỔI BẬT
 </h2>
 
-<div class="row g-4">
-
-<div class="col-md-3">
-
-<a href="thewincity.html"
-class="text-decoration-none text-white">
-
-<div class="card project">
-
-<div class="project-img-container">
+<div class="project-carousel position-relative">
+    <button class="carousel-nav carousel-nav-prev" aria-label="Previous dự án">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="carousel-nav carousel-nav-next" aria-label="Next dự án">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <div class="project-carousel-track">
+            <div class="project-card-slide">
+            <a href="thewincity.html" class="text-decoration-none text-white">
+                <div class="card project">
+                    <div class="project-img-container">
     <div class="project-img-blur" style="background-image: url('images/wincity.jpg')"></div>
     <img loading="lazy" src="images/wincity.jpg" alt="The Win City" class="project-img-main">
 </div>
@@ -221,9 +223,8 @@ class="text-decoration-none text-white">
 <div class="card-body">
 
 <h5>The Win City</h5>
-
-<p class="text-warning fw-bold">
-Từ 1,3 tỷ/căn
+<p class="project-description">
+Đại đô thị hiện đại cửa ngõ phía Tây TP.HCM, mặt tiền Tỉnh Lộ 10 nối dài Trần Văn Giàu.
 </p>
 
 </div>
@@ -234,7 +235,7 @@ Từ 1,3 tỷ/căn
 
 </div>
 
-<div class="col-md-3">
+<div class="project-card-slide">
 
 <a href="destino.html"
 class="text-decoration-none text-white">
@@ -249,9 +250,8 @@ class="text-decoration-none text-white">
 <div class="card-body">
 
 <h5>Destino Centro</h5>
-
-<p class="text-warning fw-bold">
-Từ 1,1 tỷ/căn
+<p class="project-description">
+Căn hộ hiện đại vị trí đắc địa ngay cửa ngõ Tây Nam Sài Gòn, quy hoạch đồng bộ tiện ích thiết yếu.
 </p>
 
 </div>
@@ -262,7 +262,7 @@ Từ 1,1 tỷ/căn
 
 </div>
 
-<div class="col-md-3">
+<div class="project-card-slide">
 
 <a href="peakgarden.html"
 class="text-decoration-none text-white">
@@ -277,9 +277,8 @@ class="text-decoration-none text-white">
 <div class="card-body">
 
 <h5>The Peak Garden</h5>
-
-<p class="text-warning fw-bold">
-Từ 4 tỷ/căn
+<p class="project-description">
+Căn hộ chăm sóc sức khỏe và sắc đẹp tại Quận 7, trang bị hệ thống lọc khí tươi và lọc nước hiện đại.
 </p>
 
 </div>
@@ -290,7 +289,7 @@ Từ 4 tỷ/căn
 
 </div>
 
-<div class="col-md-3">
+<div class="project-card-slide">
 
 <a href="vlasta.html"
 class="text-decoration-none text-white">
@@ -305,9 +304,8 @@ class="text-decoration-none text-white">
 <div class="card-body">
 
 <h5>Vlasta Premier</h5>
-
-<p class="text-warning fw-bold">
-Từ 4,35 tỷ/căn
+<p class="project-description">
+Biệt thự và shophouse nghỉ dưỡng ven biển Sầm Sơn, pháp lý sở hữu lâu dài hiếm có.
 </p>
 
 </div>
@@ -319,7 +317,8 @@ Từ 4,35 tỷ/căn
 </div>
 
 </div>
-
+    </div>
+    <div class="carousel-dots" aria-label="Project carousel navigation"></div>
 </div>
 
 </section>
