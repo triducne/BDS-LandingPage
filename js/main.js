@@ -50,6 +50,19 @@ window.addEventListener('popstate', () => {
     } catch (e) {}
 });
 
+window.addEventListener('hashchange', () => {
+    try {
+        if (window.location.hash === '#news') {
+            if (window.history && typeof window.history.replaceState === 'function') {
+                window.history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+            window.scrollTo(0, 0);
+            setTimeout(() => window.scrollTo(0, 0), 50);
+            setTimeout(() => window.scrollTo(0, 0), 250);
+        }
+    } catch (e) {}
+});
+
 // Helper: aggressively clear #news and reset scroll (used on load/pageshow)
 const clearNewsHashAndScrollTop = () => {
     try {
@@ -60,9 +73,19 @@ const clearNewsHashAndScrollTop = () => {
             }
         }
         window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
         // repeat a couple times to override browser auto-scroll
-        setTimeout(() => window.scrollTo(0, 0), 30);
-        setTimeout(() => window.scrollTo(0, 0), 200);
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }, 30);
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }, 200);
     } catch (e) {}
 };
 
