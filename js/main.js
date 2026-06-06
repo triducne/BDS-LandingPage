@@ -190,17 +190,103 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    const initLocationTabs = () => {
+        const tabs = document.querySelectorAll('.location-tab');
+        const panels = document.querySelectorAll('.location-panel');
+        if (!tabs.length || !panels.length) return;
 
+        const activate = (targetId) => {
+            tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.target === targetId));
+            panels.forEach(panel => panel.classList.toggle('active', panel.id === targetId));
+            const activePanel = document.getElementById(targetId);
+            if (activePanel) {
+                activePanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        };
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.target;
+                if (!target) return;
+                activate(target);
+            });
+        });
+    };
+
+    initLocationTabs();
+    const initAmenityTabs = () => {
+        const tabs = document.querySelectorAll('.amenities-tab');
+        const panels = document.querySelectorAll('.amenity-panel');
+        if (!tabs.length || !panels.length) return;
+
+        const activate = (targetId) => {
+            tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.target === targetId));
+            panels.forEach(panel => panel.classList.toggle('active', panel.id === targetId));
+            const activePanel = document.getElementById(targetId);
+            if (activePanel) {
+                activePanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        };
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.target;
+                if (!target) return;
+                activate(target);
+            });
+        });
+    };
+
+    initAmenityTabs();
+
+    const initSpecSelector = () => {
+        const dropdownToggle = document.querySelector('.spec-dropdown-toggle');
+        const layoutMenu = document.querySelector('.spec-layout-menu');
+        const layoutButtons = document.querySelectorAll('.spec-layout-btn');
+        const resultCard = document.querySelector('.spec-result-card');
+        const resultTitle = document.querySelector('.spec-result-title');
+        const resultSize = document.querySelector('.spec-result-size');
+        if (!dropdownToggle || !layoutMenu || !layoutButtons.length || !resultCard || !resultTitle || !resultSize) return;
+
+        const layouts = Array.from(layoutButtons).map(btn => ({
+            label: btn.dataset.label || btn.textContent.trim(),
+            size: btn.dataset.size || ''
+        }));
+
+        dropdownToggle.addEventListener('click', () => {
+            const expanded = dropdownToggle.getAttribute('aria-expanded') === 'true';
+            dropdownToggle.setAttribute('aria-expanded', String(!expanded));
+            layoutMenu.hidden = !layoutMenu.hidden;
+        });
+
+        const showResult = (index) => {
+            const layout = layouts[index];
+            if (!layout) return;
+            layoutButtons.forEach((btn, idx) => btn.classList.toggle('active', idx === index));
+            dropdownToggle.querySelector('span').textContent = layout.label;
+            resultTitle.textContent = layout.label;
+            resultSize.textContent = layout.size;
+            resultCard.style.display = 'block';
+        };
+
+        layoutButtons.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+                layoutMenu.hidden = true;
+                showResult(index);
+            });
+        });
+    };
+
+    initSpecSelector();
     syncCarouselThumbnails('amenitiesCarousel');
     syncCarouselThumbnails('apartmentCarousel');
-    syncCarouselThumbnails('paymentCarousel');
 
     syncCarouselTracker('amenitiesCarousel');
     syncCarouselTracker('apartmentCarousel');
-    syncCarouselTracker('paymentCarousel');
 
-    const initProjectsCarousel = () => {
-        const section = document.getElementById('projects');
+    const initCarousel = (sectionId) => {
+        const section = document.getElementById(sectionId);
         if (!section) return;
 
         const track = section.querySelector('.project-carousel-track');
@@ -211,8 +297,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!track || !prev || !next || cards.length === 0) return;
 
-        const groupSize = 2;
-        const pages = Math.max(1, Math.ceil(cards.length / groupSize));
+        let groupSize = window.innerWidth < 768 ? 1 : 2;
+        let pages = Math.max(1, Math.ceil(cards.length / groupSize));
         let activePage = 0;
 
         const createDots = () => {
@@ -271,14 +357,58 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }, { passive: true });
 
+        // Recompute groupSize/pages on resize
+        let resizeTimeout;
+        const recompute = () => {
+            groupSize = window.innerWidth < 768 ? 1 : 2;
+            pages = Math.max(1, Math.ceil(cards.length / groupSize));
+            // recreate dots and clamp activePage
+            if (activePage >= pages) activePage = pages - 1;
+            createDots();
+            scrollToPage(activePage, false);
+            updateButtons();
+        };
+
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(recompute, 150);
+        });
+
         createDots();
         scrollToPage(0, false);
         updateButtons();
     };
 
-    initProjectsCarousel();
+    initCarousel('projects');
+    initCarousel('news');
 
     // init single-panel payment switcher
     initPaymentTabs();
 
 });
+
+// Hide empty .info-box elements on initial load and when content changes
+(() => {
+    const hideEmptyInfoBoxes = () => {
+        document.querySelectorAll('.info-box').forEach(el => {
+            const text = (el.innerText || el.textContent || '').replace(/\u00A0/g, '').trim();
+            if (text.length === 0) {
+                el.classList.add('empty');
+            } else {
+                el.classList.remove('empty');
+            }
+        });
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', hideEmptyInfoBoxes);
+    } else {
+        hideEmptyInfoBoxes();
+    }
+
+    // Observe changes inside info-boxes (for any dynamic content)
+    const observer = new MutationObserver(hideEmptyInfoBoxes);
+    document.querySelectorAll('.info-box').forEach(node => {
+        observer.observe(node, { childList: true, subtree: true, characterData: true });
+    });
+})();
