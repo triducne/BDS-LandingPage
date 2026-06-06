@@ -63,10 +63,21 @@ window.addEventListener('hashchange', () => {
     } catch (e) {}
 });
 
+// Helper: temporarily disable smooth scroll so top resets happen instantly
+const disableSmoothScroll = () => {
+    const root = document.documentElement;
+    const saved = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    return () => {
+        root.style.scrollBehavior = saved || '';
+    };
+};
+
 // Helper: aggressively clear #news and reset scroll (used on load/pageshow)
 const clearNewsHashAndScrollTop = () => {
     try {
-    console.log('clearNewsHashAndScrollTop', { hash: window.location.hash });
+        console.log('clearNewsHashAndScrollTop', { hash: window.location.hash });
+        const restoreScroll = disableSmoothScroll();
         if (window.location.hash === '#news') {
             if (window.history && typeof window.history.replaceState === 'function') {
                 window.history.replaceState(null, '', window.location.pathname + window.location.search);
@@ -85,6 +96,7 @@ const clearNewsHashAndScrollTop = () => {
             window.scrollTo(0, 0);
             document.documentElement.scrollTop = 0;
             document.body.scrollTop = 0;
+            restoreScroll();
         }, 200);
     } catch (e) {}
 };
@@ -140,10 +152,14 @@ document.addEventListener("DOMContentLoaded", () => {
             if (window.history && typeof window.history.replaceState === 'function') {
                 window.history.replaceState(null, '', window.location.pathname + window.location.search);
             }
+            const restoreScroll = disableSmoothScroll();
+            window.scrollTo(0, 0);
+            setTimeout(() => window.scrollTo(0, 0), 50);
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+                restoreScroll();
+            }, 200);
         }
-        window.scrollTo(0, 0);
-        setTimeout(() => window.scrollTo(0, 0), 50);
-        setTimeout(() => window.scrollTo(0, 0), 200);
     });
 
     initAnchorNav();
