@@ -67,6 +67,10 @@ const clearNewsHashAndScrollTop = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    if (window.history && typeof window.history.scrollRestoration === 'string') {
+        window.history.scrollRestoration = 'manual';
+    }
+
     console.log('DOMContentLoaded', { href: window.location.href, hash: window.location.hash, referrer: document.referrer });
 
     // If we arrived back from a different page in this site (project pages), aggressively clear #news
@@ -104,6 +108,20 @@ document.addEventListener("DOMContentLoaded", () => {
         window.history.replaceState(null, '', window.location.pathname + window.location.search);
         window.scrollTo(0, 0);
     }
+
+    window.addEventListener('load', () => {
+        if (window.history && typeof window.history.scrollRestoration === 'string') {
+            window.history.scrollRestoration = 'manual';
+        }
+        if (window.location.hash === '#news') {
+            if (window.history && typeof window.history.replaceState === 'function') {
+                window.history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+        }
+        window.scrollTo(0, 0);
+        setTimeout(() => window.scrollTo(0, 0), 50);
+        setTimeout(() => window.scrollTo(0, 0), 200);
+    });
 
     initAnchorNav();
 
