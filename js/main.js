@@ -5,12 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.getElementById("leadForm");
 
-    if (!form) return;
+    if (form) {
+        const btn = form.querySelector("button");
+        const originalText = btn ? btn.innerText : '';
 
-    const btn = form.querySelector("button");
-    const originalText = btn.innerText;
-
-    form.addEventListener("submit", async (e) => {
+        form.addEventListener("submit", async (e) => {
 
         e.preventDefault();
 
@@ -99,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     });
+    }
 
     const syncCarouselThumbnails = (carouselId) => {
         const carouselEl = document.getElementById(carouselId);
