@@ -3,6 +3,31 @@ const SCRIPT_URL =
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    const initAnchorNav = () => {
+        document.querySelectorAll('a.nav-link[href^="#"]').forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href || href.length <= 1) return;
+            const targetId = href.slice(1);
+            const target = document.getElementById(targetId);
+            if (!target) return;
+
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (window.history && typeof window.history.replaceState === 'function') {
+                    window.history.replaceState(null, '', window.location.pathname + window.location.search);
+                }
+            });
+        });
+    };
+
+    if (window.location.hash === '#news' && window.history && typeof window.history.replaceState === 'function') {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        window.scrollTo(0, 0);
+    }
+
+    initAnchorNav();
+
     const form = document.getElementById("leadForm");
 
     if (form) {
