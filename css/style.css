@@ -142,7 +142,7 @@ box-sizing:border-box;
 }
 
 html{
-scroll-behavior:auto;
+scroll-behavior:smooth;
 }
 
 body{
@@ -828,7 +828,7 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
     margin: 0;
     width: 100%;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
+    touch-action: auto;
 }
 
 .project-carousel-track::-webkit-scrollbar {
@@ -900,7 +900,7 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
     padding: 0 1rem 1rem;
     width: 100%;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
+    touch-action: auto;
 }
 
 .news-carousel-track::-webkit-scrollbar {

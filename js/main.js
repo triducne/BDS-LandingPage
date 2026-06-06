@@ -1,84 +1,16 @@
 const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbybHD85YZ8EvpRLEGyGAkCYfBALElrH338ca5JwNN84HsFjNCQ4MAr5-NscEDFUkGxdjg/exec";
+
+const HEADER_HASHES = ['#news', '#projects'];
+const isHeaderAnchor = (hash) => HEADER_HASHES.includes(hash);
+
 // Ensure returned visits (back/forward or bfcache) don't restore scroll to a previous anchor
-// If there's no meaningful hash, reset scroll to top and remove any accidental hash from URL
 window.addEventListener('pageshow', (event) => {
     try {
         const navEntries = performance && performance.getEntriesByType ? performance.getEntriesByType('navigation') : [];
         const navType = (navEntries && navEntries[0] && navEntries[0].type) || '';
         console.log('pageshow', { persisted: event.persisted, navType, hash: window.location.hash });
-        // If we returned via back/forward and the URL contains #news, remove it and reset scroll.
-        if ((event.persisted || navType === 'back_forward')) {
-            if (window.location.hash === '#news') {
-                if (window.history && typeof window.history.replaceState === 'function') {
-                    window.history.replaceState(null, '', window.location.pathname + window.location.search);
-                }
-                window.scrollTo(0, 0);
-                return;
-            }
-
-            // If no hash at all, also reset to top.
-            if (!window.location.hash) {
-                window.scrollTo(0, 0);
-                if (window.history && typeof window.history.replaceState === 'function') {
-                    window.history.replaceState(null, '', window.location.pathname + window.location.search);
-                }
-            }
-        }
-    } catch (e) {
-        // ignore — best-effort only
-    }
-});
-
-// Also handle popstate (back/forward) to aggressively remove #news when it appears
-window.addEventListener('popstate', () => {
-    try {
-        console.log('popstate', { hash: window.location.hash });
-        const clearIfNews = () => {
-            if (window.location.hash === '#news') {
-                if (window.history && typeof window.history.replaceState === 'function') {
-                    window.history.replaceState(null, '', window.location.pathname + window.location.search);
-                }
-                window.scrollTo(0, 0);
-                // schedule another reset after browser's auto-scroll
-                setTimeout(() => window.scrollTo(0, 0), 50);
-                setTimeout(() => window.scrollTo(0, 0), 250);
-            }
-        };
-
-        clearIfNews();
-    } catch (e) {}
-});
-
-window.addEventListener('hashchange', () => {
-    try {
-        if (window.location.hash === '#news') {
-            if (window.history && typeof window.history.replaceState === 'function') {
-                window.history.replaceState(null, '', window.location.pathname + window.location.search);
-            }
-            window.scrollTo(0, 0);
-            setTimeout(() => window.scrollTo(0, 0), 50);
-            setTimeout(() => window.scrollTo(0, 0), 250);
-        }
-    } catch (e) {}
-});
-
-// Helper: temporarily disable smooth scroll so top resets happen instantly
-const disableSmoothScroll = () => {
-    const root = document.documentElement;
-    const saved = root.style.scrollBehavior;
-    root.style.scrollBehavior = 'auto';
-    return () => {
-        root.style.scrollBehavior = saved || '';
-    };
-};
-
-// Helper: aggressively clear #news and reset scroll (used on load/pageshow)
-const clearNewsHashAndScrollTop = () => {
-    try {
-        console.log('clearNewsHashAndScrollTop', { hash: window.location.hash });
-        const restoreScroll = disableSmoothScroll();
-        if (window.location.hash === '#news') {
+        if (isHeaderAnchor(window.location.hash)) {
             if (window.history && typeof window.history.replaceState === 'function') {
                 window.history.replaceState(null, '', window.location.pathname + window.location.search);
             }
@@ -86,20 +18,34 @@ const clearNewsHashAndScrollTop = () => {
         window.scrollTo(0, 0);
         document.documentElement.scrollTop = 0;
         document.body.scrollTop = 0;
-        // repeat a couple times to override browser auto-scroll
-        setTimeout(() => {
+    } catch (e) {
+        // ignore — best-effort only
+    }
+});
+
+// Also handle popstate (back/forward) to aggressively remove header anchors when they appear
+window.addEventListener('popstate', () => {
+    try {
+        console.log('popstate', { hash: window.location.hash });
+        if (isHeaderAnchor(window.location.hash)) {
+            if (window.history && typeof window.history.replaceState === 'function') {
+                window.history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
             window.scrollTo(0, 0);
-            document.documentElement.scrollTop = 0;
-            document.body.scrollTop = 0;
-        }, 30);
-        setTimeout(() => {
-            window.scrollTo(0, 0);
-            document.documentElement.scrollTop = 0;
-            document.body.scrollTop = 0;
-            restoreScroll();
-        }, 200);
+        }
     } catch (e) {}
-};
+});
+
+window.addEventListener('hashchange', () => {
+    try {
+        if (isHeaderAnchor(window.location.hash)) {
+            if (window.history && typeof window.history.replaceState === 'function') {
+                window.history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+            window.scrollTo(0, 0);
+        }
+    } catch (e) {}
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     if (window.history && typeof window.history.scrollRestoration === 'string') {
@@ -108,18 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log('DOMContentLoaded', { href: window.location.href, hash: window.location.hash, referrer: document.referrer });
 
-    // If we arrived back from a different page in this site (project pages), aggressively clear #news
-    try {
-        if (document.referrer) {
-            const ref = new URL(document.referrer, window.location.origin);
-            if (ref.origin === window.location.origin && ref.pathname !== window.location.pathname) {
-                console.log('Returned from different page', ref.pathname, '— clearing news/hash and scrolling top');
-                clearNewsHashAndScrollTop();
-            }
-        }
-    } catch (e) {
-        console.log('referrer check failed', e);
-    }
+    // Only clear #news when the URL actually contains it on load.
 
     const initAnchorNav = () => {
         document.querySelectorAll('a.nav-link[href^="#"]').forEach(link => {
@@ -139,28 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    if (window.location.hash === '#news' && window.history && typeof window.history.replaceState === 'function') {
+    if (isHeaderAnchor(window.location.hash) && window.history && typeof window.history.replaceState === 'function') {
         window.history.replaceState(null, '', window.location.pathname + window.location.search);
         window.scrollTo(0, 0);
     }
-
-    window.addEventListener('load', () => {
-        if (window.history && typeof window.history.scrollRestoration === 'string') {
-            window.history.scrollRestoration = 'manual';
-        }
-        if (window.location.hash === '#news') {
-            if (window.history && typeof window.history.replaceState === 'function') {
-                window.history.replaceState(null, '', window.location.pathname + window.location.search);
-            }
-            const restoreScroll = disableSmoothScroll();
-            window.scrollTo(0, 0);
-            setTimeout(() => window.scrollTo(0, 0), 50);
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-                restoreScroll();
-            }, 200);
-        }
-    });
 
     initAnchorNav();
 
