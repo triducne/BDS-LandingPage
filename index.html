@@ -12,6 +12,9 @@
             history.scrollRestoration = 'manual';
         }
 
+        document.documentElement.style.scrollBehavior = 'auto';
+        document.body.style.scrollBehavior = 'auto';
+
         const HEADER_HASHES = ['#news', '#projects'];
         if (HEADER_HASHES.includes(location.hash) && history && typeof history.replaceState === 'function') {
             history.replaceState(null, '', location.pathname + location.search);
@@ -22,6 +25,14 @@
             document.documentElement.scrollTop = 0;
             document.body.scrollTop = 0;
         }
+
+        setTimeout(() => {
+            if (typeof window !== 'undefined' && window.scrollTo) {
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+            }
+        }, 0);
     } catch (e) {
         /* ignore */
     }
