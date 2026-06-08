@@ -359,9 +359,13 @@ document.addEventListener("DOMContentLoaded", () => {
     initSpecSelector();
     syncCarouselThumbnails('amenitiesCarousel');
     syncCarouselThumbnails('apartmentCarousel');
+    syncCarouselThumbnails('scheduleCarousel');
+    syncCarouselThumbnails('legalCarousel');
 
     syncCarouselTracker('amenitiesCarousel');
     syncCarouselTracker('apartmentCarousel');
+    syncCarouselTracker('scheduleCarousel');
+    syncCarouselTracker('legalCarousel');
 
     const initCarousel = (sectionId) => {
         const section = document.getElementById(sectionId);

@@ -1,11 +1,16 @@
-﻿:root{
+:root{
     --gold:#d4af37;
     --gold-dark:#b8882c;
     --dark:#080808;
     --dark-soft:#121212;
     --light:#161616;
-    --muted:#b8b8b8;
-    --bg:#090909;
+    --muted:#d6cbbb;
+    --page-text:#e8e1d5;
+    --accent:#ffffff;
+    --bg:#070707;
+    --section-bg:rgba(18,18,18,.95);
+    --frame-bg:#121319;
+    --image-filter:saturate(1.15) contrast(1.1) brightness(1.05);
     --card:#111111;
 }
 
@@ -116,7 +121,7 @@ body.thewincity{
         radial-gradient(circle at top left, rgba(0,0,0,.28), transparent 18%),
         radial-gradient(circle at 80% 20%, rgba(0,0,0,.20), transparent 16%),
         linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.42)),
-        url("../images/wincity-banner.jpg") center/cover no-repeat;
+        url("../images/thewincity/wincity-banner.jpg") center/cover no-repeat;
     background-blend-mode: overlay, overlay, multiply;
     color: #fff;
 }
@@ -133,17 +138,52 @@ body.thewincity{
 
 .thewincity .hero h1 {
     color: var(--gold) !important;
+    margin-top: 0 !important;
     text-shadow: 0 6px 28px rgba(0,0,0,.45), 0 0 18px rgba(158,114,26,.35);
 }
 
-.thewincity .hero p:not(.hero-subtitle),
-.thewincity .hero-label {
+.thewincity .hero p:not(.hero-subtitle):not(.hero-label) {
     color:#fff !important;
     text-shadow: 0 4px 24px rgba(0,0,0,.55);
 }
 
+.thewincity .hero p.hero-label {
+    color: var(--gold) !important;
+    font-size: 2.4rem !important;
+    margin-bottom: 8px !important;
+    text-shadow: 0 4px 24px rgba(0,0,0,.55);
+}
+
+body:not(.homepage) .hero p.hero-label {
+    font-size: 2.4rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    color: var(--gold) !important;
+    text-shadow: 0 4px 24px rgba(0,0,0,.55);
+}
+
+@media (max-width: 768px) {
+    body:not(.homepage) .hero p.hero-label {
+        font-size: 1.8rem !important;
+    }
+    body:not(.homepage) .hero h1,
+    body:not(.homepage) .hero .hero-title {
+        font-size: clamp(2.4rem, 4vw, 3rem) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    body:not(.homepage) .hero p.hero-label {
+        font-size: 1.4rem !important;
+    }
+    body:not(.homepage) .hero h1,
+    body:not(.homepage) .hero .hero-title {
+        font-size: 2.2rem !important;
+    }
+}
+
 .thewincity .hero .hero-subtitle {
-    color: #f8e7b4 !important;
+    color: rgba(255,255,255,.92) !important;
     font-weight: 800 !important;
     text-shadow: 0 2px 18px rgba(0,0,0,.35);
 }
@@ -433,14 +473,16 @@ body.thewincity{
     font-weight:800;
     text-transform:uppercase;
     letter-spacing:2px;
-    color:#f5d46b;
-    margin-bottom:18px;
-    text-shadow:0 2px 20px rgba(0,0,0,.35);
-}
-
-.hero-highlight{
+        color: var(--gold);
     color:#f5d46b;
     font-weight:700;
+}
+
+body.homepage .hero .hero-label {
+    font-size:2.4rem !important;
+    font-weight:800 !important;
+    letter-spacing:2px !important;
+    color: var(--gold) !important;
 }
 
 /* duplicate hero-quick removed */
@@ -633,6 +675,40 @@ body.thewincity{
     margin-bottom:30px;
 }
 
+.wincity-location{
+    margin-bottom:30px;
+}
+
+.wincity-location .section-subtitle{
+    color: var(--gold);
+    font-weight:700;
+    margin-bottom:18px;
+    font-size:1.4rem;
+}
+
+.wincity-location-media{
+    overflow:hidden;
+    border-radius:28px;
+    border:1px solid rgba(212,175,55,.16);
+    box-shadow:0 25px 70px rgba(0,0,0,.18);
+    background:#050403;
+}
+
+.wincity-location-media img{
+    width:100%;
+    display:block;
+    height:auto;
+    object-fit:cover;
+    max-height:680px;
+}
+
+@media (min-width: 992px) {
+    .wincity-location-media img{
+        height:680px;
+        max-height:680px;
+    }
+}
+
 .info-card{
     background:rgba(255,255,255,.04);
     padding:24px;
@@ -794,7 +870,7 @@ body.thewincity .spec-table tbody td:last-child{
 }
 
 .title{
-    text-align:center;
+    text-align:left;
     color:var(--gold);
     font-size:2.4rem;
     font-weight:800;
@@ -809,7 +885,7 @@ body.thewincity .spec-table tbody td:last-child{
     display:block;
     width:90px;
     height:4px;
-    margin:16px auto 0;
+    margin:16px 0 0;
     border-radius:10px;
     background:linear-gradient(90deg, var(--gold), rgba(212,175,55,.5));
 }
@@ -1265,6 +1341,53 @@ body.thewincity .spec-table tbody td:last-child{
     content:none;
 }
 
+.schedule-grid{
+    display:grid;
+    gap:18px;
+}
+
+.schedule-card{
+    display:grid;
+    grid-template-columns: 140px 1fr;
+    gap:16px;
+    align-items:flex-start;
+    padding:20px 22px;
+    border-radius:24px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212,175,55,0.14);
+}
+
+.schedule-date{
+    color: var(--gold);
+    font-weight:700;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.schedule-description{
+    color:#e8e2d8;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.96rem;
+    line-height:1.75;
+}
+
+@media (max-width: 768px) {
+    .schedule-card{
+        grid-template-columns: 1fr;
+    }
+    .schedule-date{
+        text-transform: none;
+        white-space: normal;
+        font-size: 1.05rem;
+    }
+    .schedule-description{
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+}
+
 .amenity-card{
     max-width: 100%;
     padding: 28px;
@@ -1294,6 +1417,22 @@ body.thewincity .spec-table tbody td:last-child{
     width: 100%;
     max-width: 100%;
     margin: 0;
+}
+
+#legal .info-box.card-dark {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+#legal .info-box.card-dark ul {
+    margin: 0;
+    padding-left: 0;
+}
+
+#legal .info-box.card-dark li {
+    margin-bottom: 16px;
 }
 
 #legal .info-box p{
@@ -1409,7 +1548,6 @@ body.thewincity .spec-table tbody td:last-child{
 
 /* Make payment section text larger and more legible */
 #payment .card-head h4,
-#payment .title,
 #payment .pay-panel h4{
     font-size:1.45rem !important;
     line-height:1.2 !important;
@@ -1666,12 +1804,17 @@ body.thewincity .spec-table tbody td:last-child{
         width: 100%;
         max-width: 340px;
         margin: 18px auto 0;
-        background: rgba(8, 8, 8, 0.18);
-        border-radius: 20px;
+        background: transparent;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
     }
     .carousel-thumbnails {
         padding: 12px;
         justify-content: center;
+    }
+    .carousel {
+        padding-bottom: 0;
     }
 }
 
@@ -1903,6 +2046,68 @@ body.thewincity .section.bg-light .info-box {
     border-radius: 28px;
     box-shadow: 0 35px 90px rgba(0,0,0,.24);
     padding: 32px;
+    overflow: hidden;
+    position: relative;
+}
+
+.contact-card .contact-form {
+    margin-top: 16px;
+}
+
+.contact-card .floating {
+    position: static !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 320px;
+    margin-left: auto;
+}
+
+.contact-card .floating-btn {
+    width: 100%;
+    min-width: auto;
+    justify-content: center;
+    padding: 16px 20px;
+}
+
+#legal #form .contact-copy,
+#legal #form .contact-card,
+#legal #form .contact-highlights {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#legal #form .contact-card,
+#legal #form .contact-highlights {
+    max-width: 860px;
+}
+
+#legal #form {
+    margin-top: 9rem;
+}
+
+@media (max-width: 1199px) {
+    #legal #form {
+        margin-top: 6rem;
+    }
+}
+
+@media (max-width: 991px) {
+    #legal #form {
+        margin-top: 5rem;
+    }
+    .contact-card .floating {
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+
+.contact-form .form-check.custom-check + .form-check.custom-check {
+    margin-top: 14px;
 }
 
 .contact-copy .label {
@@ -1928,20 +2133,59 @@ body.thewincity .section.bg-light .info-box {
 }
 
 .contact-highlights {
-    display: grid;
-    gap: 16px;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .highlight {
     display: flex;
-    gap: 14px;
+    gap: 10px;
     align-items: flex-start;
     background: rgba(255,255,255,.03);
     border: 1px solid rgba(212,175,55,.12);
     border-radius: 18px;
-    padding: 16px;
-    min-height: 90px;
+    padding: 12px;
+    min-height: 72px;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+}
+
+@media (max-width: 576px) {
+    .contact-highlights {
+        gap: 8px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .highlight {
+        padding: 12px;
+        min-height: auto;
+        font-size: 0.95rem;
+        flex: 1 1 100%;
+        max-width: 420px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .highlight i {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+    .highlight strong {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    .highlight p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
 }
 
 .highlight i {
@@ -2412,6 +2656,52 @@ footer p{
 }
 
 /* Mobile fixes: remove extra frame/padding so images fill the carousel without blank area */
+@media (max-width: 992px) {
+    .carousel-inner{
+        border-radius:24px;
+        min-height: auto !important;
+        height: auto !important;
+        max-height: 420px !important;
+        overflow:hidden;
+        background: transparent !important;
+    }
+    #legal .carousel-inner{
+        max-height:none !important;
+        height:auto !important;
+        overflow:visible !important;
+    }
+    .carousel-img-container{
+        background: transparent !important;
+        padding:0 !important;
+        min-height: auto !important;
+        height: auto !important;
+        box-shadow: none !important;
+        border-radius:18px !important;
+        display:block;
+    }
+    #legal .carousel-img-container{
+        height:auto !important;
+        min-height:auto !important;
+    }
+    .carousel-img-main{
+        height:auto !important;
+        max-height:420px !important;
+        object-fit:cover !important;
+        border-radius:18px !important;
+        display:block;
+    }
+    #legal .carousel-img-main{
+        max-height:none !important;
+        object-fit:contain !important;
+    }
+    .carousel-img-blur{
+        display:none !important; /* hides the blurred background on small screens to remove dark framing */
+    }
+    .carousel {
+        padding-bottom: 0 !important;
+    }
+}
+
 @media (max-width: 576px) {
     .carousel-inner{
         border-radius:16px;
@@ -2419,6 +2709,14 @@ footer p{
         height: auto !important;
         max-height: 320px;
         overflow:hidden;
+    }
+    #legal .carousel-inner{
+        max-height:none !important;
+        height:auto !important;
+        overflow:visible !important;
+    }
+    .carousel {
+        padding-bottom: 0 !important;
     }
     .carousel-img-container{
         padding:0 !important;
@@ -2428,12 +2726,21 @@ footer p{
         border-radius:12px !important;
         display:block;
     }
+    #legal .carousel-img-container{
+        height:auto !important;
+        min-height:auto !important;
+        width:100% !important;
+    }
     .carousel-img-main{
         height:auto !important;
         max-height:320px !important;
         object-fit:cover !important;
         border-radius:12px !important;
         display:block;
+    }
+    #legal .carousel-img-main{
+        max-height:none !important;
+        object-fit:contain !important;
     }
     .carousel-img-blur{
         display:none !important; /* hides the blurred background on small screens to remove dark framing */
@@ -2448,59 +2755,182 @@ footer p{
 /* SINGLE PAYMENT FRAME (tabbed single-panel view) */
 .payment-frame{
     margin-top:18px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.10);
-    padding: 22px;
-    border-radius: 28px;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,.02);
+    background: linear-gradient(180deg, rgba(15,12,10,0.96), rgba(25,20,16,0.98));
+    border: 1px solid rgba(212,175,55,0.16);
+    padding: 26px;
+    border-radius: 30px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+}
+
+/* Override: display legal carousel images fully (portrait/legal docs) without forcing a wide horizontal frame */
+#legal .carousel-inner{
+    border-radius:28px;
+    background:#0b0b0b;
+    overflow:visible; /* allow image height to expand */
+    min-height:auto;
+    max-height:none;
+    width:100%;
+    height:auto;
+    aspect-ratio:auto;
+    padding:0 12px; /* small gutter */
+}
+
+#legal .carousel-img-container{
+    aspect-ratio: auto;
+    width:100%;
+    height:auto;
+    min-height:auto;
+    padding:0;
+    background:transparent;
+    box-shadow:none;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+#legal .carousel-img-blur{
+    display:none; /* hide blur for legal docs to avoid dark overlay */
+}
+
+#legal .carousel-img-main{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+    display:block;
+    border-radius:6px;
+}
+
+@media (max-width: 992px) {
+    #legal .carousel-img-main{
+        max-height:60vh;
+    }
+}
+
+@media (max-width: 576px) {
+    #legal .carousel-inner{
+        padding:0;
+        width:100%;
+    }
+    #legal .carousel-img-container{
+        width:100%;
+    }
+    #legal .carousel-img-main{
+        width:100%;
+        max-width:100%;
+        height:auto;
+        max-height:none;
+        border-radius:8px;
+    }
 }
 .payment-tabs{
     display:flex;
-    gap:10px;
+    gap:12px;
     flex-wrap:wrap;
-    margin-bottom:18px;
+    margin-bottom:24px;
+    padding:10px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
 }
 .tab-btn{
-    background:transparent;
-    border:1px solid rgba(255,255,255,0.10);
-    color:var(--page-text);
-    padding:12px 16px;
-    border-radius:14px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #f6e7a9;
+    padding: 14px 22px;
+    border-radius: 999px;
     cursor:pointer;
     font-weight:700;
     min-width:140px;
     text-align:center;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+.tab-btn:hover{
+    transform: translateY(-1px);
+    background: rgba(212,175,55,0.14);
 }
 .tab-btn.active{
-    background:var(--gold);
+    background: linear-gradient(135deg, rgba(212,175,55,0.95), rgba(245,220,135,0.95));
     color:#111;
-    border-color:var(--gold-dark);
+    border-color: rgba(212,175,55,0.9);
+    box-shadow: 0 18px 30px rgba(212,175,55,0.18);
 }
 .payment-content{ padding:0; }
-.pay-panel{ display:none; padding:18px 12px 10px; }
+.pay-panel{ display:none; padding:0; }
 .pay-panel.active{ display:block; }
-.pay-panel .card-head{ margin-bottom:14px; }
-.pay-panel ul{ list-style:disc; padding-left:20px; color:#e8e2d8; }
+.pay-panel .card-head{
+    margin-bottom:18px;
+    padding-bottom:10px;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.pay-panel .card-head h4{
+    color: var(--gold);
+    font-size: 1.35rem;
+    margin-bottom: 0;
+    letter-spacing: 0.02em;
+}
+.pay-panel ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:grid;
+    gap:6px;
+}
+.pay-panel ul li{
+    font-size: 1rem;
+    position: relative;
+    padding: 12px 16px 12px 32px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    color:#e8e2d8;
+    line-height:1.7;
+}
+.pay-panel ul li::before{
+    content:'';
+    position:absolute;
+    left:14px;
+    top:50%;
+    transform: translateY(-50%);
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background: var(--gold);
+    box-shadow: 0 0 20px rgba(212,175,55,0.25);
+}
+@media (max-width: 768px) {
+    .payment-tabs{
+        justify-content:center;
+    }
+    .tab-btn{
+        min-width: 120px;
+        padding: 12px 18px;
+    }
+}
 
 
 .carousel-tracker {
-    width: min(300px, calc(100% - 52px));
+    width: min(320px, 100%);
+    max-width: 320px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     z-index: 5;
     position: absolute;
     left: 50%;
     bottom: 18px;
     transform: translateX(-50%);
-    padding: 6px 12px;
-    background: rgba(0, 0, 0, 0.22);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-    backdrop-filter: blur(12px);
+    padding: 12px 18px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    box-sizing: border-box;
 }
 
 .carousel-progress-bar-track {
@@ -2519,13 +2949,23 @@ footer p{
 }
 
 .carousel-counter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 68px;
+    padding: 6px 10px;
     font-family: 'Poppins', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--gold);
     letter-spacing: 0.8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 999px;
 }
 
+.carousel {
+    padding-bottom: 96px;
+}
 .carousel-thumbnails {
     display: flex;
     flex-wrap: wrap;
@@ -2535,13 +2975,13 @@ footer p{
     width: min(320px, 100%);
     position: absolute;
     left: 50%;
-    bottom: -100px;
+    bottom: -68px;
     transform: translateX(-50%);
     padding: 10px 10px;
-    background: rgba(8, 8, 8, 0.28);
-    border-radius: 22px;
-    border: 1px solid rgba(212, 175, 55, 0.12);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.14);
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
     z-index: 4;
 }
 
@@ -2554,6 +2994,14 @@ footer p{
     background-position: center;
     cursor: pointer;
     transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    overflow: hidden;
+}
+
+.carousel-thumb-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .carousel-thumb-btn.active,
@@ -2567,6 +3015,8 @@ footer p{
     outline: none;
     box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
 }
+
+/* Legal and schedule carousels now use the shared carousel tracker style used by the apartment/plan carousels */
 
 @media (max-width: 768px) {
     .carousel-tracker {
@@ -2600,12 +3050,21 @@ footer p{
     .carousel-tracker {
         width: min(220px, calc(100% - 24px));
         padding: 5px 10px;
+        position: static;
+        transform: none;
+        left: auto;
+        bottom: auto;
+        margin-top: 14px;
     }
     .carousel-thumbnails {
-        width: min(220px, calc(100% - 24px));
+        width: 100%;
         gap: 6px;
-        padding: 6px 6px;
-        bottom: -72px;
+        padding: 8px 0;
+        position: static;
+        transform: none;
+        left: auto;
+        bottom: auto;
+        margin-top: 12px;
     }
     .carousel-thumb-btn {
         width: 38px;
@@ -2622,12 +3081,27 @@ footer p{
         font-size: 0.98rem;
         line-height: 1.6;
     }
-    /* ensure floating buttons do not cover the legal card */
+    /* keep the legal card lean and balanced on smaller screens */
     #legal .info-box{
-        padding-bottom: 120px; /* reserve space for floating buttons */
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 18px 16px 22px;
+    }
+    #legal .info-box ul{
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    #legal .info-box ul li{
+        margin-bottom: 10px;
+    }
+    #legal #form{
+        margin-top: 2.4rem;
     }
     .legal-schedule{
-        background: rgba(255,255,255,0.04);
+        background: rgba(255,255,255,0.03);
+        margin-top:24px;
+        padding:18px;
     }
 }
 
@@ -2636,10 +3110,114 @@ footer p{
         font-size: 0.98rem;
     }
     #legal .info-box{
-        padding-bottom: 140px;
+        padding-bottom: 28px;
+    }
+    #legal .info-box ul{
+        gap: 12px;
     }
     .legal-schedule{
         padding:14px;
+        border-radius: 22px;
+    }
+
+    .navbar-brand {
+        font-size: 1.15rem;
+    }
+    .navbar .nav-link {
+        font-size: 0.9rem;
+        padding: 0.65rem 0.75rem;
+    }
+    .hero {
+        min-height: auto;
+        padding: 28px 16px 38px;
+    }
+    .hero-content {
+        padding: 20px 16px;
+    }
+    .hero h1 {
+        font-size: clamp(2.8rem, 10vw, 3.6rem);
+    }
+    .hero p,
+    .hero-subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    .hero-actions {
+        gap: 12px;
+    }
+    .hero .hero-btn {
+        width: 100%;
+        padding: 14px 18px;
+    }
+    .hero-highlights .hero-quick {
+        padding: 0 12px;
+        gap: 12px;
+    }
+    .hero-highlights .quick-card {
+        padding: 14px 12px;
+    }
+    .overview-stack {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .overview-media,
+    .info-box {
+        width: 100%;
+    }
+    .map-card iframe {
+        min-height: 320px;
+    }
+    .payment-tabs {
+        gap: 8px;
+        padding: 8px;
+    }
+    .tab-btn {
+        min-width: 100px;
+        padding: 10px 14px;
+    }
+    .contact-card {
+        padding: 20px;
+    }
+    #legal #form {
+        margin-top: 2.4rem;
+    }
+    .contact-highlights {
+        gap: 12px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-highlights .highlight {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 420px;
+    }
+    .contact-highlights .highlight i {
+        min-width: 42px;
+        min-height: 42px;
+        margin-top: 0;
+    }
+    .carousel {
+        padding-bottom: 0 !important;
+    }
+    .carousel-tracker,
+    .carousel-thumbnails {
+        position: static;
+        transform: none;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: 14px;
+    }
+    .carousel-thumbnails {
+        padding: 8px 0;
+        gap: 8px;
+    }
+    .carousel-thumb-btn {
+        width: 36px;
+        height: 28px;
     }
 }
 

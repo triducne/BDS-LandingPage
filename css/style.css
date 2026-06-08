@@ -151,8 +151,8 @@ font-size:16px;
 line-height:1.7;
 font-weight:400;
 overflow-x:hidden;
-background:radial-gradient(circle at top, rgba(212,175,55,.04), transparent 24%), #070707;
-color:#f2efe9;
+background:radial-gradient(circle at top, rgba(212,175,55,.04), transparent 24%), var(--bg);
+color:var(--page-text);
 }
 
 button,
@@ -242,6 +242,31 @@ letter-spacing:2px;
 text-transform:uppercase;
 color:var(--gold);
 margin-bottom:16px;
+}
+
+body.homepage .hero .hero-label {
+    font-size:2.4rem !important;
+    font-weight:800 !important;
+    letter-spacing:2px !important;
+    color:var(--gold) !important;
+}
+
+@media (max-width: 768px) {
+    body.homepage .hero .hero-label {
+        font-size:1.8rem !important;
+    }
+    .hero h1 {
+        font-size:clamp(2.4rem,4vw,3rem) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    body.homepage .hero .hero-label {
+        font-size:1.4rem !important;
+    }
+    .hero h1 {
+        font-size:2.2rem !important;
+    }
 }
 
 .hero h1{
@@ -853,11 +878,13 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     padding: 0;
 }
 
 .project-card-slide .card.project {
     width: 100%;
+    height: 100%;
 }
 
 @media (max-width: 1199px) {
@@ -1123,6 +1150,8 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
     flex-direction: column;
     justify-content: flex-start;
     min-height: 100%;
+    height: 100%;
+    flex: 1 1 auto;
     border-radius: 28px;
     overflow: hidden;
     background: rgba(10,10,10,.95);
@@ -1135,12 +1164,14 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.5rem;
     background: rgba(0,0,0,.72);
     border-radius: 0 0 28px 28px;
     z-index: 1;
     margin-top: -4px;
+    flex: 1 1 auto;
+    min-height: 180px;
 }
 
 .project-card-slide .card-body h5 {
@@ -1369,6 +1400,7 @@ margin-top:10px;
         padding:16px;
     }
 }
+
 
 
 
