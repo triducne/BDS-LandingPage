@@ -18,21 +18,10 @@
         const HEADER_HASHES = ['#news', '#projects'];
         if (HEADER_HASHES.includes(location.hash) && history && typeof history.replaceState === 'function') {
             history.replaceState(null, '', location.pathname + location.search);
-        }
-
-        if (typeof window !== 'undefined' && window.scrollTo) {
-            window.scrollTo(0, 0);
-            document.documentElement.scrollTop = 0;
-            document.body.scrollTop = 0;
-        }
-
-        setTimeout(() => {
             if (typeof window !== 'undefined' && window.scrollTo) {
                 window.scrollTo(0, 0);
-                document.documentElement.scrollTop = 0;
-                document.body.scrollTop = 0;
             }
-        }, 0);
+        }
     } catch (e) {
         /* ignore */
     }
@@ -401,7 +390,7 @@ TIN TỨC THỊ TRƯỜNG
     <div class="project-carousel-track">
 
         <div class="project-card-slide">
-            <a href="#" class="text-decoration-none text-white">
+            <a href="vanhdai3.html" class="text-decoration-none text-white">
                 <div class="card project">
                     <div class="project-img-container">
                         <div class="project-img-blur" style="background-image: url('images/news/vanh-dai-3.jpg')"></div>
@@ -409,14 +398,14 @@ TIN TỨC THỊ TRƯỜNG
                     </div>
                     <div class="card-body">
                         <h5>Vành Đai 3</h5>
-                        <p class="project-description">Hạ tầng chiến lược thúc đẩy giá trị bất động sản.</p>
+                        <p class="project-description">Gói thầu chậm tiến độ, bổ sung thầu phụ để đẩy nhanh thi công.</p>
                     </div>
                 </div>
             </a>
         </div>
 
         <div class="project-card-slide">
-            <a href="#" class="text-decoration-none text-white">
+            <a href="vanhdai4.html" class="text-decoration-none text-white">
                 <div class="card project">
                     <div class="project-img-container">
                         <div class="project-img-blur" style="background-image: url('images/news/vanh-dai-4.jpg')"></div>
@@ -431,7 +420,7 @@ TIN TỨC THỊ TRƯỜNG
         </div>
 
         <div class="project-card-slide">
-            <a href="#" class="text-decoration-none text-white">
+            <a href="metro-so-4.html" class="text-decoration-none text-white">
                 <div class="card project">
                     <div class="project-img-container">
                         <div class="project-img-blur" style="background-image: url('images/news/metro-so-4.webp')"></div>
@@ -446,7 +435,7 @@ TIN TỨC THỊ TRƯỜNG
         </div>
 
         <div class="project-card-slide">
-            <a href="#" class="text-decoration-none text-white">
+            <a href="vo-van-kiet-noi-dai.html" class="text-decoration-none text-white">
                 <div class="card project">
                     <div class="project-img-container">
                         <div class="project-img-blur" style="background-image: url('images/news/vo-van-kiet-noi-dai.webp')"></div>
@@ -461,7 +450,7 @@ TIN TỨC THỊ TRƯỜNG
         </div>
 
         <div class="project-card-slide">
-            <a href="#" class="text-decoration-none text-white">
+            <a href="cau-phuoc.html" class="text-decoration-none text-white">
                 <div class="card project">
                     <div class="project-img-container">
                         <div class="project-img-blur" style="background-image: url('images/news/cau-phuoc-khanh.jpg')"></div>

@@ -10,14 +10,12 @@ window.addEventListener('pageshow', (event) => {
         const navEntries = performance && performance.getEntriesByType ? performance.getEntriesByType('navigation') : [];
         const navType = (navEntries && navEntries[0] && navEntries[0].type) || '';
         console.log('pageshow', { persisted: event.persisted, navType, hash: window.location.hash });
-        if (isHeaderAnchor(window.location.hash)) {
+        if (event.persisted || isHeaderAnchor(window.location.hash)) {
             if (window.history && typeof window.history.replaceState === 'function') {
                 window.history.replaceState(null, '', window.location.pathname + window.location.search);
             }
+            window.scrollTo(0, 0);
         }
-        window.scrollTo(0, 0);
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
     } catch (e) {
         // ignore — best-effort only
     }
@@ -47,14 +45,38 @@ window.addEventListener('hashchange', () => {
     } catch (e) {}
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     if (window.history && typeof window.history.scrollRestoration === 'string') {
         window.history.scrollRestoration = 'manual';
     }
 
     console.log('DOMContentLoaded', { href: window.location.href, hash: window.location.hash, referrer: document.referrer });
 
+    const loadHTMLIncludes = async () => {
+        const includes = document.querySelectorAll('[data-include]');
+        await Promise.all(Array.from(includes).map(async (el) => {
+            const src = el.dataset.include;
+            if (!src) return;
+            try {
+                const response = await fetch(src);
+                if (!response.ok) {
+                    throw new Error(`Failed to load include: ${src} (${response.status})`);
+                }
+                el.innerHTML = await response.text();
+            } catch (error) {
+                console.error('Error loading include', src, error);
+            }
+        }));
+    };
+
+    await loadHTMLIncludes();
+
     // Only clear #news when the URL actually contains it on load.
+    const NAVBAR_OFFSET = 96;
+    const scrollToTarget = (target, smooth = true) => {
+        const scrollTop = target.getBoundingClientRect().top + window.pageYOffset - NAVBAR_OFFSET;
+        window.scrollTo({ top: Math.max(0, scrollTop), behavior: smooth ? 'smooth' : 'auto' });
+    };
 
     const initAnchorNav = () => {
         document.querySelectorAll('a.nav-link[href^="#"]').forEach(link => {
@@ -66,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             link.addEventListener('click', (event) => {
                 event.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                scrollToTarget(target);
                 if (window.history && typeof window.history.replaceState === 'function') {
                     window.history.replaceState(null, '', window.location.pathname + window.location.search);
                 }
@@ -414,7 +436,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const index = activePage * groupSize;
             const card = cards[index];
             if (card) {
-                card.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', inline: 'start', block: 'nearest' });
+                track.scrollTo({ left: card.offsetLeft, behavior: smooth ? 'smooth' : 'auto' });
             }
             updateButtons();
             updateDots();

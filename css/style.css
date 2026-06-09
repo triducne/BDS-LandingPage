@@ -1,5 +1,4 @@
-/* Homepage (index) - Gold & Black tone overrides */
-.homepage{
+:root {
     --gold: #d4af37;
     --gold-dark: #b8882c;
     --bg: #070707;
@@ -10,9 +9,14 @@
     --image-filter: saturate(1.15) contrast(1.1) brightness(1.05);
 }
 
-body.homepage,
-.homepage .hero,
-.homepage .section,
+/* Homepage (index) - Gold & Black tone overrides */
+.homepage {
+    /* page-specific overrides can go here if needed */
+}
+
+body,
+.hero,
+.section,
 .homepage .project .card-body,
 .homepage .news,
 .homepage .stats,
@@ -41,8 +45,8 @@ body.homepage{
 .homepage .nav-link:hover{ color: var(--gold) !important; }
 
 .homepage .title{ color: var(--gold) !important; }
-.homepage .hero h1{ color: var(--gold) !important; }
-.homepage .btn-gold, .homepage .btn-warning{ background: var(--gold); color:#111; }
+.hero h1{ color: var(--gold) !important; }
+.btn-gold, .btn-warning{ background: var(--gold); color:#111; }
 
 .homepage footer{ background:transparent; color:var(--muted); }
 
@@ -89,8 +93,8 @@ body.homepage{
     filter: saturate(1.25) contrast(1.2) brightness(1.1);
 }
 
-.homepage .hero .hero-content,
-.homepage .hero .hero-text {
+.hero .hero-content,
+.hero .hero-text {
     background: transparent;
     border: none;
     box-shadow: none;
@@ -176,8 +180,20 @@ backdrop-filter:blur(12px);
 box-shadow:0 10px 35px rgba(0,0,0,.4);
 }
 
+@media (max-width: 768px) {
+    .navbar {
+        backdrop-filter: none;
+        background: rgba(0,0,0,.98);
+    }
+    .project-img-blur {
+        filter: none;
+        opacity: .62;
+    }
+}
+
 .navbar-brand{
 color:var(--gold)!important;
+font-family:'Montserrat',sans-serif;
 font-size:1.5rem;
 font-weight:800;
 letter-spacing:1px;
@@ -185,11 +201,32 @@ white-space:nowrap;
 line-height:1;
 }
 
+.navbar-toggler{
+border:1px solid rgba(212,175,55,.22);
+width:48px;
+height:48px;
+border-radius:14px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(255,255,255,.04);
+}
+
+.navbar-toggler:hover,
+.navbar-toggler:focus{
+background:rgba(212,175,55,.12);
+}
+
+.navbar-toggler-icon{
+filter:invert(1) sepia(1) saturate(5) hue-rotate(20deg);
+}
+
 .nav-link{
 color:#fff!important;
 margin-left:16px;
 font-size:15px;
 font-weight:500;
+font-family:'Poppins',sans-serif;
 }
 
 .nav-link:hover{
@@ -198,7 +235,7 @@ color:var(--gold)!important;
 
 /* HERO */
 
-.homepage .hero{
+.hero{
 position:relative;
 min-height:100vh;
 background:
@@ -218,7 +255,7 @@ padding:0 24px;
 overflow:hidden;
 }
 
-.homepage .hero::before{
+.hero::before{
 content:'';
 position:absolute;
 inset:0;
@@ -244,7 +281,7 @@ color:var(--gold);
 margin-bottom:16px;
 }
 
-body.homepage .hero .hero-label {
+.hero .hero-label {
     font-size:2.4rem !important;
     font-weight:800 !important;
     letter-spacing:2px !important;
@@ -252,7 +289,7 @@ body.homepage .hero .hero-label {
 }
 
 @media (max-width: 768px) {
-    body.homepage .hero .hero-label {
+    .hero .hero-label {
         font-size:1.8rem !important;
     }
     .hero h1 {
@@ -261,7 +298,7 @@ body.homepage .hero .hero-label {
 }
 
 @media (max-width: 576px) {
-    body.homepage .hero .hero-label {
+    .hero .hero-label {
         font-size:1.4rem !important;
     }
     .hero h1 {
@@ -273,14 +310,14 @@ body.homepage .hero .hero-label {
 font-family:'Poppins',sans-serif;
 font-size:clamp(2.8rem,4.8vw,4rem);
 color:var(--gold);
-font-weight:900;
-letter-spacing:-.4px;
+font-weight:700;
+letter-spacing:0;
 line-height:1.05;
 margin-bottom:16px;
 max-width:840px;
 margin-left:auto;
 margin-right:auto;
-text-shadow:0 14px 24px rgba(0,0,0,.28);
+text-shadow:none;
 }
 
 .hero-subtitle,
@@ -346,8 +383,8 @@ margin-top:6px;
     justify-content:center;
 }
 
-.hero-quick .quick-card strong{display:block;color:var(--gold);font-size:1.05rem}
-.hero-quick .quick-card span{display:block;color:#e6dfcf;font-size:0.88rem}
+.hero-quick .quick-card strong{display:block;color:var(--gold);font-size:16px}
+.hero-quick .quick-card span{display:block;color:#e6dfcf;font-size:16px}
 
 @media(max-width:768px){
     /* On small screens, allow wrapping so users see all cards without horizontal swipe */
@@ -392,8 +429,8 @@ margin-top:6px;
         text-align:center;
     }
     .hero-quick .quick-card i{font-size:1.1rem; width:30px; height:30px}
-    .hero-quick .quick-card strong{font-size:0.92rem}
-    .hero-quick .quick-card span{font-size:0.75rem}
+    .hero-quick .quick-card strong{font-size:12px}
+    .hero-quick .quick-card span{font-size:12px}
 }
 
 
@@ -557,22 +594,22 @@ transform:translateY(-2px);
 
 @media(max-width:576px){
     .stats .row{
-        gap:6px;
+        gap:4px;
         justify-content:space-between;
         flex-wrap:nowrap;
-        padding-bottom:8px;
+        padding-bottom:6px;
     }
     .stats .col-6{
-        padding:0 4px;
-        flex:0 0 22%;
-        width:22%;
+        padding:0 3px;
+        flex:0 0 23%;
+        width:23%;
         min-width:0;
     }
     .stats h2{
-        font-size:1.7rem;
+        font-size:1.45rem;
     }
     .stats p{
-        font-size:0.82rem;
+        font-size:0.75rem;
     }
     .hero{
         min-height:62vh;
@@ -720,6 +757,7 @@ border-bottom-left-radius:32px;
 display:flex;
 flex-direction:column;
 gap:16px;
+text-align:left;
 }
 
 #about h3{
@@ -736,6 +774,7 @@ color:rgba(255,255,255,.92);
 font-size:1rem;
 line-height:1.8;
 margin:0;
+text-align:left;
 }
 
 #about .about-features{
@@ -754,10 +793,13 @@ gap:16px;
 
 #about ul li{
 position:relative;
-padding-left:30px;
-color:#f2ead8;
+padding:6px 0 6px 30px;
+color:rgba(255,255,255,.92);
 font-size:1rem;
 line-height:1.8;
+background:none;
+border:none;
+border-radius:0;
 }
 
 #about ul li::before{
@@ -765,16 +807,11 @@ content:'';
 position:absolute;
 left:0;
 top:0.9rem;
-width:12px;
-height:12px;
+width:8px;
+height:8px;
 background:var(--gold);
 border-radius:50%;
-}
-
-/* remove small decorative bullet dots site-wide where not desired */
-#about ul li::before{
-    display:none;
-    content:none;
+box-shadow:none;
 }
 
 @media(max-width:992px){
@@ -1181,7 +1218,7 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
 }
 
 .project-card-slide .card-body p {
-    color: #f0d756;
+    color: var(--gold);
     font-weight: 700;
     font-size: 1rem;
 }

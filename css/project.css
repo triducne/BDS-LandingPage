@@ -14,44 +14,75 @@
     --card:#111111;
 }
 
-/* The Win City - page-specific tone overrides */
-.thewincity{
+/* Project pages share a common theme */
+.project-page{
     --gold: #d4af37;
     --gold-dark: #b8882c;
-    --muted: #d6cbbb;
-    --page-text: #e8e1d5;
+    --muted: rgba(255,255,255,.75);
+    --page-text: #ffffff;
     --accent: #ffffff;
     --bg: #070707;
     --section-bg: rgba(18,18,18,.95);
     --frame-bg: #121319;
     --image-filter: saturate(1.15) contrast(1.1) brightness(1.05);
-}
-
-body.thewincity{
     background: radial-gradient(circle at top, rgba(212,175,55,.05), transparent 24%), #070707;
     color: var(--page-text);
 }
 
-.thewincity .hero p,
-.thewincity .info-box p,
-.thewincity .section p,
-.thewincity .news p,
-.thewincity .overview-panel p,
-.thewincity .stat-card p,
-.thewincity .quick-card span {
+.project-page .hero p,
+.project-page .info-box p,
+.project-page .section p,
+.project-page .news p,
+.project-page .overview-panel p,
+.project-page .stat-card p,
+.project-page .quick-card span {
     color: var(--page-text) !important;
     opacity: 0.95;
 }
 
-.thewincity .title,
-.thewincity .navbar-brand,
-.thewincity .info-box h4,
-.thewincity .project .card-body h5,
-.thewincity .carousel-caption h4 {
+.project-page .quick-card{
+    color: #ffffff !important;
+}
+
+.project-page .quick-card span{
+    color: rgba(255,255,255,.82) !important;
+}
+
+.project-page .highlight strong,
+.project-page .hero-highlights .highlight strong {
+    color: #ffffff !important;
+}
+
+.project-page .highlight p,
+.project-page .contact-copy p {
+    color: rgba(255,255,255,.92) !important;
+}
+
+.project-page .contact-form .form-check-label,
+.project-page .contact-form .form-text,
+.project-page .contact-form .form-control,
+.project-page .contact-form .form-control::placeholder {
+    color: rgba(255,255,255,.92) !important;
+    font-size: 16px !important;
+}
+
+.project-page .highlight i {
     color: var(--gold) !important;
 }
 
-.thewincity .nav-link{
+.project-page .contact-form .btn-gold {
+    color: #111 !important;
+}
+
+.project-page .title,
+.project-page .navbar-brand,
+.project-page .info-box h4,
+.project-page .project .card-body h5,
+.project-page .carousel-caption h4 {
+    color: var(--gold) !important;
+}
+
+.project-page .nav-link{
     color: var(--accent) !important;
     font-size: 1rem;
     font-weight: 600;
@@ -59,19 +90,206 @@ body.thewincity{
     letter-spacing: 0.02em;
 }
 
-.thewincity .nav-link:hover{
+.project-page .nav-link:hover{
     color: var(--gold) !important;
 }
 
-.thewincity .btn-primary,
-.thewincity .btn-gold{
+.project-page .btn-primary,
+.project-page .btn-gold{
     background: var(--gold) !important;
     color: #111 !important;
 }
 
-.thewincity footer{
+.project-page footer{
     color: var(--muted);
 }
+
+/* Ensure project page copy text renders at 16px */
+.project-page .hero .hero-subtitle,
+.project-page .section p,
+.project-page .section li,
+.project-page .contact-copy p,
+.project-page .contact-highlights strong,
+.project-page .contact-highlights p,
+.project-page .hero-quick .quick-card strong,
+.project-page .hero-quick .quick-card span,
+.project-page .info-box ul li,
+.project-page .location-tabs li,
+.project-page .wincity-location p,
+.project-page .schedule-date,
+.project-page .schedule-description,
+.project-page .payment-content li,
+.project-page .form-check-label,
+.project-page .form-text {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+/* Shared hero styles for project pages */
+.project-page .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    padding:0 24px;
+    overflow:hidden;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+.project-page .hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 25% 15%, rgba(255,255,255,.16), transparent 20%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,.10), transparent 14%),
+        linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.48));
+    pointer-events:none;
+}
+
+.hero-content{
+    position:relative;
+    width:100%;
+    max-width:920px;
+    margin:0 auto;
+    padding:0 20px;
+}
+
+.project-page .hero h1,
+.project-page .hero .hero-title{
+    font-family:'Montserrat', 'Poppins', sans-serif;
+    font-size:clamp(2.8rem,4.8vw,4rem);
+    color:var(--gold) !important;
+    font-weight:900;
+    letter-spacing:-.4px;
+    line-height:1.05;
+    margin-bottom:20px;
+    max-width:840px;
+    margin-left:auto;
+    margin-right:auto;
+    text-shadow:0 14px 24px rgba(0,0,0,.28);
+}
+
+.project-page .hero p,
+.project-page .hero .hero-subtitle{
+    font-family:'Poppins',sans-serif;
+    font-size:1rem;
+    font-weight:500;
+    color:rgba(255,255,255,.92);
+    max-width:700px;
+    margin:18px auto 26px;
+    line-height:1.75;
+    letter-spacing:.08em;
+    text-transform:none;
+}
+
+.project-page .hero-subtitle{
+    display:block;
+    margin-top:0;
+}
+
+.project-page .hero-subtitle .hero-highlight,
+.project-page .hero-subtitle span{
+    color:var(--gold);
+    font-weight:700;
+}
+
+body.project-page .hero .hero-label {
+    font-family:'Montserrat', 'Poppins', sans-serif;
+    font-size:2.4rem !important;
+    font-weight:800 !important;
+    letter-spacing:2px !important;
+    text-transform:uppercase !important;
+    opacity:.9 !important;
+    color:var(--gold) !important;
+    text-shadow: 0 4px 24px rgba(0,0,0,.55);
+}
+
+@media (max-width: 768px) {
+    body.project-page .hero .hero-label {
+        font-size:1.8rem !important;
+    }
+
+    body.project-page .hero h1,
+    body.project-page .hero .hero-title {
+        font-size:clamp(2.4rem,4vw,3rem) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    body.project-page .hero .hero-label {
+        font-size:1.4rem !important;
+    }
+
+    body.project-page .hero h1,
+    body.project-page .hero .hero-title {
+        font-size:2.2rem !important;
+    }
+}
+
+.project-page.thewincity .hero{
+    background-image:
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.55)),
+        url("../images/thewincity/wincity-banner.jpg");
+}
+
+.project-page.arcadia .hero,
+.project-page.destino .hero,
+.project-page.peakgarden .hero,
+.project-page.vlasta .hero{
+    background-size: cover;
+    background-position: center;
+}
+
+.project-page.arcadia .hero{
+    background-image:
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.55)),
+        url("../images/lavila/arcadia-at-lavila.png");
+}
+
+.project-page.destino .hero{
+    background-image:
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.55)),
+        url("../images/destino/destino.jpg");
+}
+
+.project-page:not(.thewincity) .hero h1,
+.project-page:not(.thewincity) .hero .hero-title {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
+}
+
+@media (max-width: 900px) {
+    .project-page:not(.thewincity) .hero h1,
+    .project-page:not(.thewincity) .hero .hero-title {
+        white-space: nowrap !important;
+        font-size:2rem !important;
+    }
+}
+
+.project-page.peakgarden .hero{
+    background-image:
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.55)),
+        url("../images/peakgarden/peakgarden.jpg");
+}
+
+.project-page.vlasta .hero{
+    background-image:
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.55)),
+        url("../images/vlasta/vlasta.jpg");
+}
+
+.project-page.thewincity .section.bg-light{
+    background: var(--section-bg);
+}
+
+/* NAVBAR */
 
 /* NAVBAR */
 
@@ -97,178 +315,6 @@ body.thewincity{
 
 .nav-link:hover{
     color:var(--gold)!important;
-}
-
-
-/* HERO - bright image with dark text for The Win City */
-
-.hero{
-    position:relative;
-    min-height:95vh;
-    height:auto;
-    background: linear-gradient(180deg, rgba(255,255,255,.90), rgba(245,235,205,.92));
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#111;
-    padding:40px 24px 60px;
-    overflow:hidden;
-}
-
-.thewincity .hero{
-    background:
-        radial-gradient(circle at top left, rgba(0,0,0,.28), transparent 18%),
-        radial-gradient(circle at 80% 20%, rgba(0,0,0,.20), transparent 16%),
-        linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.42)),
-        url("../images/thewincity/wincity-banner.jpg") center/cover no-repeat;
-    background-blend-mode: overlay, overlay, multiply;
-    color: #fff;
-}
-
-.thewincity .hero::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:
-        radial-gradient(circle at 50% 10%, rgba(255,255,255,.14), transparent 20%),
-        linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.26));
-    pointer-events:none;
-}
-
-.thewincity .hero h1 {
-    color: var(--gold) !important;
-    margin-top: 0 !important;
-    text-shadow: 0 6px 28px rgba(0,0,0,.45), 0 0 18px rgba(158,114,26,.35);
-}
-
-.thewincity .hero p:not(.hero-subtitle):not(.hero-label) {
-    color:#fff !important;
-    text-shadow: 0 4px 24px rgba(0,0,0,.55);
-}
-
-.thewincity .hero p.hero-label {
-    color: var(--gold) !important;
-    font-size: 2.4rem !important;
-    margin-bottom: 8px !important;
-    text-shadow: 0 4px 24px rgba(0,0,0,.55);
-}
-
-body:not(.homepage) .hero p.hero-label {
-    font-size: 2.4rem !important;
-    font-weight: 800 !important;
-    letter-spacing: 2px !important;
-    color: var(--gold) !important;
-    text-shadow: 0 4px 24px rgba(0,0,0,.55);
-}
-
-@media (max-width: 768px) {
-    body:not(.homepage) .hero p.hero-label {
-        font-size: 1.8rem !important;
-    }
-    body:not(.homepage) .hero h1,
-    body:not(.homepage) .hero .hero-title {
-        font-size: clamp(2.4rem, 4vw, 3rem) !important;
-    }
-}
-
-@media (max-width: 576px) {
-    body:not(.homepage) .hero p.hero-label {
-        font-size: 1.4rem !important;
-    }
-    body:not(.homepage) .hero h1,
-    body:not(.homepage) .hero .hero-title {
-        font-size: 2.2rem !important;
-    }
-}
-
-.thewincity .hero .hero-subtitle {
-    color: rgba(255,255,255,.92) !important;
-    font-weight: 800 !important;
-    text-shadow: 0 2px 18px rgba(0,0,0,.35);
-}
-
-.thewincity .hero .hero-subtitle .hero-highlight,
-.thewincity .hero .hero-subtitle span {
-    color: #ffd77e !important;
-    font-weight: 800 !important;
-}
-
-.thewincity .hero .btn-primary.hero-btn {
-    background: var(--gold) !important;
-    color: #111 !important;
-    border: none !important;
-    box-shadow: 0 14px 40px rgba(212,175,55,.16);
-}
-
-.thewincity .hero .btn-secondary.hero-btn {
-    background: #fff !important;
-    color: #111 !important;
-    border: 1px solid rgba(0,0,0,.06) !important;
-}
-
-.thewincity .section.bg-light{
-    background: var(--section-bg);
-}
-
-.hero-content{
-    position:relative;
-    width:100%;
-    max-width:1040px;
-    margin:auto;
-    padding:24px 28px;
-    background:transparent;
-    border:0;
-    border-radius:0;
-    box-shadow:none;
-}
-
-.hero-label{
-    font-size:1.05rem;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    color:#c2921a;
-    text-shadow:0 1px 16px rgba(0,0,0,.25);
-    margin-top:0;
-    margin-bottom:12px;
-}
-
-.hero h1{
-    font-size:clamp(3.6rem,6vw,5.4rem);
-    color:#c2921a;
-    font-weight:900;
-    letter-spacing:-0.5px;
-    margin-bottom:18px;
-    text-shadow:0 6px 28px rgba(0,0,0,.45), 0 0 18px rgba(158,114,26,.35);
-}
-
-.hero p{
-    font-size:1.2rem;
-    color:#d8b159;
-    opacity:0.98;
-    margin-bottom:26px;
-    max-width:760px;
-    margin-left:auto;
-    margin-right:auto;
-    line-height:1.85;
-    text-shadow:0 3px 20px rgba(0,0,0,.22);
-}
-
-.hero-subtitle{
-    display:block;
-    color:#111 !important;
-    font-size:1.2rem;
-    font-weight:800;
-    line-height:2;
-    max-width:840px;
-    margin:16px auto 0;
-    text-shadow:0 1px 6px rgba(255,255,255,.08);
-}
-
-.hero-subtitle .hero-highlight,
-.hero-subtitle span {
-    color:#111 !important;
-    font-weight:800;
 }
 
 .hero-highlights{
@@ -361,8 +407,8 @@ body:not(.homepage) .hero p.hero-label {
 
     .hero-actions{ gap:12px; }
 
-    .thewincity .hero .btn-primary.hero-btn,
-    .thewincity .hero .btn-secondary.hero-btn{
+    .project-page .hero .btn-primary.hero-btn,
+    .project-page .hero .btn-secondary.hero-btn{
         padding:12px 26px !important;
         font-size:0.92rem !important;
         border-radius:30px !important;
@@ -409,8 +455,8 @@ body:not(.homepage) .hero p.hero-label {
         font-size:0.95rem !important;
     }
 
-    .thewincity .hero .btn-primary.hero-btn,
-    .thewincity .hero .btn-secondary.hero-btn{
+    .project-page .hero .btn-primary.hero-btn,
+    .project-page .hero .btn-secondary.hero-btn{
         padding:10px 18px !important;
         font-size:0.85rem !important;
         border-radius:26px !important;
@@ -427,21 +473,21 @@ body:not(.homepage) .hero p.hero-label {
         align-items:center;
     }
 
-    .thewincity .hero .hero-btn{
+    .project-page .hero .hero-btn{
         display:inline-block !important;
         width:auto !important;
         max-width:300px !important;
-        padding:8px 20px !important;
-        font-size:0.88rem !important;
+        padding:10px 24px !important;
+        font-size:0.95rem !important;
         box-shadow:0 10px 30px rgba(0,0,0,.12) !important;
     }
 
-    .thewincity .hero .btn-primary.hero-btn{
+    .project-page .hero .btn-primary.hero-btn{
         background:var(--gold) !important;
         color:#111 !important;
     }
 
-    .thewincity .hero .btn-secondary.hero-btn{
+    .project-page .hero .btn-secondary.hero-btn{
         background:#fff !important;
         color:#111 !important;
     }
@@ -454,7 +500,7 @@ body:not(.homepage) .hero p.hero-label {
         gap:24px;
     }
 
-    .thewincity .hero .hero-btn{
+    .project-page .hero .hero-btn{
         padding:20px 64px !important;
         font-size:1.15rem !important;
         border-radius:44px !important;
@@ -462,20 +508,18 @@ body:not(.homepage) .hero p.hero-label {
         box-shadow:0 28px 70px rgba(212,175,55,.20) !important;
     }
 
-    .thewincity .hero .btn-primary.hero-btn{
+    .project-page .hero .btn-primary.hero-btn{
         background:var(--gold) !important;
         color:#111 !important;
     }
 }
 
 .hero-label{
-    font-size:2rem;
-    font-weight:800;
+    font-size:1rem;
+    font-weight:700;
     text-transform:uppercase;
     letter-spacing:2px;
-        color: var(--gold);
-    color:#f5d46b;
-    font-weight:700;
+    color: var(--gold);
 }
 
 body.homepage .hero .hero-label {
@@ -515,18 +559,18 @@ body.homepage .hero .hero-label {
 .quick-card strong{
     display:block;
     color:#fff;
-    font-size:0.9rem;
+    font-size:16px;
 }
 
 .quick-card span{
     display:block;
     color:#d6d0c8;
-    font-size:0.8rem;
+    font-size:16px;
 }
 
 .hero-btn{
-    padding:16px 42px;
-    font-size:1rem;
+    padding:18px 44px;
+    font-size:1.2rem;
     letter-spacing:1px;
 }
 
@@ -534,7 +578,7 @@ body.homepage .hero .hero-label {
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:16px;
+    gap:18px;
     margin-top:24px;
 }
 
@@ -599,7 +643,7 @@ body.homepage .hero .hero-label {
 
 .spec-table th,
 .spec-table td{
-    color:#f6e7a9 !important;
+    color: var(--gold) !important;
     border-top:1px solid rgba(212,175,55,.14);
     padding:16px 12px;
 }
@@ -637,12 +681,20 @@ body.homepage .hero .hero-label {
     word-break: break-word !important;
 }
 .hero-highlights .hero-quick .quick-card strong{
-    font-size:0.82rem !important;
-    line-height:1.05 !important;
+    font-size:16px !important;
+    line-height:1.2 !important;
 }
 .hero-highlights .hero-quick .quick-card span{
-    font-size:0.72rem !important;
-    line-height:1.05 !important;
+    font-size:16px !important;
+    line-height:1.2 !important;
+}
+
+@media (max-width:480px) {
+    body.thewincity .hero-highlights .hero-quick .quick-card strong,
+    body.thewincity .hero-highlights .hero-quick .quick-card span {
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+    }
 }
 
 .map-card{
@@ -683,7 +735,7 @@ body.homepage .hero .hero-label {
     color: var(--gold);
     font-weight:700;
     margin-bottom:18px;
-    font-size:1.4rem;
+    font-size:24px;
 }
 
 .wincity-location-media{
@@ -814,7 +866,7 @@ body.thewincity .spec-table{
 
 body.thewincity .spec-table th,
 body.thewincity .spec-table td{
-    color:#f6e7a9 !important;
+    color: var(--gold) !important;
 }
 
 body.thewincity .spec-table tbody td:last-child{
@@ -1549,7 +1601,7 @@ body.thewincity .spec-table tbody td:last-child{
 /* Make payment section text larger and more legible */
 #payment .card-head h4,
 #payment .pay-panel h4{
-    font-size:1.45rem !important;
+    font-size:24px !important;
     line-height:1.2 !important;
 }
 
@@ -1558,7 +1610,7 @@ body.thewincity .spec-table tbody td:last-child{
 }
 
 #payment .pay-panel ul li{
-    font-size:1.05rem !important;
+    font-size:16px !important;
     line-height:1.6 !important;
     margin-bottom:12px !important;
 }
@@ -1568,7 +1620,7 @@ body.thewincity .spec-table tbody td:last-child{
         font-size:1.25rem !important;
     }
     #payment .pay-panel ul li{
-        font-size:1.02rem !important;
+        font-size:16px !important;
         margin-bottom:8px !important;
     }
 }
@@ -2472,23 +2524,25 @@ footer p{
     }
 
     .hero{
-        min-height:55vh;
-        padding:60px 16px 36px;
+        min-height:62vh;
+        padding:50px 16px 30px;
+        background-position:center 25% !important;
     }
 
     .hero-content{
         margin:0 12px;
-        padding:40px 0 30px;
+        padding:36px 0 24px;
+        max-width:100%;
     }
 
     .hero h1{
-        font-size:2rem;
+        font-size:2.2rem;
     }
 
     .hero p,
     .hero-subtitle{
         font-size:0.95rem;
-        line-height:1.6;
+        line-height:1.65;
     }
 
     .hero-actions{
@@ -2611,17 +2665,17 @@ footer p{
     }
 }
 
-/* Page-specific mobile image reset for The Win City: remove extra frame and limit height */
+/* Mobile image reset for all project pages: remove extra frame and limit height */
 @media (max-width: 576px) {
-    body.thewincity .carousel-inner,
-    body.thewincity .carousel-img-container,
-    body.thewincity .carousel-img-main,
-    body.thewincity .carousel-img-blur,
-    body.thewincity .overview-img,
-    body.thewincity .unified-img,
-    body.thewincity .project-img-main,
-    body.thewincity .overview-panel img,
-    body.thewincity .location img{
+    .project-page .carousel-inner,
+    .project-page .carousel-img-container,
+    .project-page .carousel-img-main,
+    .project-page .carousel-img-blur,
+    .project-page .overview-img,
+    .project-page .unified-img,
+    .project-page .project-img-main,
+    .project-page .overview-panel img,
+    .project-page .location img{
         padding: 0 !important;
         height: auto !important;
         max-height: 320px !important;
@@ -2631,18 +2685,18 @@ footer p{
         object-fit: cover !important;
         display: block !important;
     }
-    body.thewincity .carousel-img-blur{
+    .project-page .carousel-img-blur{
         display: none !important;
     }
-    body.thewincity .carousel-inner{
+    .project-page .carousel-inner{
         min-height: auto !important;
         max-height: 320px !important;
     }
     /* Map / iframe specific fixes */
-    body.thewincity .map-card iframe,
-    body.thewincity iframe,
-    body.thewincity .overview-panel iframe,
-    body.thewincity .map-fullwidth iframe{
+    .project-page .map-card iframe,
+    .project-page iframe,
+    .project-page .overview-panel iframe,
+    .project-page .map-fullwidth iframe{
         width:100% !important;
         height: auto !important;
         aspect-ratio: 405 / 227 !important; /* match provided image aspect ratio */
@@ -2838,7 +2892,7 @@ footer p{
 .tab-btn{
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.12);
-    color: #f6e7a9;
+    color: var(--gold);
     padding: 14px 22px;
     border-radius: 999px;
     cursor:pointer;
