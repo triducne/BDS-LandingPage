@@ -1,7 +1,7 @@
 const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbybHD85YZ8EvpRLEGyGAkCYfBALElrH338ca5JwNN84HsFjNCQ4MAr5-NscEDFUkGxdjg/exec";
 
-const HEADER_HASHES = ['#news', '#projects'];
+const HEADER_HASHES = ['#news', '#projects', '#about', '#contact'];
 const isHeaderAnchor = (hash) => HEADER_HASHES.includes(hash);
 
 // Ensure returned visits (back/forward or bfcache) don't restore scroll to a previous anchor
@@ -10,7 +10,7 @@ window.addEventListener('pageshow', (event) => {
         const navEntries = performance && performance.getEntriesByType ? performance.getEntriesByType('navigation') : [];
         const navType = (navEntries && navEntries[0] && navEntries[0].type) || '';
         console.log('pageshow', { persisted: event.persisted, navType, hash: window.location.hash });
-        if (event.persisted || isHeaderAnchor(window.location.hash)) {
+        if (event.persisted || navType === 'back_forward') {
             if (window.history && typeof window.history.replaceState === 'function') {
                 window.history.replaceState(null, '', window.location.pathname + window.location.search);
             }
@@ -96,12 +96,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     };
 
-    if (isHeaderAnchor(window.location.hash) && window.history && typeof window.history.replaceState === 'function') {
-        window.history.replaceState(null, '', window.location.pathname + window.location.search);
-        window.scrollTo(0, 0);
-    }
-
     initAnchorNav();
+
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            scrollToTarget(target, false);
+        }
+    }
 
     const form = document.getElementById("leadForm");
 

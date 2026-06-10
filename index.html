@@ -5,7 +5,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Prevent auto-jump to #news and #projects on mobile/back navigation by clearing the hash early -->
 <script>
     try {
         if (history && typeof history.scrollRestoration === 'string') {
@@ -14,14 +13,6 @@
 
         document.documentElement.style.scrollBehavior = 'auto';
         document.body.style.scrollBehavior = 'auto';
-
-        const HEADER_HASHES = ['#news', '#projects'];
-        if (HEADER_HASHES.includes(location.hash) && history && typeof history.replaceState === 'function') {
-            history.replaceState(null, '', location.pathname + location.search);
-            if (typeof window !== 'undefined' && window.scrollTo) {
-                window.scrollTo(0, 0);
-            }
-        }
     } catch (e) {
         /* ignore */
     }

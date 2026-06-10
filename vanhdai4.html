@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/news.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body class="news-article">
@@ -16,6 +19,17 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">TRÍ ĐỨC REALTY</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html#about">Giới thiệu</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#projects">Dự án</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#news">Tin tức</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contact">Liên hệ</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
 
@@ -42,7 +56,8 @@
                     </div>
                 </div>
                 <div class="article-body">
-                    <img loading="lazy" src="images/news/vanh-dai-4.jpg" alt="Vành Đai 4" onerror="this.style.display='none'">
+                    <!-- Ảnh bài viết để trống, thêm sau khi có nội dung -->
+                    <img loading="lazy" src="" alt="Vành Đai 4" onerror="this.style.display='none'">
 
                     <p>Vành đai 4 là một phần trong chuỗi kết nối hạ tầng vùng nhằm giảm áp lực cho các tuyến quốc lộ chính và cải thiện lưu thông giữa các tỉnh. Dự án kỳ vọng đem lại lợi ích lớn cho phát triển đô thị và logistics.</p>
 
@@ -70,6 +85,25 @@
 
 <footer>
     <h4>TRÍ ĐỨC REALTY</h4>
+    <p>© 2026 Trí Đức Realty</p>
+</footer>
+
+<div class="floating">
+    <a href="tel:0876914621" class="floating-btn">
+        <i class="fa-solid fa-phone"></i>
+        <span>Gọi ngay</span>
+    </a>
+    <a href="https://zalo.me/0876914621" class="floating-btn">
+        <i class="fa-solid fa-comments"></i>
+        <span>Chat Zalo</span>
+    </a>
+</div>
+
+<footer>
+    <h4>TRÍ ĐỨC REALTY</h4>
+    <p>Chuyên tư vấn bất động sản khu Tây & Nam TP.HCM</p>
+    <p>Hotline: 0876 914 621</p>
+    <p>Zalo: 0876 914 621</p>
     <p>© 2026 Trí Đức Realty</p>
 </footer>
 
