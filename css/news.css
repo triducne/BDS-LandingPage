@@ -36,6 +36,43 @@ body.news-article .btn-gold:focus {
     color: #111;
 }
 
+body.news-article .related-links {
+    padding: 1.8rem 1.6rem;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 1rem;
+    background: rgba(10,10,10,.88);
+    margin: 3rem 0;
+}
+
+body.news-article .related-links .title {
+    margin-bottom: 1.2rem;
+    color: #ffffff;
+    text-align: left;
+}
+
+body.news-article .related-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+body.news-article .related-links li {
+    margin-bottom: 0.9rem;
+}
+
+body.news-article .related-links a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    transition: color .2s ease;
+}
+
+body.news-article .related-links a:hover,
+body.news-article .related-links a:focus {
+    color: rgba(212,175,55,.95);
+}
+
 body.news-article main.section {
     padding-top: 0;
     padding-bottom: 0;
