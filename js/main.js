@@ -383,11 +383,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     initSpecSelector();
     syncCarouselThumbnails('amenitiesCarousel');
     syncCarouselThumbnails('apartmentCarousel');
+    syncCarouselThumbnails('paymentCarousel');
     syncCarouselThumbnails('scheduleCarousel');
     syncCarouselThumbnails('legalCarousel');
 
     syncCarouselTracker('amenitiesCarousel');
     syncCarouselTracker('apartmentCarousel');
+    syncCarouselTracker('paymentCarousel');
     syncCarouselTracker('scheduleCarousel');
     syncCarouselTracker('legalCarousel');
 

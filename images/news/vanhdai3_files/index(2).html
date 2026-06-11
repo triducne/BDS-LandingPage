@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- saved from url=(1105)https://cdn.blueseed.tv/bu6-tech/2026/04/300x600_new/index.html?v=4&id=_plus&c=https%3A%2F%2Fadclick.g.doubleclick.net%2Fpcs%2Fclick%3Fxai%3DAKAOjsuWp5VGoQRrGRazM_IAWDqpqGgRF3jtwjH3sNUzktdeIW9U26s7iikrE3rV2mTWyNSk4Cbr5Fcm7_WgUv8sOrHyyKYUmYmHcfXjug9ye_aDSSh3Dl4xs_9h5JG_EWCWzi3xJ0jeYOGf8UXZ6OmwfVFkDE3Epnm78FvnyI3F_KC5bNaVZA9VVkZ3-SMFItP9E0oiIq4b3RzDABvspdh-LF2vLp3v3pBO897D7v61WdT3B2WpS87jgdi2zGWZP7qsLa_esu1VOoLtp-eOzX8j4qwOaeh28rjUEirwHW3m30Gy06uXn60HBlVEQuRgfuZcXr184MiTN0AjRgr3JcDllkb6OlvGgWYuQrWvwJVE6wHCBHbclmFXLBX7CsuAkn3CqDcLLPMXNktZzeM%26sai%3DAMfl-YQ3kyPpAEDvVqu3WDUMl5YtZHoiBvy_TDYCqvWtfH2DlOqfaDKpOl_YrzML7YGnLeb3fsdgrrLCVttT9JV0b1aaJwBLmftZzOjhkWBrpwVdgRL-ic_VG0P5WWy-IQP12RGScNc7B9-ABb8W2hsgnxjG06wns-axDJI1auhvQcXCiMJdLM-84YRPlgMOw4JEa6VIefuyWVCdTQ8F6cHlVzoIzhi5_j-JMv9_26mpfzxBwMvKmmVoiuSMQwNN-yUJMbemU63WXjO3uSZTNFe8nC_sGx2q0SiwG_WYDR5qBRmSPkMgxu9YjRm5zquh11-tZF05yzUxQkdoANVlTn1vBtAX-VvxslKXu_W5R6hwlFg3VH2R0tS4Zb-zjjlrGtq_p4Mv_9eaHSzQf931MzkLpA%26sig%3DCg0ArKJSzHrysTRKty8bEAE%26fbs_aeid%3D%255Bgw_fbsaeid%255D%26urlfix%3D1%26adurl%3Dhttps%3A%2F%2Fasia.adform.net%2FC%2F%3Fbn%3D88621119 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="authoring-tool" content="Lectora Inspire for Google">
+<meta name="ad.size" content="width=300,height=600">
+<title>index</title>
+<!-- write your code here -->
+<style>
+  #animation_container {
+	position:absolute;
+	margin:auto;
+	left:0;right:0;
+	top:0;bottom:0;
+  }
+</style>
+<script src="./createjs_2019.11.15_min.js.tải xuống"></script>
+<script src="./easeljs_1.0.0_min.js.tải xuống"></script>
+<script type="text/javascript">
+    function getParamURL(name) {
+			return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+		}
+		var clickTag = getParamURL('c');
+</script>
+<script src="./index.js.tải xuống"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+var bsStartRequested = false;
+window.addEventListener('message', function (e) {
+	var d = e.data || {};
+	if (d.type === 'bs_banner_start') {
+		bsStartRequested = true;
+		if (typeof fnStartAnimation === 'function') {
+			fnStartAnimation();
+			fnStartAnimation = null;
+		}
+	}
+});
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("CF4E084977307D488484C56999D497F9");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
+}
+function handleComplete(evt,comp) {
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.index();
+	stage = new lib.Stage(canvas);
+	fnStartAnimation = function() {
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}
+	AdobeAn.makeResponsive(true,'both',true,1,[canvas,anim_container,dom_overlay_container]);
+	document.body.style.background = "#000";
+	AdobeAn.compositionLoaded(lib.properties.id);
+
+	// Render frame 0, không tick
+	stage.addChild(exportRoot);
+	stage.update();
+
+	// Báo parent: ready
+	var bsId = (window.frameElement && window.frameElement.id) || '';
+	parent.postMessage({ type: 'bs_banner_ready', id: bsId }, '*');
+
+	// Nếu start đã đến trước handleComplete → chạy luôn
+	if (bsStartRequested) {
+		fnStartAnimation();
+		fnStartAnimation = null;
+	}
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin: 0px; background: rgb(0, 0, 0);" marginwidth="0" marginheight="0">
+	<div id="animation_container" style="; width:300px; height:600px">
+		<a href="javascript:window.open(window.clickTag)">
+		<canvas id="canvas" width="412" height="825" style="position: absolute; display: block; width: 300px; height: 600px;"></canvas></a>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:300px; height:600px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+<script defer="" src="./v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;17fc3cbadc754656a66abbbf3e9ac24c&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+<div id="preloadjs-container" style="visibility: hidden; position: absolute; height: 10px; width: 10px; overflow: hidden; transform: translate(-10px, -10px);"></div></body></html>

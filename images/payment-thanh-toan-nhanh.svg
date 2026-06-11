@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="g3" x1="0" x2="1">
+      <stop offset="0" stop-color="#fbd786"/>
+      <stop offset="1" stop-color="#f7797d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="#0b0b0b" />
+  <rect x="40" y="40" width="1120" height="620" rx="28" fill="url(#g3)" opacity="0.12" />
+  <g transform="translate(80,80)">
+    <rect x="0" y="0" width="1040" height="540" rx="20" fill="#0b0b0b" opacity="0.9" />
+    <text x="48" y="80" fill="#ffdca8" font-family="Poppins, sans-serif" font-size="40" font-weight="800">Thanh toán nhanh — Các phương án</text>
+    <text x="48" y="140" fill="#fff" font-family="Poppins, sans-serif" font-size="20">- Thanh toán 50%: Chiết khấu 5% (áp dụng khi TT 50% trong vòng 10 ngày)</text>
+    <text x="48" y="170" fill="#fff" font-family="Poppins, sans-serif" font-size="20">- Thanh toán 70%: Chiết khấu 7%</text>
+    <text x="48" y="200" fill="#fff" font-family="Poppins, sans-serif" font-size="20">- Thanh toán ĐẶC BIỆT 95%: Chiết khấu 10%</text>
+    <text x="48" y="240" fill="#f7e4c2" font-family="Poppins, sans-serif" font-size="18">- Đặt cọc: 50.000.000 VNĐ; KPBT: 2% thanh toán khi có thông báo bàn giao</text>
+    <text x="48" y="280" fill="#f7e4c2" font-family="Poppins, sans-serif" font-size="18">Lưu ý: Mỗi phương thức có giới hạn số lượng; chi tiết theo điều khoản chính sách.</text>
+  </g>
+  <g transform="translate(900,520)">
+    <text x="0" y="0" fill="#888" font-family="Poppins, sans-serif" font-size="12">Chi tiết & điều kiện: theo Thông báo chính sách bán hàng</text>
+  </g>
+</svg>

@@ -1,12 +1,14 @@
 :root {
     --gold: #d4af37;
     --gold-dark: #b8882c;
+    --gold-soft: rgba(212,175,55,.15);
     --bg: #070707;
-    --section-bg: rgba(18,18,18,.95);
+    --section-bg: rgba(14,14,14,.92);
+    --card-bg: rgba(12,12,12,.78);
     --muted: #d6cbbb;
-    --page-text: #e8e1d5;
+    --page-text: #f4efe3;
     --frame-bg: #121319;
-    --image-filter: saturate(1.15) contrast(1.1) brightness(1.05);
+    --image-filter: saturate(1.18) contrast(1.12) brightness(1.08);
 }
 
 /* Homepage (index) - Gold & Black tone overrides */
@@ -473,31 +475,33 @@ background:var(--gold);
 border:none;
 color:#111;
 font-weight:800;
-padding:20px 52px;
-font-size:1.05rem;
-border-radius:42px;
-box-shadow:0 14px 40px rgba(212,175,55,.24);
+padding:18px 48px;
+font-size:1.03rem;
+border-radius:46px;
+box-shadow:0 18px 48px rgba(212,175,55,.25);
+transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
 }
 
 .btn-warning:hover,
 .btn-gold:hover{
 background:var(--gold-dark);
-transform:scale(1.03);
-box-shadow:0 18px 48px rgba(212,175,55,.32);
+transform:translateY(-2px) scale(1.02);
+box-shadow:0 20px 56px rgba(212,175,55,.30);
 }
 
 .btn-secondary{
-background:rgba(212,175,55,.12);
+background:rgba(255,255,255,.08);
 color:#fff;
-border:1px solid rgba(212,175,55,.45);
+border:1px solid rgba(255,255,255,.18);
 font-weight:700;
-padding:18px 36px;
-border-radius:36px;
+padding:16px 38px;
+border-radius:38px;
+backdrop-filter:blur(6px);
 }
 
 .btn-secondary:hover{
-background:rgba(212,175,55,.18);
-transform:scale(1.02);
+background:rgba(255,255,255,.18);
+transform:translateY(-1px);
 }
 
 .btn-primary:focus-visible,
@@ -705,6 +709,8 @@ transform:translateY(-2px);
 
 .section{
 padding:90px 0;
+background: var(--section-bg);
+border-radius: 32px;
 }
 
 .title{
@@ -729,7 +735,7 @@ background:linear-gradient(90deg, var(--gold), rgba(212,175,55,.5));
 }
 
 .section p{
-color:#d6d0c8;
+color:rgba(255,255,255,.80);
 margin-top:20px;
 max-width:760px;
 text-align:center;
@@ -738,7 +744,9 @@ margin-right:auto;
 }
 
 .bg-light{
-background:linear-gradient(180deg, rgba(10,10,10,.98) 0%, rgba(22,22,22,.98) 100%);
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(14px);
 }
 
 #about .about-panel{

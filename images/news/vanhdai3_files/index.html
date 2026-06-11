@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- saved from url=(0126)https://cdn.blueseed.tv/prod/2026/05/IAS.Nivea.Body.Super.Night.480x960.Fullbackground.cmp2c95p52iyrqd27k3a6ynfx.V1/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="authoring-tool" content="Lectora Inspire for Google">
+<meta name="ad.size" content="width=360,height=640">
+<meta name="template" content="Banner 3.0.0">
+<meta name="environment" content="gwd-dv360">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>inflowMB</title>
+<!-- write your code here -->
+<style>
+  #animation_container {
+	position:absolute;
+	margin:auto;
+	left:0;right:0;
+	top:0;bottom:0;
+  }
+</style>
+<script src="./createjs.min.js.tải xuống"></script>
+<script src="./inflowMB.js.tải xuống"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("827671A73C6F974AB079886C1BC673C2");
+	var lib=comp.getLibrary();
+	createjs.MotionGuidePlugin.install();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.inflowMB();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(true,'both',true,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+<script type="application/javascript" src="./skeleton.js.tải xuống"></script><script id="ias_dw_x95t1scqw" type="text/javascript" src="./skeleton(1).js.tải xuống"></script><script src="./__IntegralAS_Q_S__"></script><iframe tabindex="-1" src="./saved_resource.html" class="_ntnrjf7826-hj" style="width: 0px !important; height: 0px !important; border: 0px !important; position: absolute !important; top: -10000px !important; left: -10000px !important;"></iframe> <noscript><IMG SRC="https://pixel.adsafeprotected.com/rfw/st/2921344/94112724/skeleton.gif?gdpr=${GDPR}&gdpr_consent=${GDPR_CONSENT_278}&gdpr_pd=${GDPR_PD}" BORDER=0 WIDTH=1 HEIGHT=1 ALT=""></noscript>
+</head>
+<body onload="init();" style="margin:0px;opacity: 0;" marginwidth="0" marginheight="0" data-integralas-id-4d42db5a-78e6-4802-0e7c-0dd4770830b3="">
+	<div id="animation_container" style="width: 5.625px; height: 10px;">
+		<canvas id="canvas" width="7" height="13" style="position: absolute; display: block; width: 5.625px; height: 10px;"></canvas>
+		<div id="dom_overlay_container" style="pointer-events: none; overflow: hidden; width: 5.625px; height: 10px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+<script defer="" src="./v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;17fc3cbadc754656a66abbbf3e9ac24c&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+<div style="position: absolute; width: 100%; opacity: 0; height: 100%; z-index: -999; top: 0px; left: 0px;"></div><div id="preloadjs-container" style="visibility: hidden; position: absolute; height: 10px; width: 10px; overflow: hidden; transform: translate(-10px, -10px);"></div></body></html>
