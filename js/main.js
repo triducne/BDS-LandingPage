@@ -1,5 +1,4 @@
-const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbybHD85YZ8EvpRLEGyGAkCYfBALElrH338ca5JwNN84HsFjNCQ4MAr5-NscEDFUkGxdjg/exec";
+const BACKEND_LEAD_URL = '/api/leads';
 
 const HEADER_HASHES = ['#news', '#projects', '#about', '#contact'];
 const isHeaderAnchor = (hash) => HEADER_HASHES.includes(hash);
@@ -144,22 +143,34 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         try {
 
-            await fetch(SCRIPT_URL, {
+            const response = await fetch(BACKEND_LEAD_URL, {
                 method: "POST",
-                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify({
                     name,
                     phone,
-                    project,
-                    createdAt: new Date().toISOString()
+                    project
                 })
             });
 
-            const message =
-                document.getElementById("message");
+            const message = document.getElementById("message");
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                const errorText = errorData.error || 'Không thể gửi dữ liệu. Vui lòng thử lại sau.';
+                if (message) {
+                    message.innerHTML = `
+                    <div class="alert alert-danger mt-3">
+                        ❌ ${errorText}
+                    </div>
+                    `;
+                }
+                return;
+            }
 
             if (message) {
-
                 message.innerHTML = `
                 <div class="alert alert-success mt-3">
                     ✅ Đăng ký thành công!<br>
@@ -179,11 +190,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             console.error(error);
 
-            const message =
-                document.getElementById("message");
+            const message = document.getElementById("message");
 
             if (message) {
-
                 message.innerHTML = `
                 <div class="alert alert-danger mt-3">
                     ❌ Không thể gửi dữ liệu.
@@ -341,46 +350,49 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     initAmenityTabs();
 
-    const initSpecSelector = () => {
-        const dropdownToggle = document.querySelector('.spec-dropdown-toggle');
-        const layoutMenu = document.querySelector('.spec-layout-menu');
-        const layoutButtons = document.querySelectorAll('.spec-layout-btn');
-        const resultCard = document.querySelector('.spec-result-card');
-        const resultTitle = document.querySelector('.spec-result-title');
-        const resultSize = document.querySelector('.spec-result-size');
-        if (!dropdownToggle || !layoutMenu || !layoutButtons.length || !resultCard || !resultTitle || !resultSize) return;
+    const initSpecSelectors = () => {
+        const specSelectors = document.querySelectorAll('.spec-selector');
+        specSelectors.forEach(selector => {
+            const dropdownToggle = selector.querySelector('.spec-dropdown-toggle');
+            const layoutMenu = selector.querySelector('.spec-layout-menu');
+            const layoutButtons = selector.querySelectorAll('.spec-layout-btn');
+            const resultCard = selector.querySelector('.spec-result-card');
+            const resultTitle = selector.querySelector('.spec-result-title');
+            const resultSize = selector.querySelector('.spec-result-size');
+            if (!dropdownToggle || !layoutMenu || !layoutButtons.length || !resultCard || !resultTitle || !resultSize) return;
 
-        const layouts = Array.from(layoutButtons).map(btn => ({
-            label: btn.dataset.label || btn.textContent.trim(),
-            size: btn.dataset.size || ''
-        }));
+            const layouts = Array.from(layoutButtons).map(btn => ({
+                label: btn.dataset.label || btn.textContent.trim(),
+                price: btn.dataset.price || btn.dataset.size || ''
+            }));
 
-        dropdownToggle.addEventListener('click', () => {
-            const expanded = dropdownToggle.getAttribute('aria-expanded') === 'true';
-            dropdownToggle.setAttribute('aria-expanded', String(!expanded));
-            layoutMenu.hidden = !layoutMenu.hidden;
-        });
+            dropdownToggle.addEventListener('click', () => {
+                const expanded = dropdownToggle.getAttribute('aria-expanded') === 'true';
+                dropdownToggle.setAttribute('aria-expanded', String(!expanded));
+                layoutMenu.hidden = !layoutMenu.hidden;
+            });
 
-        const showResult = (index) => {
-            const layout = layouts[index];
-            if (!layout) return;
-            layoutButtons.forEach((btn, idx) => btn.classList.toggle('active', idx === index));
-            dropdownToggle.querySelector('span').textContent = layout.label;
-            resultTitle.textContent = layout.label;
-            resultSize.textContent = layout.size;
-            resultCard.style.display = 'block';
-        };
+            const showResult = (index) => {
+                const layout = layouts[index];
+                if (!layout) return;
+                layoutButtons.forEach((btn, idx) => btn.classList.toggle('active', idx === index));
+                dropdownToggle.querySelector('span').textContent = layout.label;
+                resultTitle.textContent = layout.label;
+                resultSize.textContent = layout.price;
+                resultCard.style.display = 'block';
+            };
 
-        layoutButtons.forEach((btn, index) => {
-            btn.addEventListener('click', () => {
-                dropdownToggle.setAttribute('aria-expanded', 'false');
-                layoutMenu.hidden = true;
-                showResult(index);
+            layoutButtons.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                    layoutMenu.hidden = true;
+                    showResult(index);
+                });
             });
         });
     };
 
-    initSpecSelector();
+    initSpecSelectors();
     syncCarouselThumbnails('amenitiesCarousel');
     syncCarouselThumbnails('apartmentCarousel');
     syncCarouselThumbnails('paymentCarousel');

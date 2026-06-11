@@ -468,6 +468,13 @@ body.project-page .hero .hero-label {
     background-repeat: no-repeat;
 }
 
+.project-page.peakgarden .hero{
+    background-image: url("../images/hero-banner.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .project-page.arcadia{
     --section-bg: rgba(18,18,18,.95);
     --accent: #ffffff;
@@ -542,7 +549,7 @@ body.project-page .hero .hero-label {
 }
 
 .project-page.peakgarden .hero{
-    background-image: url("../images/peakgarden/peakgarden.jpg");
+    background-image: url("../images/peakgarden/hero-banner.jpg");
 }
 
 .project-page.vlasta .hero{
@@ -1041,7 +1048,13 @@ body.homepage .hero .hero-label {
 
 @media (max-width:480px) {
     body.thewincity .hero-highlights .hero-quick .quick-card strong,
-    body.thewincity .hero-highlights .hero-quick .quick-card span {
+    body.thewincity .hero-highlights .hero-quick .quick-card span,
+    body.peakgarden .hero-highlights .hero-quick .quick-card strong,
+    body.peakgarden .hero-highlights .hero-quick .quick-card span,
+    body.vlasta .hero-highlights .hero-quick .quick-card strong,
+    body.vlasta .hero-highlights .hero-quick .quick-card span,
+    body.arcadia .hero-highlights .hero-quick .quick-card strong,
+    body.arcadia .hero-highlights .hero-quick .quick-card span {
         font-size: 12px !important;
         line-height: 1.3 !important;
     }
