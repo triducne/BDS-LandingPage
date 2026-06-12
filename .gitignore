@@ -1,0 +1,22 @@
+# Node.js dependencies
+node_modules/
+
+# Generated image optimization artifacts
+image-refs.json
+image-refs.txt
+image-conversion-report.json
+image-update-report.json
+image-cleanup-report.json
+
+# Local editor and OS files
+.DS_Store
+Thumbs.db
+*.log
+
+# Ignore temporary files created by editors
+*.swp
+*.swo
+*~
+
+# Ignore downloaded junk directory that is not part of the site
+images/news/vanhdai3_files/
