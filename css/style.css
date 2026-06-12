@@ -2,12 +2,12 @@
     --gold: #d4af37;
     --gold-dark: #b8882c;
     --gold-soft: rgba(212,175,55,.15);
-    --bg: #070707;
-    --section-bg: rgba(14,14,14,.92);
-    --card-bg: rgba(12,12,12,.78);
+    --bg: #000;
+    --section-bg: #020202;
+    --card-bg: rgba(0,0,0,.88);
     --muted: #d6cbbb;
     --page-text: #f4efe3;
-    --frame-bg: #121319;
+    --frame-bg: #090909;
     --image-filter: saturate(1.18) contrast(1.12) brightness(1.08);
 }
 
@@ -31,12 +31,16 @@ body.homepage{
 }
 
 .homepage .section.bg-light{
-    background: linear-gradient(180deg, rgba(10,10,10,.96), rgba(20,20,20,.98));
+    background: rgba(0,0,0,.98);
     border: 1px solid rgba(212,175,55,.10);
 }
 
 html {
     scroll-padding-top: 96px;
+}
+
+body {
+    background: #000;
 }
 
 #news,
@@ -79,10 +83,10 @@ html {
 .homepage .overview-panel,
 .homepage .project-img-blur {
     position: relative;
-    background: linear-gradient(135deg, rgba(255,214,110,.05), rgba(18,18,18,.98));
+    background: rgba(0,0,0,.72);
     padding: 16px;
     border-radius: 30px;
-    border: 1px solid rgba(212,175,55,.15);
+    border: 1px solid rgba(255,255,255,.08);
     box-shadow: 0 26px 80px rgba(0,0,0,.38);
     overflow: hidden;
 }
@@ -163,6 +167,37 @@ html {
     }
 }
 
+/* Strong black theme enforcement */
+html,
+body,
+.section,
+.bg-light,
+.bg-secondary,
+.project-page .section,
+.project-page .section.bg-light,
+.project-page .section.bg-secondary,
+.project-page .info-box,
+.info-box,
+.card,
+.card-body,
+.news-card,
+.news-card-body,
+.spec-selector,
+.contact-card,
+.navbar,
+.overview-panel,
+.project-img-container,
+.carousel-img-container,
+.project-img-blur,
+.carousel-caption,
+.carousel-nav {
+    background-image: none !important;
+    background-color: #000 !important;
+    border-color: rgba(255,255,255,.08) !important;
+    box-shadow: 0 18px 48px rgba(0,0,0,.30) !important;
+    color: var(--page-text) !important;
+}
+
 *{
 margin:0;
 padding:0;
@@ -179,7 +214,7 @@ font-size:16px;
 line-height:1.7;
 font-weight:400;
 overflow-x:hidden;
-background:radial-gradient(circle at top, rgba(212,175,55,.04), transparent 24%), var(--bg);
+background: var(--bg);
 color:var(--page-text);
 }
 
@@ -226,23 +261,41 @@ line-height:1;
 }
 
 .navbar-toggler{
-border:1px solid rgba(212,175,55,.22);
-width:48px;
-height:48px;
-border-radius:14px;
+border:1px solid rgba(212,175,55,.45);
+width:52px;
+height:52px;
+border-radius:16px;
 display:flex;
 align-items:center;
 justify-content:center;
-background:rgba(255,255,255,.04);
+background:rgba(212,175,55,.12);
+backdrop-filter:blur(8px);
+transition:background .25s ease, transform .25s ease, border-color .25s ease;
 }
 
 .navbar-toggler:hover,
 .navbar-toggler:focus{
-background:rgba(212,175,55,.12);
+background:rgba(212,175,55,.25);
+border-color:rgba(212,175,55,.85);
+transform:scale(1.03);
 }
 
 .navbar-toggler-icon{
-filter:invert(1) sepia(1) saturate(5) hue-rotate(20deg);
+filter: invert(1) sepia(1) saturate(6) hue-rotate(30deg);
+width:26px;
+height:26px;
+}
+
+@media (max-width: 768px) {
+    .navbar-toggler{
+        width:56px;
+        height:56px;
+    }
+
+    .navbar-toggler-icon{
+        width:28px;
+        height:28px;
+    }
 }
 
 .nav-link{
@@ -262,8 +315,8 @@ color:var(--gold)!important;
 .hero{
 position:relative;
 min-height:100vh;
-background: url("../images/hero-banner.jpg") center/cover no-repeat;
-background-position:center;
+background: url("../images/hero-banner.jpg") center/cover no-repeat !important;
+background-position:center !important;
 background-attachment:scroll;
 display:flex;
 align-items:center;
@@ -274,12 +327,26 @@ padding:0 24px;
 overflow:hidden;
 }
 
-.hero::before{
-content:'';
-position:absolute;
-inset:0;
-background: none;
-pointer-events:none;
+.homepage .hero {
+    background: url("../images/hero-banner.jpg") center/cover no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-color: transparent !important;
+}
+
+.homepage .hero::before,
+.project-page .hero::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: transparent !important;
+    pointer-events: none !important;
+}
+
+.homepage .hero,
+.project-page .hero {
+    background-blend-mode: normal !important;
 }
 
 .hero-text{
@@ -823,7 +890,7 @@ font-family:'Poppins',sans-serif;
 font-size:2rem;
 font-weight:900;
 letter-spacing:-.4px;
-color:#fff;
+color:var(--gold);
 margin:0;
 }
 
@@ -1469,34 +1536,67 @@ min-width:170px;
 justify-content:center;
 }
 
-.floating-btn i{
-font-size:1.25rem;
+/* Enforce black-only theme for remaining light elements */
+html, body, .site-wrapper, .section, .bg-light, .bg-secondary, .card, .card-body, .news-card, .news-card-body, .project-card-slide .card.project, .project-card-slide .card-body, .info-box, .spec-selector, .contact-card, .hero-quick .quick-card, .trust-card, .payment-tabs, .tab-btn, .payment-card, .pay-panel ul li, .contact form, .contact .form-control, .contact .form-select, .project-page .contact form, input, textarea, select, .form-control, .form-select, .payment-carousel-indicators button, .legal-schedule, .carousel-nav, .carousel-dots button, .carousel-counter, .carousel-thumbnails, .overview-panel, .project-img-container, .carousel-img-container, .carousel-caption, .project-img-blur, .project-page .hero-highlights, .project-page .project-nav-cta, .project-page .spec-dropdown-toggle, .project-page .spec-layout-menu, .project-page .spec-layout-btn, .project-page .spec-result-card, .project-page .info-card, .partner-logo {
+    background-image: none !important;
+    background-color: rgba(0,0,0,.88) !important;
+    background: rgba(0,0,0,.88) !important;
+    border-color: rgba(255,255,255,.08) !important;
+    box-shadow: 0 18px 48px rgba(0,0,0,.40) !important;
+    color: var(--page-text) !important;
 }
 
-.floating-btn:hover{
-background:var(--gold-dark);
-transform:translateY(-2px) scale(1.02);
+.btn-secondary,
+.btn-outline-light,
+.btn-outline-dark,
+.tab-btn {
+    background: rgba(0,0,0,.86) !important;
+    color: #fff !important;
+    border-color: rgba(255,255,255,.16) !important;
 }
 
-@media (max-width: 768px) {
-    .floating{
-        right:16px;
-        bottom:16px;
-        gap:10px;
-    }
-    .floating-btn{
-        padding:12px 16px;
-        font-size:0.93rem;
-        min-width:unset;
-        width:auto;
-        border-radius:999px;
-    }
-    .floating-btn span{
-        display:none;
-    }
-    .floating-btn i{
-        font-size:1.1rem;
-    }
+.btn-secondary:hover,
+.btn-outline-light:hover,
+.btn-outline-dark:hover,
+.tab-btn:hover,
+.carousel-nav:hover,
+.carousel-nav:focus {
+    background: rgba(255,255,255,.08) !important;
+    color: #fff !important;
+    border-color: rgba(255,255,255,.22) !important;
+}
+
+.project-page .hero::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: transparent !important;
+    pointer-events: none !important;
+}
+
+.homepage .hero::before,
+.project-page .hero::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: transparent !important;
+    pointer-events: none !important;
+}
+
+.homepage .hero,
+.project-page .hero {
+    background-color: transparent !important;
+    background-blend-mode: normal !important;
+}
+
+.homepage .hero .hero-text,
+.project-page .hero .hero-text,
+.project-page .hero .hero-content,
+.project-page .hero-copy,
+.project-page .hero-actions {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 footer{
