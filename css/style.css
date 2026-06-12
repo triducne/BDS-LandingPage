@@ -333,6 +333,8 @@ overflow:hidden;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-color: transparent !important;
+    position: relative;
+    overflow: hidden;
 }
 
 .homepage .hero::before,
@@ -340,7 +342,7 @@ overflow:hidden;
     content: '' !important;
     position: absolute !important;
     inset: 0 !important;
-    background: transparent !important;
+    background: rgba(0,0,0,.25) !important;
     pointer-events: none !important;
 }
 
@@ -723,6 +725,14 @@ transform:translateY(-2px);
     .nav-link{
         margin-left:0;
         padding:10px 0;
+    }
+    .navbar-nav .nav-item.d-flex.align-items-center .nav-link {
+        margin-left:0 !important;
+        padding-left:0;
+        width:100%;
+    }
+    .navbar-nav .nav-item.d-flex.align-items-center {
+        justify-content:flex-start;
     }
     .section{
         padding:50px 0;
@@ -1537,13 +1547,24 @@ justify-content:center;
 }
 
 /* Enforce black-only theme for remaining light elements */
-html, body, .site-wrapper, .section, .bg-light, .bg-secondary, .card, .card-body, .news-card, .news-card-body, .project-card-slide .card.project, .project-card-slide .card-body, .info-box, .spec-selector, .contact-card, .hero-quick .quick-card, .trust-card, .payment-tabs, .tab-btn, .payment-card, .pay-panel ul li, .contact form, .contact .form-control, .contact .form-select, .project-page .contact form, input, textarea, select, .form-control, .form-select, .payment-carousel-indicators button, .legal-schedule, .carousel-nav, .carousel-dots button, .carousel-counter, .carousel-thumbnails, .overview-panel, .project-img-container, .carousel-img-container, .carousel-caption, .project-img-blur, .project-page .hero-highlights, .project-page .project-nav-cta, .project-page .spec-dropdown-toggle, .project-page .spec-layout-menu, .project-page .spec-layout-btn, .project-page .spec-result-card, .project-page .info-card, .partner-logo {
+html, body, .site-wrapper, .section, .bg-light, .bg-secondary, .card, .card-body, .news-card, .news-card-body, .project-card-slide .card.project, .project-card-slide .card-body, .info-box, .spec-selector, .contact-card, .hero-quick .quick-card, .trust-card, .payment-tabs, .tab-btn, .payment-card, .pay-panel ul li, .contact form, .contact .form-control, .contact .form-select, .project-page .contact form, input:not([type="checkbox"]):not([type="radio"]), textarea, select, .form-control, .form-select, .payment-carousel-indicators button, .legal-schedule, .carousel-nav, .carousel-dots button, .carousel-counter, .carousel-thumbnails, .overview-panel, .project-img-container, .carousel-img-container, .carousel-caption, .project-img-blur, .project-page .hero-highlights, .project-page .project-nav-cta, .project-page .spec-dropdown-toggle, .project-page .spec-layout-menu, .project-page .spec-layout-btn, .project-page .spec-result-card, .project-page .info-card, .partner-logo {
     background-image: none !important;
     background-color: rgba(0,0,0,.88) !important;
     background: rgba(0,0,0,.88) !important;
     border-color: rgba(255,255,255,.08) !important;
     box-shadow: 0 18px 48px rgba(0,0,0,.40) !important;
     color: var(--page-text) !important;
+}
+
+.form-check-input {
+    background-color: #111 !important;
+    border: 1px solid rgba(255,255,255,.35) !important;
+    accent-color: var(--gold) !important;
+    width: 1.15rem;
+    height: 1.15rem;
+    min-width: 1.15rem;
+    min-height: 1.15rem;
+    box-shadow: none !important;
 }
 
 .btn-secondary,
@@ -1566,20 +1587,12 @@ html, body, .site-wrapper, .section, .bg-light, .bg-secondary, .card, .card-body
     border-color: rgba(255,255,255,.22) !important;
 }
 
-.project-page .hero::before {
+.project-page .hero::before,
+.homepage .hero::before {
     content: '' !important;
     position: absolute !important;
     inset: 0 !important;
-    background: transparent !important;
-    pointer-events: none !important;
-}
-
-.homepage .hero::before,
-.project-page .hero::before {
-    content: '' !important;
-    position: absolute !important;
-    inset: 0 !important;
-    background: transparent !important;
+    background: rgba(0,0,0,.25) !important;
     pointer-events: none !important;
 }
 

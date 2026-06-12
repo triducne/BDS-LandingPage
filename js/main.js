@@ -1,4 +1,4 @@
-const BACKEND_LEAD_URL = '/api/leads';
+﻿const BACKEND_LEAD_URL = 'https://script.google.com/macros/s/AKfycbxI_cz5SvBrRHsS8Vp-uPK0vt4sDP2unCk9ZVyF6NfZ1ysyhmQf_YZ-qjd09JxTLRVIyQ/exec';
 
 const HEADER_HASHES = ['#news', '#projects', '#about', '#contact'];
 const isHeaderAnchor = (hash) => HEADER_HASHES.includes(hash);
@@ -142,24 +142,30 @@ document.addEventListener("DOMContentLoaded", async () => {
         btn.innerText = "ĐANG GỬI...";
 
         try {
-
-            const response = await fetch(BACKEND_LEAD_URL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name,
-                    phone,
-                    project
-                })
+            const params = new URLSearchParams({
+                name,
+                phone,
+                project
             });
 
-            const message = document.getElementById("message");
+            const response = await fetch(`${BACKEND_LEAD_URL}?${params.toString()}`, {
+                method: 'GET',
+                mode: 'cors'
+            });
 
-            if (!response.ok) {
-                const errorData = await response.json().catch(() => ({}));
-                const errorText = errorData.error || 'Không thể gửi dữ liệu. Vui lòng thử lại sau.';
+            const text = await response.text();
+            let result = { success: response.ok };
+            try {
+                result = JSON.parse(text);
+            } catch {
+                result = { success: response.ok };
+            }
+
+            const success = response.ok && result && result.success !== false;
+            const message = document.getElementById('message');
+
+            if (!success) {
+                const errorText = result?.error || 'Không thể gửi dữ liệu. Vui lòng thử lại sau.';
                 if (message) {
                     message.innerHTML = `
                     <div class="alert alert-danger mt-3">
@@ -180,11 +186,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             form.reset();
-
-            window.scrollTo({
-                top: form.offsetTop - 100,
-                behavior: "smooth"
-            });
 
         } catch (error) {
 

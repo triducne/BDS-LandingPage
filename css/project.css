@@ -339,7 +339,7 @@
     content:'';
     position:absolute;
     inset:0;
-    background: transparent !important;
+    background: rgba(0,0,0,.25) !important;
     pointer-events:none;
 }
 
@@ -3893,7 +3893,7 @@ footer p{
     background: rgba(0,0,0,.70) !important;
 }
 
-.project-page .hero-content,
+..project-page .hero-content,
 .project-page .hero-copy,
 .project-page .hero-actions {
     background: transparent !important;
@@ -3902,8 +3902,9 @@ footer p{
 }
 
 .project-page .hero::before {
-        content: '' !important;
-        position: absolute !important;
-        inset: 0 !important;
-        background: transparent !important;
-        pointer-events: none !important;    }
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,.28) !important;
+    pointer-events: none !important;
+}
