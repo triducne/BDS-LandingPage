@@ -251,13 +251,22 @@ box-shadow:0 10px 35px rgba(0,0,0,.4);
 }
 
 .navbar-brand{
-color:var(--gold)!important;
-font-family:'Montserrat',sans-serif;
-font-size:1.5rem;
-font-weight:800;
-letter-spacing:1px;
-white-space:nowrap;
-line-height:1;
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+    color:var(--gold)!important;
+    font-family:'Montserrat',sans-serif;
+    font-size:1.5rem;
+    font-weight:800;
+    letter-spacing:1px;
+    white-space:nowrap;
+    line-height:1;
+}
+
+.navbar-logo {
+    height: 38px;
+    width: auto;
+    display: inline-block;
 }
 
 .navbar-toggler{
@@ -315,7 +324,7 @@ color:var(--gold)!important;
 .hero{
 position:relative;
 min-height:100vh;
-background: url("../images/hero-banner.jpg") center/cover no-repeat !important;
+background: url("../images/hero-banner.webp") center/cover no-repeat !important;
 background-position:center !important;
 background-attachment:scroll;
 display:flex;
@@ -328,7 +337,7 @@ overflow:hidden;
 }
 
 .homepage .hero {
-    background: url("../images/hero-banner.jpg") center/cover no-repeat !important;
+    background: url("../images/hero-banner.webp") center/cover no-repeat !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;

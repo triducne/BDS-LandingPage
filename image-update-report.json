@@ -1,0 +1,1052 @@
+[
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-1.500.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-1.500.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-amenity-1.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-amenity-1.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-amenity-2.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-amenity-2.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-amenity-3.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-amenity-3.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-amenity-4.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-amenity-4.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-amenity-5.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-amenity-5.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-amenity-6.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-amenity-6.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-amenity-7.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-amenity-7.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-amenity-8.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-amenity-8.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-amenity-9.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-amenity-9.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-apartment-2pn-harmonie.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-apartment-2pn-harmonie.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-apartment-2pn-libre.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-apartment-2pn-libre.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-at-lavila.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-at-lavila.webp"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/arcadia/arcadia-at-lavila.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-at-lavila.webp"
+  },
+  {
+    "sourceFile": "css/project.css",
+    "ref": "../images/arcadia/arcadia-banner.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/arcadia/arcadia-banner.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-ctdt.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-ctdt.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-gpkd.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-gpkd.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-location.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-location.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-masterplan.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia-masterplan.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-schedule-1.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/arcadia/arcadia-schedule-1.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia-schedule-2.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/arcadia/arcadia-schedule-2.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/arcadia.gpxd.jpg",
+    "updated": true,
+    "target": "images/arcadia/arcadia.gpxd.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/payment-1.jpg",
+    "updated": true,
+    "target": "images/arcadia/payment-1.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/payment-2.jpg",
+    "updated": true,
+    "target": "images/arcadia/payment-2.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/arcadia/payment-3.jpg",
+    "updated": true,
+    "target": "images/arcadia/payment-3.webp"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/avatar.jpg",
+    "updated": true,
+    "target": "images/avatar.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-amenity-1.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-amenity-1.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-amenity-2.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-amenity-2.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-amenity-3.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-amenity-3.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-amenity-4.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-amenity-4.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-apartment-1pn-1wc.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-apartment-1pn-1wc.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-apartment-1pn-plus.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-apartment-1pn-plus.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-apartment-2pn-1wc.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-apartment-2pn-1wc.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-apartment-2pn-2wc.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-apartment-2pn-2wc.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-apartment-3pn.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-apartment-3pn.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-apartment-dual-key.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-apartment-dual-key.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-apartment-studio.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-apartment-studio.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-legal-1.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-legal-1.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-legal-2.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-legal-2.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-masterplan.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-masterplan.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-schedule-1.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-schedule-1.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino-schedule-2.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/destino/destino-schedule-2.webp"
+  },
+  {
+    "sourceFile": "css/project.css",
+    "ref": "../images/destino/destino.jpg",
+    "updated": true,
+    "target": "../images/destino/destino.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/destino/destino.jpg",
+    "updated": true,
+    "target": "images/destino/destino.webp"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/destino/destino.jpg",
+    "updated": true,
+    "target": "images/destino/destino.webp"
+  },
+  {
+    "sourceFile": "arcadia.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "cau-phuoc.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "destino.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "metro-so-4.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "noble-crystal-reverside.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "sunshine-sky-city.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "vanhdai3.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "vanhdai4.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "vo-van-kiet-noi-dai.html",
+    "ref": "images/favicon.png",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/favicon.webp"
+  },
+  {
+    "sourceFile": "css/project.css",
+    "ref": "../images/hero-banner.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/hero-banner.webp"
+  },
+  {
+    "sourceFile": "css/style.css",
+    "ref": "../images/hero-banner.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/hero-banner.webp"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/news/cau-phuoc-khanh.jpg",
+    "updated": true,
+    "target": "images/news/cau-phuoc-khanh.webp"
+  },
+  {
+    "sourceFile": "cau-phuoc.html",
+    "ref": "images/news/cau-phuoc.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/news/cau-phuoc.webp"
+  },
+  {
+    "sourceFile": "css/news.css",
+    "ref": "../images/news/hero-banner-vd3.jpg",
+    "updated": true,
+    "target": "../images/news/hero-banner-vd3.webp"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/news/metro-so-4.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "metro-so-4.html",
+    "ref": "images/news/metro-so-4.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/news/vanh-dai-3.jpg",
+    "updated": true,
+    "target": "images/news/vanh-dai-3.webp"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/news/vanh-dai-4.jpg",
+    "updated": true,
+    "target": "images/news/vanh-dai-4.webp"
+  },
+  {
+    "sourceFile": "css/news.css",
+    "ref": "../images/news/vanhdai3-new.jpg",
+    "updated": true,
+    "target": "../images/news/vanhdai3-new.webp"
+  },
+  {
+    "sourceFile": "vanhdai3.html",
+    "ref": "images/news/vanhdai3-new.jpg",
+    "updated": true,
+    "target": "images/news/vanhdai3-new.webp"
+  },
+  {
+    "sourceFile": "vo-van-kiet-noi-dai.html",
+    "ref": "images/news/vo-van-kiet-noi-dai.jpg",
+    "updated": true,
+    "target": "images/news/vo-van-kiet-noi-dai.webp"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/news/vo-van-kiet-noi-dai.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "noble-crystal-reverside.html",
+    "ref": "images/noble-crystal-reverside/amenity-1.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/noble-crystal-reverside/amenity-1.webp"
+  },
+  {
+    "sourceFile": "noble-crystal-reverside.html",
+    "ref": "images/noble-crystal-reverside/apartment-studio.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/noble-crystal-reverside/apartment-studio.webp"
+  },
+  {
+    "sourceFile": "noble-crystal-reverside.html",
+    "ref": "images/noble-crystal-reverside/legal-1.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/noble-crystal-reverside/legal-1.webp"
+  },
+  {
+    "sourceFile": "noble-crystal-reverside.html",
+    "ref": "images/noble-crystal-reverside/location.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/noble-crystal-reverside/location.webp"
+  },
+  {
+    "sourceFile": "noble-crystal-reverside.html",
+    "ref": "images/noble-crystal-reverside/masterplan.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/noble-crystal-reverside/masterplan.webp"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/noble-crystal-reverside/overview.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/noble-crystal-reverside/overview.webp"
+  },
+  {
+    "sourceFile": "noble-crystal-reverside.html",
+    "ref": "images/noble-crystal-reverside/overview.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/noble-crystal-reverside/overview.webp"
+  },
+  {
+    "sourceFile": "noble-crystal-reverside.html",
+    "ref": "images/noble-crystal-reverside/schedule-1.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/noble-crystal-reverside/schedule-1.webp"
+  },
+  {
+    "sourceFile": "css/project.css",
+    "ref": "../images/peakgarden/hero-banner.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/peakgarden/hero-banner.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/legal-1.png",
+    "updated": true,
+    "target": "images/peakgarden/legal-1.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/legal-2.png",
+    "updated": true,
+    "target": "images/peakgarden/legal-2.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/legal-3.png",
+    "updated": true,
+    "target": "images/peakgarden/legal-3.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/legal-4.png",
+    "updated": true,
+    "target": "images/peakgarden/legal-4.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/legal-5.png",
+    "updated": true,
+    "target": "images/peakgarden/legal-5.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/peakgarden-amenity-1.jpg",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden-amenity-1.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/peakgarden-amenity-2.jpg",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden-amenity-2.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/peakgarden-amenity-3.jpg",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden-amenity-3.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/peakgarden-amenity-4.png",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden-amenity-4.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/peakgarden-amenity-5.png",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden-amenity-5.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/peakgarden-apartment-1.jpg",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden-apartment-1.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/peakgarden-apartment-2.jpg",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden-apartment-2.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/peakgarden-apartment-3.jpg",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden-apartment-3.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/peakgarden-apartment-4.jpg",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden-apartment-4.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/peakgarden-location.jpg",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden-location.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/peakgarden-masterplan.jpg",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden-masterplan.webp"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/peakgarden/peakgarden.jpg",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/peakgarden.jpg",
+    "updated": true,
+    "target": "images/peakgarden/peakgarden.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/schedule-1.jpg",
+    "updated": true,
+    "target": "images/peakgarden/schedule-1.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/schedule-2.jpg",
+    "updated": true,
+    "target": "images/peakgarden/schedule-2.webp"
+  },
+  {
+    "sourceFile": "peakgarden.html",
+    "ref": "images/peakgarden/schedule-3.jpg",
+    "updated": true,
+    "target": "images/peakgarden/schedule-3.webp"
+  },
+  {
+    "sourceFile": "sunshine-sky-city.html",
+    "ref": "images/sunshine-sky-city/amenity-1.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/sunshine-sky-city/amenity-1.webp"
+  },
+  {
+    "sourceFile": "sunshine-sky-city.html",
+    "ref": "images/sunshine-sky-city/apartment-studio.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/sunshine-sky-city/apartment-studio.webp"
+  },
+  {
+    "sourceFile": "sunshine-sky-city.html",
+    "ref": "images/sunshine-sky-city/legal-1.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/sunshine-sky-city/legal-1.webp"
+  },
+  {
+    "sourceFile": "sunshine-sky-city.html",
+    "ref": "images/sunshine-sky-city/location.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/sunshine-sky-city/location.webp"
+  },
+  {
+    "sourceFile": "sunshine-sky-city.html",
+    "ref": "images/sunshine-sky-city/masterplan.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/sunshine-sky-city/masterplan.webp"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/sunshine-sky-city/overview.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/sunshine-sky-city/overview.webp"
+  },
+  {
+    "sourceFile": "sunshine-sky-city.html",
+    "ref": "images/sunshine-sky-city/overview.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/sunshine-sky-city/overview.webp"
+  },
+  {
+    "sourceFile": "sunshine-sky-city.html",
+    "ref": "images/sunshine-sky-city/schedule-1.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/sunshine-sky-city/schedule-1.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/amenity-1.jpg",
+    "updated": true,
+    "target": "images/thewincity/amenity-1.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/amenity-2.jpg",
+    "updated": true,
+    "target": "images/thewincity/amenity-2.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/amenity-3.jpg",
+    "updated": true,
+    "target": "images/thewincity/amenity-3.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/amenity-4.jpg",
+    "updated": true,
+    "target": "images/thewincity/amenity-4.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/amenity-5.jpg",
+    "updated": true,
+    "target": "images/thewincity/amenity-5.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/amenity-6.jpg",
+    "updated": true,
+    "target": "images/thewincity/amenity-6.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/amenity-7.jpg",
+    "updated": true,
+    "target": "images/thewincity/amenity-7.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/amenity-8.jpg",
+    "updated": true,
+    "target": "images/thewincity/amenity-8.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/amenity-9.jpg",
+    "updated": true,
+    "target": "images/thewincity/amenity-9.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/apartment-1pn-1wc.jpg",
+    "updated": true,
+    "target": "images/thewincity/apartment-1pn-1wc.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/apartment-1pn-plus.jpg",
+    "updated": true,
+    "target": "images/thewincity/apartment-1pn-plus.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/apartment-2pn-1wc.jpg",
+    "updated": true,
+    "target": "images/thewincity/apartment-2pn-1wc.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/apartment-2pn-2wc.jpg",
+    "updated": true,
+    "target": "images/thewincity/apartment-2pn-2wc.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/apartment-3pn.jpg",
+    "updated": true,
+    "target": "images/thewincity/apartment-3pn.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/apartment-dual-key.jpg",
+    "updated": true,
+    "target": "images/thewincity/apartment-dual-key.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/apartment-studio.jpg",
+    "updated": true,
+    "target": "images/thewincity/apartment-studio.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/legal-1.png",
+    "updated": true,
+    "target": "images/thewincity/legal-1.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/legal-2.png",
+    "updated": true,
+    "target": "images/thewincity/legal-2.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/legal-3.png",
+    "updated": true,
+    "target": "images/thewincity/legal-3.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/legal-4.png",
+    "updated": true,
+    "target": "images/thewincity/legal-4.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/legal-5.png",
+    "updated": true,
+    "target": "images/thewincity/legal-5.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/legal-6.png",
+    "updated": true,
+    "target": "images/thewincity/legal-6.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/schedule-1.jpg",
+    "updated": true,
+    "target": "images/thewincity/schedule-1.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/schedule-2.jpg",
+    "updated": true,
+    "target": "images/thewincity/schedule-2.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/schedule-3.jpg",
+    "updated": true,
+    "target": "images/thewincity/schedule-3.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/schedule-4.jpg",
+    "updated": true,
+    "target": "images/thewincity/schedule-4.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/schedule-5.jpg",
+    "updated": true,
+    "target": "images/thewincity/schedule-5.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/schedule-6.jpg",
+    "updated": true,
+    "target": "images/thewincity/schedule-6.webp"
+  },
+  {
+    "sourceFile": "css/project.css",
+    "ref": "../images/thewincity/wincity-banner.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/thewincity/wincity-banner.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/wincity-location.jpg",
+    "updated": true,
+    "target": "images/thewincity/wincity-location.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/wincity-masterplan.jpg",
+    "updated": true,
+    "target": "images/thewincity/wincity-masterplan.webp"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/thewincity/wincity.jpg",
+    "updated": true,
+    "target": "images/thewincity/wincity.webp"
+  },
+  {
+    "sourceFile": "thewincity.html",
+    "ref": "images/thewincity/wincity.jpg",
+    "updated": true,
+    "target": "images/thewincity/wincity.webp"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/amenity-1.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/amenity-2.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/amenity-3.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/amenity-4.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/amenity-5.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/amenity-6.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/amenity-7.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/amenity-8.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/apartment-1pn.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/apartment-1pn+.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/apartment-2pn.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/apartment-3pn.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "css/project.css",
+    "ref": "../images/vlasta/hero-banner.jpg",
+    "skipped": true,
+    "reason": "target WebP missing",
+    "target": "images/vlasta/hero-banner.webp"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/legal-1.png",
+    "updated": true,
+    "target": "images/vlasta/legal-1.webp"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/legal-2.png",
+    "updated": true,
+    "target": "images/vlasta/legal-2.webp"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/legal-3.png",
+    "updated": true,
+    "target": "images/vlasta/legal-3.webp"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/legal-4.png",
+    "updated": true,
+    "target": "images/vlasta/legal-4.webp"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/schedule-1.jpg",
+    "updated": true,
+    "target": "images/vlasta/schedule-1.webp"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/schedule-2.jpg",
+    "updated": true,
+    "target": "images/vlasta/schedule-2.webp"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/schedule-3.jpg",
+    "updated": true,
+    "target": "images/vlasta/schedule-3.webp"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/vlasta-location.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/vlasta-masterplan.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "index.html",
+    "ref": "images/vlasta/vlasta.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  },
+  {
+    "sourceFile": "vlasta.html",
+    "ref": "images/vlasta/vlasta.webp",
+    "skipped": true,
+    "reason": "unsupported extension"
+  }
+]

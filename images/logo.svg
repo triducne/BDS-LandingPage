@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">TRÍ ĐỨC REALTY</title>
+  <desc id="logoDesc">Logo mark for TRÍ ĐỨC REALTY featuring a stylized building icon.</desc>
+  <rect width="180" height="50" rx="10" fill="#000" />
+  <g fill="none" stroke="#d4af37" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 40 L20 18 L30 18 L30 40" />
+    <path d="M35 40 L35 12 L45 12 L45 40" />
+    <path d="M50 40 L50 24 L60 24 L60 40" />
+  </g>
+  <text x="72" y="33" fill="#d4af37" font-family="Montserrat, sans-serif" font-size="18" font-weight="700">TRÍ ĐỨC</text>
+</svg>

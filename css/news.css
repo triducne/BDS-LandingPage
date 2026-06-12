@@ -101,11 +101,11 @@ body.news-article main.section {
 }
 
 .hero-banner {
-    background: url('../images/news/vanhdai3-new.jpg') center/cover no-repeat;
+    background: url('../images/news/vanhdai3-new.webp') center/cover no-repeat;
 }
 
 .hero.hero-vd3 {
-    background: url('../images/news/hero-banner-vd3.jpg') center/cover no-repeat;
+    background: url('../images/news/hero-banner-vd3.webp') center/cover no-repeat;
     text-align: center;
     justify-items: center;
 }
@@ -386,7 +386,7 @@ body.news-article main.section {
 }
 
 .hero.hero-vd3 {
-    background: url('../images/news/hero-banner-vd3.jpg') center/cover no-repeat;
+    background: url('../images/news/hero-banner-vd3.webp') center/cover no-repeat;
 }
 
 .news-main .article-body ul {

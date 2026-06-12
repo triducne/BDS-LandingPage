@@ -469,7 +469,7 @@ body.project-page .hero .hero-label {
 }
 
 .project-page.peakgarden .hero{
-    background-image: url("../images/hero-banner.jpg");
+    background-image: url("../images/hero-banner.webp");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -530,7 +530,7 @@ body.project-page .hero .hero-label {
 }
 
 .project-page.destino .hero{
-    background: url("../images/destino/destino.jpg") center/cover no-repeat !important;
+    background: url("../images/destino/destino.webp") center/cover no-repeat !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
