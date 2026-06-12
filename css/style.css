@@ -324,7 +324,7 @@ color:var(--gold)!important;
 .hero{
 position:relative;
 min-height:100vh;
-background: url("../images/hero-banner.webp") center/cover no-repeat !important;
+background: url("../images/blog/hero-banner.webp") center/cover no-repeat !important;
 background-position:center !important;
 background-attachment:scroll;
 display:flex;
@@ -337,7 +337,7 @@ overflow:hidden;
 }
 
 .homepage .hero {
-    background: url("../images/hero-banner.webp") center/cover no-repeat !important;
+    background-image: url("../images/hero-banner.webp") !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -433,9 +433,33 @@ text-transform:none;
 display:flex;
 align-items:center;
 justify-content:center;
-gap:16px;
+gap:14px;
 flex-wrap:wrap;
 margin-top:18px;
+}
+
+.hero-actions .btn{
+    min-width: 180px;
+}
+
+@media (max-width: 768px) {
+    .hero-actions{
+        gap:12px;
+    }
+    .hero-actions .btn{
+        padding: 12px 28px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-actions{
+        flex-direction:column;
+        width:100%;
+    }
+    .hero-actions .btn{
+        width:100% !important;
+        min-width:0;
+    }
 }
 
 .hero-trust{
@@ -577,21 +601,23 @@ border-radius:38px;
 backdrop-filter:blur(6px);
 }
 
-.btn-secondary:hover{
-background:rgba(255,255,255,.18);
-transform:translateY(-1px);
-}
+    .cta-repeat .d-flex.justify-content-center.gap-3 {
+        gap: 0.75rem;
+    }
+    .cta-repeat .d-flex.justify-content-center.gap-3 .btn {
+        flex: 1 1 220px;
+        min-width: 180px;
+    }
 
-.btn-primary:focus-visible,
-.btn-secondary:focus-visible,
-.btn-gold:focus-visible,
-.nav-link:focus-visible{
-outline:2px solid rgba(212,175,55,.5);
-outline-offset:4px;
-}
-
-.nav-link{
-transform:translateY(0);
+    @media (max-width: 768px) {
+        .cta-repeat .d-flex.justify-content-center.gap-3 {
+            gap: 0.65rem;
+        }
+        .cta-repeat .d-flex.justify-content-center.gap-3 .btn {
+            flex: 1 1 100%;
+            min-width: 0;
+        }
+    }
 transition:color .35s ease, transform .35s ease;
 }
 

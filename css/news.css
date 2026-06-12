@@ -91,6 +91,10 @@ body.news-article main.section {
     overflow: hidden;
 }
 
+.news-article .hero {
+    background: none !important;
+}
+
 .hero-banner::before,
 .hero.hero-vd3::before {
     content: '';
@@ -105,7 +109,7 @@ body.news-article main.section {
 }
 
 .hero.hero-vd3 {
-    background: url('../images/news/hero-banner-vd3.webp') center/cover no-repeat;
+    background: url('../images/news/hero-banner-vd3.webp') center/cover no-repeat !important;
     text-align: center;
     justify-items: center;
 }
