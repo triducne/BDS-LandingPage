@@ -73,6 +73,132 @@ body.news-article .related-links a:focus {
     color: rgba(212,175,55,.95);
 }
 
+body.news-article .featured-projects-card {
+    background: rgba(10, 10, 10, 0.92);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 32px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.30);
+    max-width: 980px;
+    margin: 0 auto 1.5rem;
+}
+
+body.news-article .featured-projects-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 24px 28px;
+    gap: 12px;
+    cursor: pointer;
+    color: var(--page-text);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: .25px;
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.12), rgba(255,255,255,0.04));
+}
+
+body.news-article .featured-projects-summary::-webkit-details-marker,
+body.news-article .featured-projects-summary::marker {
+    display: none;
+}
+
+body.news-article .featured-projects-summary span:first-child {
+    letter-spacing: .5px;
+}
+
+body.news-article .featured-projects-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    background: rgba(212, 175, 55, 0.14);
+}
+
+body.news-article .featured-projects-icon i {
+    transition: transform .25s ease;
+}
+
+body.news-article details[open] .featured-projects-icon i {
+    transform: rotate(180deg);
+}
+
+body.news-article .featured-projects-list {
+    display: grid;
+    gap: 0;
+    background: rgba(255,255,255,0.06);
+}
+
+body.news-article .featured-projects-list a:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+body.news-article .featured-projects-item {
+    display: grid;
+    grid-template-columns: minmax(180px, 1.8fr) minmax(140px, 1fr) minmax(140px, 1fr);
+    align-items: center;
+    gap: 14px;
+    padding: 18px 24px;
+    background: rgba(0, 0, 0, 0.78);
+    color: var(--page-text);
+    text-decoration: none;
+    transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+body.news-article .featured-projects-item:hover,
+body.news-article .featured-projects-item:focus-visible {
+    background: rgba(255,255,255,0.06);
+    transform: translateX(1px);
+    box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.08);
+}
+
+body.news-article .featured-projects-item .project-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+}
+
+body.news-article .featured-projects-item .project-location,
+body.news-article .featured-projects-item .project-price {
+    color: rgba(214, 203, 187, 0.92);
+    font-size: .95rem;
+}
+
+body.news-article .featured-projects-item .project-price {
+    font-weight: 700;
+    color: var(--gold);
+}
+
+body.news-article .featured-projects-current {
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.08), rgba(255,255,255,0.04));
+    border-left: 4px solid rgba(212, 175, 55, 0.9);
+}
+
+body.news-article .featured-projects-item {
+    grid-template-columns: 1fr;
+    text-align: left;
+}
+
+body.news-article .featured-projects-summary {
+    padding: 20px 22px;
+}
+
+body.news-article .featured-projects-card {
+    border-radius: 24px;
+}
+
+body.news-article .featured-projects-summary {
+    padding: 16px 18px;
+    font-size: 0.98rem;
+}
+
+body.news-article .featured-projects-item {
+    padding: 16px 18px;
+}
+
 body.news-article main.section {
     padding-top: 0;
     padding-bottom: 0;
@@ -109,7 +235,7 @@ body.news-article main.section {
 }
 
 .hero.hero-vd3 {
-    background: url('../images/news/hero-banner-vd3.webp') center/cover no-repeat !important;
+    background: url('../images/news/hero-banner.webp') center/cover no-repeat !important;
     text-align: center;
     justify-items: center;
 }
@@ -128,9 +254,15 @@ body.news-article main.section {
 }
 
 .hero.hero-vd3 .hero-text .hero-label,
-.hero.hero-vd3 .hero-text h1,
 .hero.hero-vd3 .hero-text .hero-subtitle {
     color: #fff;
+}
+
+body.news-article .hero.hero-vd3 .hero-text h1,
+body.news-article .news-main h2,
+body.news-article .news-card h3,
+body.news-article .news-card h4 {
+    color: var(--gold) !important;
 }
 
 .hero.hero-vd3 .hero-text .hero-label {
