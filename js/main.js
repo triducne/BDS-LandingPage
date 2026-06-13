@@ -7,9 +7,7 @@ const isHeaderAnchor = (hash) => HEADER_HASHES.includes(hash);
 window.addEventListener('pageshow', (event) => {
     try {
         const navEntries = performance && performance.getEntriesByType ? performance.getEntriesByType('navigation') : [];
-        const navType = (navEntries && navEntries[0] && navEntries[0].type) || '';
-        console.log('pageshow', { persisted: event.persisted, navType, hash: window.location.hash });
-        if (event.persisted || navType === 'back_forward') {
+        const navType = (navEntries && navEntries[0] && navEntries[0].type) || '';if (event.persisted || navType === 'back_forward') {
             if (window.history && typeof window.history.replaceState === 'function') {
                 window.history.replaceState(null, '', window.location.pathname + window.location.search);
             }
@@ -22,9 +20,7 @@ window.addEventListener('pageshow', (event) => {
 
 // Also handle popstate (back/forward) to aggressively remove header anchors when they appear
 window.addEventListener('popstate', () => {
-    try {
-        console.log('popstate', { hash: window.location.hash });
-        if (isHeaderAnchor(window.location.hash)) {
+    try {if (isHeaderAnchor(window.location.hash)) {
             if (window.history && typeof window.history.replaceState === 'function') {
                 window.history.replaceState(null, '', window.location.pathname + window.location.search);
             }
@@ -47,11 +43,7 @@ window.addEventListener('hashchange', () => {
 document.addEventListener("DOMContentLoaded", async () => {
     if (window.history && typeof window.history.scrollRestoration === 'string') {
         window.history.scrollRestoration = 'manual';
-    }
-
-    console.log('DOMContentLoaded', { href: window.location.href, hash: window.location.hash, referrer: document.referrer });
-
-    const loadHTMLIncludes = async () => {
+    }const loadHTMLIncludes = async () => {
         const includes = document.querySelectorAll('[data-include]');
         await Promise.all(Array.from(includes).map(async (el) => {
             const src = el.dataset.include;
@@ -533,3 +525,4 @@ document.addEventListener("DOMContentLoaded", async () => {
         observer.observe(node, { childList: true, subtree: true, characterData: true });
     });
 })();
+
