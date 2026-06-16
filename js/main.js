@@ -16,6 +16,22 @@ window.addEventListener('pageshow', (event) => {
     } catch (e) {
         // ignore — best-effort only
     }
+
+    // Runtime handler: allow removing the Zalo checkbox option via the 'Bỏ' button
+    try {
+        const removeBtn = document.getElementById('removeZaloBtn');
+        if (removeBtn) {
+            removeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const input = document.getElementById('contactByZalo');
+                if (input) input.checked = false;
+                const wrapper = removeBtn.closest('.form-check');
+                if (wrapper) wrapper.remove();
+            });
+        }
+    } catch (err) {
+        console.error('removeZaloBtn handler error', err);
+    }
 });
 
 // Also handle popstate (back/forward) to aggressively remove header anchors when they appear
@@ -98,6 +114,42 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const form = document.getElementById("leadForm");
 
+    // Ensure checkbox rows in the lead form are clickable (defensive runtime fix)
+    (function ensureLeadFormCheckboxesClickable(){
+        const leadFormContainer = document.querySelector('#form .contact-form') || document.querySelector('#form');
+        if (!leadFormContainer) return;
+        const rows = leadFormContainer.querySelectorAll('.form-check.custom-check');
+        rows.forEach(row => {
+            try {
+                row.style.pointerEvents = 'auto';
+                if (!row.style.position) row.style.position = 'relative';
+                row.style.zIndex = '9999';
+                // make the whole row toggle the checkbox when clicked
+                row.setAttribute('tabindex', '0');
+                row.addEventListener('click', (e) => {
+                    const input = row.querySelector('input[type="checkbox"]');
+                    if (!input) return;
+                    if (e.target === input) return; // let native behavior run
+                    e.preventDefault();
+                    input.checked = !input.checked;
+                    input.dispatchEvent(new Event('change', { bubbles: true }));
+                });
+                // keyboard accessibility: Space or Enter toggles
+                row.addEventListener('keydown', (e) => {
+                    if (e.key === ' ' || e.key === 'Enter') {
+                        e.preventDefault();
+                        const input = row.querySelector('input[type="checkbox"]');
+                        if (!input) return;
+                        input.click();
+                    }
+                });
+            } catch (err) {
+                // defensive: don't break main script
+                console.error('ensureLeadFormCheckboxesClickable error', err);
+            }
+        });
+    })();
+
     if (form) {
         const btn = form.querySelector("button");
         const originalText = btn ? btn.innerText : '';
@@ -114,6 +166,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const project =
             document.getElementById("project")?.value || "";
+
+        const contactByZalo =
+            document.getElementById("contactByZalo")?.checked ? 'yes' : 'no';
+
+        const financeAdvice =
+            document.getElementById("financeAdvice")?.checked ? 'yes' : 'no';
 
         if (!name) {
             alert("Vui lòng nhập họ tên");
@@ -137,7 +195,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             const params = new URLSearchParams({
                 name,
                 phone,
-                project
+                project,
+                contactByZalo,
+                financeAdvice
             });
 
             const response = await fetch(`${BACKEND_LEAD_URL}?${params.toString()}`, {
