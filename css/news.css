@@ -24,6 +24,8 @@ body.news-article .nav-link:hover {
     color: var(--gold) !important;
 }
 
+/* layout spacing is handled by shared rules; avoid page-specific !important overrides */
+
 body.news-article .btn-gold {
     background: #d4af37;
     color: #111;
@@ -337,6 +339,60 @@ body.news-article .news-card h4 {
     }
 }
 
+/* Reduce hero height and scale typography on very small phones to avoid clipping */
+@media (max-width: 420px) {
+    .hero-banner,
+    .hero.hero-vd3 {
+        min-height: 52vh;
+        padding: 36px 12px 18px;
+        background-position: top center;
+    }
+
+    .hero-banner h1,
+    .hero.hero-vd3 .hero-text h1 {
+        font-size: 1.6rem;
+        line-height: 1.06;
+        margin-bottom: 8px;
+    }
+
+    .hero.hero-vd3 .hero-text .hero-label {
+        font-size: 1rem;
+    }
+
+    .hero.hero-vd3 .hero-text .hero-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}
+
+/* Final override: ensure hero is pushed below fixed navbar and headline scales on very small screens */
+@media (max-width: 576px) {
+    body.news-article .hero {
+        padding-top: 120px !important;
+        padding-bottom: 18px !important;
+        min-height: 46vh !important;
+    }
+
+    body.news-article .hero .hero-text h1,
+    .hero-banner h1 {
+        font-size: 1.6rem !important;
+        line-height: 1.04 !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    body.news-article .hero {
+        padding-top: 132px !important;
+    }
+
+    body.news-article .hero .hero-text h1,
+    .hero-banner h1 {
+        font-size: 1.4rem !important;
+        line-height: 1.02 !important;
+    }
+}
+
 .hero-banner .eyebrow {
     color: #d4af37;
     font-size: 0.95rem;
@@ -361,6 +417,9 @@ body.news-article .news-card h4 {
     justify-content: center;
     gap: 1rem;
 }
+
+/* News pages should reuse the shared `.project-hero` class (added to HTML) */
+
 
 .news-container {
     max-width: 1100px;
