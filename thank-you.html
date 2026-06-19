@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cảm ơn - Trí Đức Realty</title>
+    <meta name="description" content="Cảm ơn bạn đã đăng ký nhận bảng giá. Trí Đức Realty sẽ liên hệ lại trong thời gian sớm nhất.">
+    <meta name="theme-color" content="#111111">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/project.css">
+</head>
+
+<body class="thank-you-page">
+    <section class="section py-5 bg-light">
+        <div class="container text-center">
+            <div class="card shadow-sm rounded-4 p-5">
+                <div class="mb-4">
+                    <i class="fa-solid fa-circle-check fa-4x text-success"></i>
+                </div>
+                <h1 id="thankTitle" class="title">CẢM ƠN ANH/CHỊ!</h1>
+                <p class="section-note mb-4">Yêu cầu của anh/chị đã được tiếp nhận thành công.</p>
+                <p class="mb-4">Trí Đức Realty sẽ liên hệ trong thời gian sớm nhất để gửi bảng giá và tư vấn chi tiết cho dự án <span id="projectName">của anh/chị</span>.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="index.html" class="btn btn-gold btn-lg">Về trang chủ</a>
+                    <a id="backButton" href="index.html" class="btn btn-gold btn-lg">Quay lại dự án</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const project = params.get('project');
+        const returnUrl = params.get('returnUrl') || 'index.html';
+
+        const projectName = document.getElementById('projectName');
+        const thankTitle = document.getElementById('thankTitle');
+        const backButton = document.getElementById('backButton');
+
+        if (projectName) projectName.textContent = project ? project : 'của anh/chị';
+        if (thankTitle && project) thankTitle.textContent = `Cảm ơn anh/chị đã đăng ký ${project}`;
+        if (backButton) {
+            backButton.href = returnUrl;
+            backButton.textContent = project ? `Quay lại ${project}` : 'Quay lại dự án';
+        }
+    </script>
+</body>
+
+</html>

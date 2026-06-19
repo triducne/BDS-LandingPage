@@ -238,6 +238,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             form.reset();
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            window.location.href = `thank-you.html?project=${encodeURIComponent(project)}&returnUrl=${encodeURIComponent(currentPage)}`;
 
         } catch (error) {
 
