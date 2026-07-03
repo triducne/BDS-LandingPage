@@ -18,6 +18,65 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css?v=4">
     <link rel="stylesheet" href="css/project.css">
+    <style>
+        .thank-you-page .section {
+            padding: 2.5rem 1rem;
+        }
+        .thank-you-page .card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            border-radius: 1.6rem;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+        }
+        .thank-you-page .title {
+            font-size: clamp(2.1rem, 6.2vw, 3rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+        .thank-you-page .section-note,
+        .thank-you-page .card p {
+            font-size: 1rem;
+        }
+        .thank-you-page .d-flex {
+            gap: 1rem;
+        }
+        .thank-you-page .btn-gold {
+            min-width: 180px;
+            padding: 0.95rem 1.8rem;
+        }
+        @media (max-width: 768px) {
+            .thank-you-page .card {
+                padding: 2.2rem 1.4rem;
+            }
+            .thank-you-page .section {
+                padding: 2rem 0.75rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .thank-you-page .card {
+                padding: 1.75rem 1rem;
+                border-radius: 1.2rem;
+                text-align: center;
+            }
+            .thank-you-page .card .title,
+            .thank-you-page .card p {
+                text-align: center;
+            }
+            .thank-you-page .d-flex {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .thank-you-page .btn-gold {
+                width: 100%;
+                max-width: 100%;
+            }
+            .thank-you-page .section-note,
+            .thank-you-page .card p {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
 </head>
 
 <body class="thank-you-page">

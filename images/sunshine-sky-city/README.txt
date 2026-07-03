@@ -1,0 +1,22 @@
+Thư mục ảnh cho Sunshine Sky City.
+Bạn có thể thêm ảnh vào đây với các tên sau để trang tự động dùng đúng:
+- hero.webp
+- wincity.webp
+- wincity-location.webp
+- amenity-1.webp
+- amenity-2.webp
+- amenity-3.webp
+- amenity-4.webp
+- wincity-masterplan.webp
+- apartment-studio.webp
+- apartment-1pn-1wc.webp
+- apartment-1pn-plus.webp
+- apartment-2pn-1wc.webp
+- apartment-2pn-2wc.webp
+- apartment-3pn.webp
+- schedule-1.webp
+- schedule-2.webp
+- schedule-3.webp
+- legal-1.webp
+- legal-2.webp
+- legal-3.webp

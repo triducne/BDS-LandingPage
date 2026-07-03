@@ -451,6 +451,28 @@ body.project-page .hero .hero-label {
     background-color: transparent !important;
 }
 
+.project-page.sunshine-sky-city .hero{
+    background: url("../images/sunshine-sky-city/hero.webp") center/cover no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-color: transparent !important;
+}
+
+.project-page.sunshine-sky-city .section.bg-light{
+    background-color: #111;
+    background: linear-gradient(180deg, rgba(12,12,12,.96), rgba(24,24,24,.98));
+    border: 1px solid rgba(212,175,55,.09);
+    background-clip: border-box;
+}
+
+.project-page.sunshine-sky-city .section.bg-light .title,
+.project-page.sunshine-sky-city .section.bg-light p,
+.project-page.sunshine-sky-city .section.bg-light .card,
+.project-page.sunshine-sky-city .section.bg-light .info-box {
+    color: var(--page-text);
+}
+
 .project-page.victory-hermes .hero{
     background: url("../images/blog/hero-banner.webp") center/cover no-repeat !important;
     background-position: center !important;
@@ -1113,6 +1135,8 @@ body.homepage .hero .hero-label {
 @media (max-width:480px) {
     body.thewincity .hero-highlights .hero-quick .quick-card strong,
     body.thewincity .hero-highlights .hero-quick .quick-card span,
+    body.sunshine-sky-city .hero-highlights .hero-quick .quick-card strong,
+    body.sunshine-sky-city .hero-highlights .hero-quick .quick-card span,
     body.peakgarden .hero-highlights .hero-quick .quick-card strong,
     body.peakgarden .hero-highlights .hero-quick .quick-card span,
     body.vlasta .hero-highlights .hero-quick .quick-card strong,
@@ -1306,6 +1330,29 @@ body.thewincity .spec-table td{
 }
 
 body.thewincity .spec-table tbody td:last-child{
+    color:#ffffff !important;
+}
+
+body.sunshine-sky-city .spec-table,
+body.sunshine-sky-city .spec-table.table,
+body.sunshine-sky-city .spec-table thead,
+body.sunshine-sky-city .spec-table tbody,
+body.sunshine-sky-city .spec-table th,
+body.sunshine-sky-city .spec-table td{
+    background:transparent !important;
+}
+
+body.sunshine-sky-city .spec-table{
+    background:#050403 !important;
+    border:1px solid rgba(212,175,55,.28) !important;
+}
+
+body.sunshine-sky-city .spec-table th,
+body.sunshine-sky-city .spec-table td{
+    color: var(--gold) !important;
+}
+
+body.sunshine-sky-city .spec-table tbody td:last-child{
     color:#ffffff !important;
 }
 
