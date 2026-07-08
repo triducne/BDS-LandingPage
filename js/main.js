@@ -642,3 +642,28 @@ function initFaqSidebar(){
 
 document.addEventListener('DOMContentLoaded', initFaqSidebar);
 
+// FAQ scroll progress indicator
+function initFaqProgress(){
+    try{
+        const faqSection = document.getElementById('faq');
+        if(!faqSection) return;
+        const scrollEl = faqSection.querySelector('.faq-scroll');
+        const fill = faqSection.querySelector('.faq-progress-fill');
+        if(!scrollEl || !fill) return;
+
+        function update(){
+            const scrollTop = scrollEl.scrollTop;
+            const scrollHeight = scrollEl.scrollHeight - scrollEl.clientHeight;
+            const pct = scrollHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100)) : 0;
+            fill.style.width = pct + '%';
+        }
+
+        scrollEl.addEventListener('scroll', update, { passive: true });
+        // update on resize and initial
+        window.addEventListener('resize', update);
+        update();
+    }catch(err){ console.error('initFaqProgress', err); }
+}
+
+document.addEventListener('DOMContentLoaded', initFaqProgress);
+
