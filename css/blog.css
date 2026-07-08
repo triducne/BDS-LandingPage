@@ -124,6 +124,14 @@ body.blog-article .navbar {
     .project-page.victory-hermes .hero .hero-content {
         padding-top: 48px;
     }
+    .project-page.arcadia-at-lavila .hero {
+        min-height: 60vh !important;
+        background-position: top center !important;
+    }
+
+    .project-page.arcadia-at-lavila .hero .hero-content {
+        padding-top: 48px;
+    }
     .hero.hero-blog .hero-label {
         font-size: 1.8rem;
     }
@@ -140,6 +148,29 @@ body.blog-article .navbar {
         margin: 12px auto 20px;
         max-width: 600px;
     }
+}
+
+.project-page.arcadia-at-lavila .hero {
+    min-height: 100vh !important;
+    background: url('../images/blog/hero-banner-arcadia.webp') center/cover no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-page.arcadia-at-lavila .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.18);
+    z-index: 0;
+}
+
+.project-page.arcadia-at-lavila .hero .hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 72px;
 }
 
 @media (max-width: 576px) {
@@ -315,7 +346,24 @@ body.blog-article .navbar {
     .hero.hero-blog {
         padding: 80px 16px 60px;
     }
+    .project-page.arcadia-at-lavila .hero .hero-content {
+        padding-top: 48px;
+    }
     .blog-article .article-body {
         padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-page.arcadia-at-lavila .hero {
+        min-height: 56vh !important;
+        background-position: top center !important;
+    }
+    .project-page.arcadia-at-lavila .hero .hero-content {
+        padding-top: 38px;
+    }
+    .project-page.arcadia-at-lavila .hero .hero-actions .btn {
+        width: 100%;
+        max-width: 100%;
     }
 }
