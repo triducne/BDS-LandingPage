@@ -20,3 +20,39 @@ Thumbs.db
 
 # Ignore downloaded junk directory that is not part of the site
 images/news/vanhdai3_files/
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Temporary and build artifacts
+tmp/
+tmp/unneeded/
+dist/
+build/
+.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Generated image reports (already tracked sometimes)
+image-cleanup-report.json
+image-conversion-report.json
+image-update-report.json
+image-refs.json
+image-refs.txt
+
+# Design sources
+*.psd
+*.ai
+*.xcf
+
+# Misc
+*.bak
+*~
