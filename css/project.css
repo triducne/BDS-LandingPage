@@ -2928,6 +2928,7 @@ details[open] .featured-projects-icon i {
 #form .contact-copy .title,
 #form .contact-copy .section-note {
     color: var(--page-text);
+    text-align: center;
 }
 
 #form .contact-form .form-control,
