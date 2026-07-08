@@ -2752,7 +2752,11 @@ body.thewincity .section.bg-light .info-box {
     overflow: hidden;
     box-shadow: 0 30px 90px rgba(0, 0, 0, 0.30);
     max-width: 980px;
-    margin: 0 auto;
+    margin: 0 auto 1.8rem;
+}
+
+.featured-projects-card + .featured-projects-card {
+    margin-top: 1.8rem;
 }
 
 .featured-projects-summary {

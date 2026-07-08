@@ -203,8 +203,16 @@ body.blog-article .navbar {
 }
 
 .blog-article .article-header h2 {
-    color: #fff;
+    color: var(--gold);
     margin-bottom: 1rem;
+}
+
+.blog-article .article-header p,
+.blog-article .article-header .section-note {
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .blog-article .news-meta {
@@ -230,24 +238,54 @@ body.blog-article .navbar {
     filter: saturate(1.08) contrast(1.05) brightness(1.02);
 }
 
-.blog-article .blog-copy h3,
-.blog-article .blog-copy h4 {
-    color: #fff;
+.blog-article .blog-copy h3 {
+    color: var(--gold);
+    font-size: 1.15rem;
     margin-top: 2rem;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.blog-article .blog-copy h4 {
+    color: var(--gold);
+    font-size: 1rem;
+    margin-top: 1.4rem;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .blog-article .blog-copy p,
 .blog-article .blog-copy li {
     color: #dcd6cb;
     line-height: 1.85;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    margin-left: 0;
+    margin-right: 0;
 }
 
-.blog-article .blog-copy ul {
+.blog-article .blog-copy ul,
+.blog-article .blog-copy ol {
+    margin-left: 0;
     padding-left: 1.4rem;
+    text-align: left;
 }
 
-.blog-article .blog-copy ul li {
+.blog-article .blog-copy ul li,
+.blog-article .blog-copy ol li {
     margin-bottom: 0.85rem;
+}
+
+.blog-article .article-body,
+.blog-article .blog-copy {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
 }
 
 .voucher-summary {
@@ -296,12 +334,15 @@ body.blog-article .navbar {
 .related-links {
     padding: 1.6rem;
     border-radius: 22px;
-    border: 1px solid rgba(255,255,255,.08);
-    background: rgba(10,10,10,.93);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(20, 15, 10, 0.93));
+    backdrop-filter: blur(10px);
 }
 
 .related-links h4 {
     margin-bottom: 1rem;
+    color: var(--gold);
+    font-weight: 600;
 }
 
 .related-links ul {
@@ -316,12 +357,20 @@ body.blog-article .navbar {
 
 .related-links a {
     color: #f4efe3;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
 }
 
 .related-links a:hover {
     color: var(--gold);
+    background: rgba(212, 175, 55, 0.08);
+    border-left-color: var(--gold);
+    padding-left: 1.2rem;
 }
 
 .blog-article .related-links {
