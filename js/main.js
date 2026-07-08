@@ -588,3 +588,57 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 })();
 
+// Init scrollable FAQ sidebar and interactions
+function initFaqSidebar(){
+    try{
+        const faqSection = document.getElementById('faq');
+        if(!faqSection) return;
+        const details = Array.from(faqSection.querySelectorAll('.faq-list details'));
+        const navList = document.getElementById('faq-nav-list');
+        if(!navList || !details.length) return;
+
+        navList.innerHTML = '';
+
+        details.forEach((detail, idx) => {
+            const summary = detail.querySelector('summary');
+            const text = summary ? summary.textContent.trim() : `Câu hỏi ${idx+1}`;
+            const li = document.createElement('li');
+            li.textContent = text;
+            li.tabIndex = 0;
+            li.addEventListener('click', () => openDetail(idx));
+            li.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDetail(idx); } });
+            navList.appendChild(li);
+        });
+
+        function openDetail(index){
+            details.forEach((d,i)=> d.open = (i===index));
+            Array.from(navList.children).forEach((c,i)=> c.classList.toggle('active', i===index));
+            const scrollEl = faqSection.querySelector('.faq-scroll');
+            const target = details[index];
+            if(scrollEl && target){
+                const top = target.offsetTop - scrollEl.offsetTop - 12;
+                scrollEl.scrollTo({ top, behavior: 'smooth' });
+            } else if(target){
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Ensure only one open at a time and update active nav state
+        details.forEach((detail, idx) => {
+            detail.addEventListener('toggle', () => {
+                if(detail.open){
+                    details.forEach((d,i)=> { if(d !== detail) d.open = false; });
+                    Array.from(navList.children).forEach((c,i)=> c.classList.toggle('active', i===idx));
+                } else {
+                    Array.from(navList.children).forEach((c,i)=> c.classList.remove('active'));
+                }
+            });
+        });
+
+    } catch (err){
+        console.error('initFaqSidebar error', err);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initFaqSidebar);
+
