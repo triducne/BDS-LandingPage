@@ -1,0 +1,31 @@
+/* Common shared styles used by all pages (header, footer, basic typography, variables) */
+:root{
+    --gold:#d4af37;
+    --gold-dark:#b8882c;
+    --muted:#d6cbbb;
+    --page-text:#f4efe3;
+    --bg:#000;
+}
+
+/* Basic reset & typography */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{font-family:'Poppins',sans-serif;font-size:16px;line-height:1.7;background:var(--bg);color:var(--page-text)}
+
+/* Navbar - shared */
+.navbar{background:rgba(0,0,0,.96);backdrop-filter:blur(12px);box-shadow:0 10px 35px rgba(0,0,0,.4)}
+.navbar-brand{display:flex;align-items:center;gap:.75rem;color:var(--gold)!important;font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800}
+.navbar-logo{height:38px;width:auto;display:inline-block}
+.nav-link{color:var(--page-text)!important;margin-left:16px;font-size:15px;font-weight:500}
+.nav-link:hover{color:var(--gold)!important}
+
+/* Buttons base - page-specific colours are in page CSS */
+.btn{transition:.35s ease}
+.btn-primary{padding:10px 20px;border-radius:10px}
+
+/* Shared layout helpers used across pages */
+.container{width:100%;max-width:1200px;margin-left:auto;margin-right:auto;padding-left:16px;padding-right:16px}
+.section{padding:36px 0}
+
+/* Footer minimal shared styling */
+footer{color:var(--muted)}

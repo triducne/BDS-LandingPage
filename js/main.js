@@ -239,7 +239,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             form.reset();
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            window.location.href = `thank-you.html?project=${encodeURIComponent(project)}&returnUrl=${encodeURIComponent(currentPage)}`;
+            try {
+                sessionStorage.setItem('leadProject', project || '');
+                sessionStorage.setItem('leadReturnUrl', currentPage);
+            } catch (storageError) {
+                console.warn('Unable to persist lead thank-you state', storageError);
+            }
+            window.location.href = 'thank-you.html';
 
         } catch (error) {
 
