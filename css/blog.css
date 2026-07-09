@@ -2,16 +2,146 @@
     --blog-bg: #050505;
     --blog-panel: rgba(10, 10, 10, 0.96);
     --blog-border: rgba(212, 175, 55, 0.15);
+    --blog-surface: rgba(255, 255, 255, 0.04);
+    --blog-text: #f7efe0;
+    --blog-muted: #d8cfbe;
 }
 
 body.blog-article {
-    background: radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 25%), #050505;
-    color: #f4efe3;
+    background: radial-gradient(circle at top, rgba(212, 175, 55, 0.13), transparent 24%), #030303;
+    color: var(--blog-text);
 }
 
 body.blog-article .navbar {
-    background: rgba(0, 0, 0, 0.94);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+    background: rgba(0, 0, 0, 0.96);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.16);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+body.blog-article .navbar .nav-link,
+body.blog-article .navbar-brand {
+    color: var(--blog-text) !important;
+}
+
+body.blog-article .navbar .nav-link:hover,
+body.blog-article .navbar .nav-link:focus {
+    color: var(--gold) !important;
+}
+
+body.blog-article .section,
+body.blog-article .section.bg-light {
+    background: transparent;
+    border: 0;
+}
+
+body.blog-article .hero.project-hero,
+body.blog-article .hero.hero-blog {
+    background-color: #040404 !important;
+    background-image: url('../images/blog/hero-banner.webp') !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    color: var(--blog-text);
+}
+
+body.project-page.arcadia-at-lavila.blog-article .hero.project-hero {
+    background-image: url('../images/blog/hero-banner-arcadia.webp') !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+body.project-page.victory-hermes.blog-article .hero.project-hero {
+    background-image: url('../images/blog/hero-banner.webp') !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+body.blog-article .hero .hero-title,
+body.blog-article .hero .hero-subtitle,
+body.blog-article .hero .hero-copy {
+    color: var(--blog-text);
+}
+
+body.blog-article .hero .hero-title {
+    color: var(--gold) !important;
+    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.blog-article .hero .btn,
+body.blog-article .btn-gold,
+body.blog-article .btn-primary {
+    background: var(--gold);
+    color: #111;
+    border-color: var(--gold);
+    box-shadow: 0 12px 28px rgba(212, 175, 55, 0.22);
+}
+
+body.blog-article .hero-quick .quick-card,
+body.blog-article .related-links,
+body.blog-article .contact-card,
+body.blog-article .article-body,
+body.blog-article .article-body .blog-copy {
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.97), rgba(18, 13, 8, 0.95));
+    border: 1px solid rgba(212, 175, 55, 0.16);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+}
+
+body.blog-article .hero-quick .quick-card strong,
+body.blog-article .article-header h2,
+body.blog-article .blog-copy h3,
+body.blog-article .blog-copy h4,
+body.blog-article .related-links h4,
+body.blog-article .contact-copy .title {
+    color: var(--gold) !important;
+}
+
+body.blog-article .hero-quick .quick-card span,
+body.blog-article .blog-copy p,
+body.blog-article .blog-copy li,
+body.blog-article .blog-copy ul,
+body.blog-article .blog-copy ol,
+body.blog-article .section-note,
+body.blog-article .contact-copy p,
+body.blog-article .form-label,
+body.blog-article .form-text {
+    color: var(--blog-muted);
+}
+
+body.blog-article .article-body {
+    border-radius: 28px;
+    padding: 2rem;
+}
+
+body.blog-article .article-body img {
+    border: 1px solid rgba(212, 175, 55, 0.16);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+body.blog-article .related-links a {
+    color: var(--blog-text);
+}
+
+body.blog-article .related-links a:hover,
+body.blog-article .related-links a:focus {
+    color: var(--gold);
+    background: rgba(212, 175, 55, 0.08);
+}
+
+body.blog-article .contact-form .form-control {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--blog-text);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+body.blog-article .contact-form .form-control::placeholder {
+    color: rgba(216, 207, 190, 0.7);
+}
+
+body.blog-article .contact-form .form-check-input:checked {
+    background-color: var(--gold);
+    border-color: var(--gold);
 }
 
 .hero.hero-blog {
