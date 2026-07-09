@@ -29,14 +29,16 @@ body.blog-article .navbar .nav-link:focus {
 }
 
 body.blog-article .section,
-body.blog-article .section.bg-light {
-    background: transparent;
-    border: 0;
+body.blog-article .section.bg-light,
+body.blog-article .section.bg-secondary {
+    background: rgba(0,0,0,.72);
+    border: 1px solid rgba(255,255,255,.05);
+    background-clip: border-box;
 }
 
 body.blog-article .hero.project-hero,
 body.blog-article .hero.hero-blog {
-    background-color: #040404 !important;
+    background-color: #000 !important;
     background-image: url('../images/blog/hero-banner.webp') !important;
     background-position: center !important;
     background-size: cover !important;
@@ -83,9 +85,9 @@ body.blog-article .related-links,
 body.blog-article .contact-card,
 body.blog-article .article-body,
 body.blog-article .article-body .blog-copy {
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.97), rgba(18, 13, 8, 0.95));
-    border: 1px solid rgba(212, 175, 55, 0.16);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+    background: rgba(0,0,0,.72);
+    border: 1px solid rgba(255,255,255,.05);
+    box-shadow: 0 18px 48px rgba(0,0,0,.32);
 }
 
 body.blog-article .hero-quick .quick-card strong,
@@ -110,13 +112,21 @@ body.blog-article .form-text {
 }
 
 body.blog-article .article-body {
-    border-radius: 28px;
-    padding: 2rem;
+    border-radius: 36px;
+    padding: 0;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
 }
 
 body.blog-article .article-body img {
-    border: 1px solid rgba(212, 175, 55, 0.16);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 24px;
+    margin-bottom: 1.8rem;
+    border: 1px solid rgba(255,255,255,.05);
+    box-shadow: 0 18px 48px rgba(0,0,0,.22);
 }
 
 body.blog-article .related-links a {
@@ -321,7 +331,7 @@ body.blog-article .contact-form .form-check-input:checked {
 }
 
 .blog-article .news-container {
-    padding: 3rem 0 4rem;
+    padding: 0;
 }
 
 .blog-article .news-layout {
@@ -330,6 +340,14 @@ body.blog-article .contact-form .form-check-input:checked {
     gap: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.blog-article .article-header {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 28px;
+    padding: 0;
+    margin-bottom: 2rem;
 }
 
 .blog-article .article-header h2 {
@@ -345,12 +363,18 @@ body.blog-article .contact-form .form-check-input:checked {
     text-align: left !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 0 1rem 0 !important;
+    margin: 0 !important;
     padding: 0 !important;
     word-wrap: break-word;
     overflow-wrap: anywhere;
     hyphens: auto;
     line-height: 1.8;
+    color: rgba(255,255,255,.9);
+}
+
+.blog-article .article-header .section-note {
+    margin-top: 1rem;
+    color: rgba(255,255,255,.78);
 }
 
 .blog-article .news-meta {
@@ -365,7 +389,7 @@ body.blog-article .contact-form .form-check-input:checked {
     background: var(--blog-panel);
     border: 1px solid var(--blog-border);
     border-radius: 30px;
-    padding: 2rem;
+    padding: 0;
     width: 100%;
     box-sizing: border-box;
     overflow-wrap: anywhere;
@@ -490,21 +514,97 @@ body.blog-article .contact-form .form-check-input:checked {
 .related-links {
     padding: 1.6rem;
     border-radius: 22px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(20, 15, 10, 0.93));
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.05);
+    background: rgba(0,0,0,.72);
+    backdrop-filter: blur(8px);
 }
 
-.related-links h4 {
-    margin-bottom: 1rem;
-    color: var(--gold);
-    font-weight: 600;
+@media (max-width: 768px) {
+    .blog-article .news-layout {
+        gap: 1.5rem;
+        padding: 0;
+        width: 100%;
+    }
+
+    .blog-article .article-header,
+    .blog-article .article-body,
+    .related-links,
+    .voucher-summary div,
+    .voucher-carousel-section .carousel-caption {
+        padding: 0;
+        border-radius: 22px;
+    }
+
+    .blog-article .article-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .blog-article .article-header h2 {
+        font-size: 1.55rem;
+    }
+
+    .blog-article .article-body {
+        padding: 1.5rem;
+    }
+
+    .blog-article .article-body img {
+        margin-bottom: 1.5rem;
+    }
+
+    .blog-article .blog-copy h3,
+    .blog-article .blog-copy h4 {
+        font-size: 1rem;
+    }
+
+    .blog-article .blog-copy p,
+    .blog-article .blog-copy li {
+        font-size: 0.98rem;
+        line-height: 1.7;
+    }
+
+    .voucher-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .hero.hero-blog .hero-text {
+        padding: 0 12px;
+    }
+
+    .hero.hero-blog .hero-actions .btn {
+        min-width: 100%;
+    }
 }
 
-.related-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+@media (max-width: 576px) {
+    .blog-article .news-layout {
+        width: 100%;
+        padding: 0;
+    }
+
+    .blog-article .article-header,
+    .blog-article .article-body,
+    .related-links,
+    .voucher-summary div,
+    .voucher-carousel-section .carousel-caption {
+        padding: 0;
+    }
+
+    .blog-article .article-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero.hero-blog {
+        min-height: 50vh;
+        padding: 0 16px;
+    }
+
+    .hero.hero-blog .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero.hero-blog .hero-text .hero-subtitle {
+        font-size: 0.92rem;
+    }
 }
 
 .related-links li {
@@ -549,13 +649,13 @@ body.blog-article .contact-form .form-check-input:checked {
 
 @media (max-width: 768px) {
     .hero.hero-blog {
-        padding: 80px 16px 60px;
+        padding: 0;
     }
     .project-page.arcadia-at-lavila .hero .hero-content {
         padding-top: 48px;
     }
     .blog-article .article-body {
-        padding: 1.5rem;
+        padding: 0;
     }
 }
 
