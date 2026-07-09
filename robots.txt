@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Host: triducrealty.com
 
 Sitemap: https://triducrealty.com/sitemap.xml
