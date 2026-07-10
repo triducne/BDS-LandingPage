@@ -238,10 +238,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             form.reset();
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const currentPage = window.location.pathname || '/index.html';
+            const normalizedPage = currentPage.startsWith('/') ? currentPage : `/${currentPage}`;
             try {
                 sessionStorage.setItem('leadProject', project || '');
-                sessionStorage.setItem('leadReturnUrl', currentPage);
+                sessionStorage.setItem('leadReturnUrl', normalizedPage);
             } catch (storageError) {
                 console.warn('Unable to persist lead thank-you state', storageError);
             }

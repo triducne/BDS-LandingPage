@@ -93,8 +93,8 @@
                 <p class="section-note mb-4">Yêu cầu của anh/chị đã được tiếp nhận thành công.</p>
                 <p class="mb-4">Trí Đức Realty sẽ liên hệ trong thời gian sớm nhất để gửi bảng giá và tư vấn chi tiết cho dự án <span id="projectName">của anh/chị</span>.</p>
                 <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <a href="index.html" class="btn btn-gold btn-lg">Về trang chủ</a>
-                    <a id="backButton" href="index.html" class="btn btn-gold btn-lg">Quay lại dự án</a>
+                    <a href="/index.html" class="btn btn-gold btn-lg">Về trang chủ</a>
+                    <a id="backButton" href="/index.html" class="btn btn-gold btn-lg">Quay lại trang dự án</a>
                 </div>
             </div>
         </div>
@@ -102,7 +102,7 @@
 
     <script>
         let project = '';
-        let returnUrl = 'index.html';
+        let returnUrl = '/index.html';
 
         try {
             const storedProject = sessionStorage.getItem('leadProject') || '';
@@ -115,9 +115,13 @@
 
         const params = new URLSearchParams(window.location.search);
         if (!project) project = params.get('project') || '';
-        if (!returnUrl || returnUrl === 'index.html') {
-            returnUrl = params.get('returnUrl') || 'index.html';
+        if (!returnUrl || returnUrl === '/index.html') {
+            returnUrl = params.get('returnUrl') || '/index.html';
         }
+
+        const normalizedReturnUrl = returnUrl && !returnUrl.startsWith('http')
+            ? (returnUrl.startsWith('/') ? returnUrl : `/${returnUrl}`)
+            : returnUrl;
 
         const projectName = document.getElementById('projectName');
         const thankTitle = document.getElementById('thankTitle');
@@ -126,8 +130,8 @@
         if (projectName) projectName.textContent = project ? project : 'của anh/chị';
         if (thankTitle && project) thankTitle.textContent = `Cảm ơn anh/chị đã đăng ký ${project}`;
         if (backButton) {
-            backButton.href = returnUrl;
-            backButton.textContent = project ? `Quay lại ${project}` : 'Quay lại dự án';
+            backButton.href = normalizedReturnUrl;
+            backButton.textContent = project ? `Quay lại ${project}` : 'Quay lại trang dự án';
         }
     </script>
 </body>
