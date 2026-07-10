@@ -674,3 +674,23 @@ function initFaqProgress(){
 
 document.addEventListener('DOMContentLoaded', initFaqProgress);
 
+// Ensure carousel captions do not show until their main image has loaded
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        const imgs = document.querySelectorAll('.carousel-item .carousel-img-main');
+        imgs.forEach(img => {
+            const item = img.closest('.carousel-item');
+            if (!item) return;
+            const markLoaded = () => item.classList.add('loaded');
+            if (img.complete && img.naturalWidth) {
+                markLoaded();
+            } else {
+                img.addEventListener('load', markLoaded);
+                img.addEventListener('error', markLoaded);
+            }
+        });
+    } catch (err) {
+        console.warn('carousel image load handler error', err);
+    }
+});
+

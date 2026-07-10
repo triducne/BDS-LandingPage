@@ -1807,3 +1807,26 @@ margin-top:10px;
 
 
 
+
+
+/* Hide carousel captions until the main image for that slide has loaded */
+.carousel-caption{
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity .28s ease, transform .28s ease;
+}
+.carousel-item.loaded .carousel-caption{
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+
+/* Optional: ensure caption box is visually stable while hidden */
+.carousel-caption h4, .carousel-caption p{
+    will-change: opacity, transform;
+}
+
+
+
+
