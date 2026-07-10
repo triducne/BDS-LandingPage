@@ -45,7 +45,8 @@ for (const filePath of files) {
   const ext = path.extname(filePath).toLowerCase();
   if (!supportedExtensions.has(ext)) continue;
   const relativePath = path.relative(root, filePath).replace(/\\/g, '/');
-  if (relativePath.toLowerCase().endsWith('favicon.png')) continue;
+  const basename = path.basename(relativePath).toLowerCase();
+  if (/^favicon(?:-|\.|$)/i.test(basename)) continue;
   if (relativePath.startsWith('images/news/vanhdai3_files/')) continue;
   const webpPath = relativePath.slice(0, -ext.length) + '.webp';
   if (!fs.existsSync(path.join(root, webpPath))) continue;
@@ -59,7 +60,7 @@ const report = {
   root,
   deleteMode,
   skipped: {
-    favicon: 'images/favicon.png',
+    favicon: 'images/favicon-32x32.png',
     preservedDir: skipDir,
   },
   staleImages,

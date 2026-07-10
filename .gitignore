@@ -56,3 +56,12 @@ image-refs.txt
 # Misc
 *.bak
 *~
+
+# Archive of unneeded/backup files
+/archive/
+
+# Specific backup folders moved to archive
+/archive/unneeded/
+
+# Old favicon backups
+/images/favicon-backup*/

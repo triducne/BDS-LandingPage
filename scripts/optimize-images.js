@@ -14,8 +14,9 @@ async function convertImage(ref) {
   if (!supported.has(ext)) {
     return { path: ref, skipped: true, reason: 'already optimized or unsupported format' };
   }
-  if (path.basename(srcPath).toLowerCase() === 'favicon.png') {
-    return { path: ref, skipped: true, reason: 'favicon preserved as PNG' };
+  const baseName = path.basename(srcPath).toLowerCase();
+  if (/^favicon(?:-|\.|$)/.test(baseName)) {
+    return { path: ref, skipped: true, reason: 'favicon preserved as PNG or special favicon file' };
   }
   if (!fs.existsSync(srcPath)) {
     return { path: ref, skipped: true, reason: 'missing file' };
