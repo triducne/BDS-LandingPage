@@ -119,6 +119,11 @@ body.blog-article .article-body {
     box-sizing: border-box;
 }
 
+body.blog-article .article-body .carousel {
+    max-width: 980px;
+    margin: 2.5rem auto;
+}
+
 body.blog-article .article-body img {
     width: 100%;
     height: auto;

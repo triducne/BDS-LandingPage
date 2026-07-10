@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } catch (storageError) {
                 console.warn('Unable to persist lead thank-you state', storageError);
             }
-            window.location.href = 'thank-you.html';
+            window.location.href = '/thank-you.html';
 
         } catch (error) {
 
