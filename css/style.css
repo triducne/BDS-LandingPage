@@ -42,18 +42,20 @@ body.homepage{
 }
 
 html {
-    scroll-padding-top: 96px;
+    scroll-padding-top: 0;
+    scroll-behavior: auto !important;
 }
 
 body {
     background: #000;
+    scroll-behavior: auto !important;
 }
 
 #news,
 #projects,
 #about,
 #contact {
-    scroll-margin-top: 96px;
+    scroll-margin-top: 0;
 }
 
 #news::before,
@@ -61,7 +63,7 @@ body {
 #about::before,
 #contact::before {
     content: '';
-    display: block;
+    display: none;
     height: 96px;
     margin-top: -96px;
     visibility: hidden;
@@ -91,9 +93,9 @@ body {
     position: relative;
     background: rgba(0,0,0,.72);
     padding: 16px;
-    border-radius: 30px;
+    border-radius: 12px;
     border: 1px solid rgba(255,255,255,.08);
-    box-shadow: 0 26px 80px rgba(0,0,0,.38);
+    box-shadow: 0 8px 24px rgba(0,0,0,.28);
     overflow: hidden;
 }
 
@@ -117,7 +119,7 @@ body {
     display: block;
     filter: saturate(1.2) contrast(1.15) brightness(1.08);
     box-shadow: 0 18px 40px rgba(0,0,0,.28);
-    transition: transform .35s ease, filter .35s ease;
+    transition: none;
 }
 
 .homepage .project-img-main:hover,
@@ -248,6 +250,10 @@ img,
 transition:.35s ease;
 }
 
+img {
+    transition: none !important;
+}
+
 /* NAVBAR */
 
 .navbar{
@@ -262,8 +268,51 @@ box-shadow:0 10px 35px rgba(0,0,0,.4);
         background: rgba(0,0,0,.98);
     }
     .project-img-blur {
-        filter: none;
-        opacity: .62;
+        display: none !important;
+    }
+    .homepage .carousel-img-container,
+    .homepage .project-img-container,
+    .homepage .overview-panel {
+        box-shadow: none !important;
+        border: none !important;
+    }
+    .homepage .carousel-img-container::after,
+    .homepage .project-img-container::after,
+    .homepage .overview-panel::after {
+        display: none !important;
+    }
+    button,
+    a,
+    img,
+    .hero-content,
+    .quick-card,
+    .btn-primary,
+    .btn-secondary,
+    .btn-gold,
+    .carousel-item,
+    .carousel-caption {
+        transition: none !important;
+    }
+    .project:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    .homepage .project-img-main:hover,
+    .homepage .carousel-img-main:hover,
+    .homepage .overview-img:hover {
+        transform: none !important;
+        filter: none !important;
+    }
+    .homepage .carousel-img-main,
+    .homepage .project-img-main,
+    .homepage .overview-img {
+        filter: none !important;
+        transition: none !important;
+        box-shadow: none !important;
+    }
+    .project-carousel-track,
+    .news-carousel-track {
+        will-change: auto !important;
     }
 }
 
@@ -1325,7 +1374,7 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
     width: 100%;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-x;
-    will-change: scroll-position;
+    will-change: auto;
 }
 
 .project-carousel-track::-webkit-scrollbar {
@@ -1403,8 +1452,8 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
     width: 100%;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-x;
-    will-change: scroll-position;
-}
+    will-change: auto;
+  }
 
 .news-carousel-track::-webkit-scrollbar {
     display: none;

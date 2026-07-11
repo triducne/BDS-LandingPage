@@ -15,13 +15,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
+    // Immediate scroll prevention - must run BEFORE any other script
+    window.scrollTo(0, 0);
+    
     try {
         if (history && typeof history.scrollRestoration === 'string') {
             history.scrollRestoration = 'manual';
         }
-
-        document.documentElement.style.scrollBehavior = 'auto';
-        document.body.style.scrollBehavior = 'auto';
+        
+        document.documentElement.style.scrollBehavior = 'auto !important';
+        document.body.style.scrollBehavior = 'auto !important';
+        document.documentElement.style.overflow = 'visible';
+        document.body.style.overflow = 'visible';
     } catch (e) {
         /* ignore */
     }

@@ -78,6 +78,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await loadHTMLIncludes();
 
+    // Force scroll to top after includes load
+    window.scrollTo(0, 0);
+    
+    // Prevent scroll during initialization
+    const preventScrollDuringInit = (e) => {
+        if (window.scrollY > 0) {
+            e.preventDefault();
+            window.scrollTo(0, 0);
+        }
+    };
+    window.addEventListener('scroll', preventScrollDuringInit, { passive: false });
+    setTimeout(() => {
+        window.removeEventListener('scroll', preventScrollDuringInit);
+    }, 500);
+
     // Only clear #news when the URL actually contains it on load.
     const NAVBAR_OFFSET = 96;
     const scrollToTarget = (target, smooth = true) => {
@@ -105,12 +120,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     initAnchorNav();
 
-    if (window.location.hash) {
-        const target = document.querySelector(window.location.hash);
-        if (target) {
-            scrollToTarget(target, false);
-        }
-    }
+    // Don't auto-scroll to hash on initial page load
+    // This prevents jumping on fresh visits
+    // Users can still navigate by clicking links or directly using anchors
 
     const form = document.getElementById("leadForm");
 
@@ -540,12 +552,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         };
 
         const scrollToPage = (page, smooth = true) => {
+            const isMobile = window.innerWidth < 768;
             activePage = Math.max(0, Math.min(page, pages - 1));
             const index = activePage * groupSize;
             const card = cards[Math.min(index, cards.length - 1)];
             if (card) {
                 card.scrollIntoView({
-                    behavior: smooth ? 'smooth' : 'auto',
+                    behavior: (smooth && !isMobile) ? 'smooth' : 'auto',
                     inline: 'start',
                     block: 'nearest'
                 });
