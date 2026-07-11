@@ -305,6 +305,26 @@ height:26px;
         width:28px;
         height:28px;
     }
+
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.98);
+        padding: 1rem 1rem 1.2rem;
+        border-radius: 1rem;
+        margin-top: 0.75rem;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        padding: 0.7rem 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 }
 
 .nav-link{
@@ -338,13 +358,36 @@ overflow:hidden;
 
 .homepage .hero {
     min-height: 100vh;
-    background-image: url("../images/hero-banner.webp") !important;
+    background-image: none !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-color: transparent !important;
     position: relative;
     overflow: hidden;
+}
+
+.hero .hero-lcp,
+.project-hero .hero-lcp {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+.hero .hero-text,
+.project-hero .hero-text,
+.hero .hero-content,
+.project-hero .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero {
+    background-color: #000;
 }
 
 /* Shared project-style hero that can be applied via class `project-hero` */
@@ -433,6 +476,36 @@ overflow:hidden;
         min-height: 56vh !important;
         padding-top: 32px !important;
         padding-bottom: 24px !important;
+    }
+
+    .hero .hero-text {
+        padding: 0 16px;
+    }
+
+    .hero h1,
+    .hero .hero-title {
+        font-size: 2rem !important;
+        line-height: 1.1;
+    }
+
+    .hero .hero-subtitle {
+        font-size: 0.95rem;
+        margin: 12px auto 18px;
+        max-width: 100%;
+    }
+
+    .hero .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero .hero-actions .btn {
+        width: 100% !important;
+        min-width: 0;
+    }
+
+    .hero .hero-lcp {
+        object-position: center top;
     }
 }
 

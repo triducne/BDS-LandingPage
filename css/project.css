@@ -444,19 +444,11 @@ body.project-page .hero .hero-label {
 }
 
 .project-page.thewincity .hero{
-    background: url("../images/thewincity/wincity-banner.jpg") center/cover no-repeat !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-color: transparent !important;
+    background: none !important;
 }
 
 .project-page.sunshine-sky-city .hero{
-    background: url("../images/sunshine-sky-city/hero.webp") center/cover no-repeat !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-color: transparent !important;
+    background: none !important;
 }
 
 .project-page.sunshine-sky-city .section.bg-light{
@@ -515,15 +507,11 @@ body.project-page .hero .hero-label {
 }
 
 .project-page.arcadia .hero{
-    background: url("../images/arcadia/arcadia-banner.jpg") center/cover no-repeat !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-color: transparent !important;
+    background: none !important;
 }
 
 .project-page.peakgarden .hero{
-    background-image: url("../images/blog/hero-banner.webp");
+    background: none !important;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -584,11 +572,7 @@ body.project-page .hero .hero-label {
 }
 
 .project-page.destino .hero{
-    background: url("../images/destino/destino.webp") center/cover no-repeat !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-color: transparent !important;
+    background: none !important;
 }
 
 .project-page:not(.thewincity) .hero h1,
@@ -607,12 +591,7 @@ body.project-page .hero .hero-label {
 }
 
 .project-page.peakgarden .hero{
-    background-image: url("../images/peakgarden/hero-banner.jpg") !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-color: transparent !important;
-    background-blend-mode: normal !important;
+    background: none !important;
 }
 
 .project-page.peakgarden .hero::before {
@@ -630,12 +609,7 @@ body.project-page.peakgarden .hero-actions {
 }
 
 .project-page.vlasta .hero{
-    background: url("../images/vlasta/hero-banner.jpg") center/cover no-repeat !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-color: transparent !important;
-    background-blend-mode: normal !important;
+    background: none !important;
 }
 
 .project-page.thewincity .section.bg-light{

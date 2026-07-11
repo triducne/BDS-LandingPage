@@ -59,14 +59,14 @@ content="Trí Đức Realty">
 rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
-<link rel="preload" as="image" href="https://triducrealty.com/images/hero-banner.webp" imagesrcset="https://triducrealty.com/images/hero-banner.webp 1600w" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-banner.webp" imagesrcset="images/hero-banner.webp 1600w" fetchpriority="high">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
 </head>
 
@@ -128,7 +128,8 @@ aria-label="Toggle navigation">
 
 <!-- HERO -->
 
-<section class="hero" style="background: url('images/hero-banner.webp') center/cover no-repeat; background-position: center; background-size: cover; background-repeat: no-repeat; background-color: transparent;">
+<section class="hero">
+    <img class="hero-lcp" src="images/hero-banner.webp" alt="" aria-hidden="true" width="1600" height="900" loading="eager" fetchpriority="high">
 
 <div class="hero-text">
 <p class="hero-label">TRÍ ĐỨC REALTY</p>
