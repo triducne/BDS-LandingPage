@@ -446,6 +446,8 @@ background-attachment:scroll;
     object-fit: cover;
     object-position: center;
     z-index: 0;
+    display: block;
+    background-color: #0b0b0b;
 }
 
 .hero .hero-text,
@@ -1718,6 +1720,7 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
     background: #111;
     flex-shrink: 0;
     border-radius: 28px 28px 0 0;
+    contain: layout paint;
 }
 
 .project-img-container::before {
@@ -1737,6 +1740,7 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
     opacity: 0.92;
     z-index: 1;
     border-radius: 28px 28px 0 0;
+    transform: scale(1.02);
 }
 
 .project-img-main {
@@ -1749,6 +1753,8 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
     object-position: center;
     transition: filter 0.5s ease;
     border-radius: 28px 28px 0 0;
+    display: block;
+    background-color: #151515;
 }
 
 .project-img-main {
