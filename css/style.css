@@ -366,7 +366,7 @@ align-items:center;
 justify-content:center;
 text-align:center;
 color:#fff;
-padding:0 24px;
+padding:48px 24px 0;
 overflow:hidden;
 background-color:#000;
 background-image:none !important;
@@ -553,24 +553,28 @@ background-attachment:scroll;
 }
 
 .hero-text{
-position:relative;
-width:100%;
-max-width:920px;
-margin:0 auto;
-padding:0 20px;
+    position:relative;
+    width:100%;
+    max-width:780px;
+    margin:0 auto;
+    padding:0 24px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
 }
 
 .hero-label{
-font-size:1rem;
-font-weight:700;
-letter-spacing:2px;
-text-transform:uppercase;
-color:var(--gold);
-margin-bottom:16px;
+    font-size:1.15rem;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:4px;
 }
 
 .hero .hero-label {
-    font-size:2.4rem !important;
+    font-size:1.8rem !important;
     font-weight:800 !important;
     letter-spacing:2px !important;
     color:var(--gold) !important;
@@ -578,7 +582,7 @@ margin-bottom:16px;
 
 @media (max-width: 768px) {
     .hero .hero-label {
-        font-size:1.8rem !important;
+        font-size:1.5rem !important;
     }
     .hero h1 {
         font-size:clamp(2.4rem,4vw,3rem) !important;
@@ -595,43 +599,48 @@ margin-bottom:16px;
 }
 
 .hero h1{
-font-family:'Poppins',sans-serif;
-font-size:clamp(2.8rem,4.8vw,4rem);
-color:var(--gold);
-font-weight:700;
-letter-spacing:0;
-line-height:1.05;
-margin-bottom:16px;
-max-width:840px;
-margin-left:auto;
-margin-right:auto;
-text-shadow:none;
+    font-family:'Poppins',sans-serif;
+    font-size:clamp(2.6rem,4.4vw,3.8rem);
+    color:var(--gold);
+    font-weight:800;
+    letter-spacing:0.04em;
+    line-height:1.05;
+    margin-bottom:10px;
+    max-width:760px;
+    margin-left:auto;
+    margin-right:auto;
+    text-shadow:0 14px 24px rgba(0,0,0,.25);
 }
 
 .hero-subtitle,
 .hero p{
-font-family:'Poppins',sans-serif;
-font-size:1rem;
-font-weight:500;
-color:rgba(255,255,255,.92);
-max-width:700px;
-margin:18px auto 26px;
-line-height:1.75;
-letter-spacing:.08em;
-text-transform:none;
+    font-family:'Poppins',sans-serif;
+    font-size:1rem;
+    font-weight:500;
+    color:rgba(255,255,255,.95);
+    max-width:680px;
+    margin:10px auto 18px;
+    line-height:1.65;
+    letter-spacing:.04em;
+    text-transform:none;
 }
 
 .hero-actions{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:14px;
-flex-wrap:wrap;
-margin-top:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:12px;
 }
 
 .hero-actions .btn{
     min-width: 180px;
+    padding: 12px 28px !important;
+}
+
+.hero-actions .btn:hover {
+    transform: translateY(-1px);
 }
 
 .hero-actions .nav-link {
@@ -1040,6 +1049,17 @@ margin-bottom:10px;
 letter-spacing:.5px;
 position:relative;
 display:inline-block;
+}
+
+#news .title{
+    text-align:left;
+    display:block;
+    margin-left:0;
+    margin-right:0;
+}
+
+#news .title::after{
+    margin:16px 0 0 0;
 }
 
 .title::after{
@@ -1475,40 +1495,81 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
 
 .carousel-nav {
     position: absolute;
-    top: 50%;
+    top: 32%;
+    left: 0.25rem;
     transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
-    border: none;
+    width: 56px;
+    height: 56px;
+    border: 1px solid rgba(255,255,255,.40) !important;
     border-radius: 50%;
-    background: rgba(255,255,255,.18);
-    color: #fff;
+    background: rgba(255,209,94,.94) !important;
+    background-color: rgba(255,209,94,.94) !important;
+    color: #111 !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 12px 24px rgba(0,0,0,.18);
-    z-index: 10;
+    box-shadow: 0 16px 32px rgba(0,0,0,.24) !important;
+    z-index: 9999 !important;
     cursor: pointer;
     transition: transform .25s ease, background .25s ease, opacity .25s ease;
+    line-height: 1;
+    padding: 0;
+    backdrop-filter: blur(4px);
 }
 
 .carousel-nav:hover,
 .carousel-nav:focus {
-    background: rgba(255,255,255,.28);
-    transform: translateY(-50%) scale(1.05);
+    background: rgba(255,213,112,1) !important;
+    background-color: rgba(255,213,112,1) !important;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav i {
+    color: #111 !important;
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
 .carousel-nav:disabled {
-    opacity: .35;
+    opacity: .4;
     cursor: default;
 }
 
 .carousel-nav-prev {
-    left: 0.5rem;
+    left: 0;
+    top: 32%;
+    transform: translateY(-50%);
 }
 
 .carousel-nav-next {
+    left: auto;
     right: 0.5rem;
+    top: 32%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 767px) {
+    .carousel-nav {
+        width: 48px;
+        height: 48px;
+        top: 28%;
+        border: 1px solid rgba(255,255,255,.35) !important;
+        background: rgba(255,209,94,.92) !important;
+        background-color: rgba(255,209,94,.92) !important;
+    }
+
+    .carousel-nav-prev,
+    .carousel-nav-next {
+        top: 28%;
+    }
+
+    .carousel-nav i {
+        font-size: 0.95rem;
+    }
+}
+
+.project-carousel .carousel-dots {
+    margin-top: 0.5rem;
 }
 
 .carousel-dots {
@@ -1535,7 +1596,7 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
 
 @media (max-width: 991px) {
     .carousel-nav {
-        display: none;
+        display: flex;
     }
 }
 
@@ -1825,7 +1886,7 @@ justify-content:center;
 }
 
 /* Enforce black-only theme for remaining light elements */
-html, body, .site-wrapper, .section, .bg-light, .bg-secondary, .card, .card-body, .news-card, .news-card-body, .project-card-slide .card.project, .project-card-slide .card-body, .info-box, .spec-selector, .contact-card, .hero-quick .quick-card, .trust-card, .payment-tabs, .tab-btn, .payment-card, .pay-panel ul li, .contact form, .contact .form-control, .contact .form-select, .project-page .contact form, input:not([type="checkbox"]):not([type="radio"]), textarea, select, .form-control, .form-select, .payment-carousel-indicators button, .legal-schedule, .carousel-nav, .carousel-dots button, .carousel-counter, .carousel-thumbnails, .overview-panel, .project-img-container, .carousel-img-container, .carousel-caption, .project-img-blur, .project-page .hero-highlights, .project-page .project-nav-cta, .project-page .spec-dropdown-toggle, .project-page .spec-layout-menu, .project-page .spec-layout-btn, .project-page .spec-result-card, .project-page .info-card, .partner-logo {
+html, body, .site-wrapper, .section, .bg-light, .bg-secondary, .card, .card-body, .news-card, .news-card-body, .project-card-slide .card.project, .project-card-slide .card-body, .info-box, .spec-selector, .contact-card, .hero-quick .quick-card, .trust-card, .payment-tabs, .tab-btn, .payment-card, .pay-panel ul li, .contact form, .contact .form-control, .contact .form-select, .project-page .contact form, input:not([type="checkbox"]):not([type="radio"]), textarea, select, .form-control, .form-select, .payment-carousel-indicators button, .legal-schedule, .carousel-dots button, .carousel-counter, .carousel-thumbnails, .overview-panel, .project-img-container, .carousel-img-container, .carousel-caption, .project-img-blur, .project-page .hero-highlights, .project-page .project-nav-cta, .project-page .spec-dropdown-toggle, .project-page .spec-layout-menu, .project-page .spec-layout-btn, .project-page .spec-result-card, .project-page .info-card, .partner-logo {
     background-image: none !important;
     background-color: rgba(0,0,0,.88) !important;
     background: rgba(0,0,0,.88) !important;
@@ -1857,12 +1918,18 @@ html, body, .site-wrapper, .section, .bg-light, .bg-secondary, .card, .card-body
 .btn-secondary:hover,
 .btn-outline-light:hover,
 .btn-outline-dark:hover,
-.tab-btn:hover,
-.carousel-nav:hover,
-.carousel-nav:focus {
+.tab-btn:hover {
     background: rgba(255,255,255,.08) !important;
     color: #fff !important;
     border-color: rgba(255,255,255,.22) !important;
+}
+
+.carousel-nav:hover,
+.carousel-nav:focus {
+    background: #ffd15e !important;
+    background-color: #ffd15e !important;
+    color: #111 !important;
+    transform: translateY(-50%) scale(1.08);
 }
 
 .project-page .hero::before,
