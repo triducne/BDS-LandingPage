@@ -21,9 +21,6 @@ h6 {
 }
 
 /* Homepage (index) - Gold & Black tone overrides */
-.homepage {
-    /* page-specific overrides can go here if needed */
-}
 
 body,
 .hero,
@@ -364,9 +361,6 @@ color:var(--gold)!important;
 .hero{
 position:relative;
 min-height:100vh;
-background: url("../images/blog/hero-banner.webp") center/cover no-repeat !important;
-background-position:center !important;
-background-attachment:scroll;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -374,15 +368,22 @@ text-align:center;
 color:#fff;
 padding:0 24px;
 overflow:hidden;
+background-color:#000;
+background-image:none !important;
+background-position:center !important;
+background-size:cover !important;
+background-repeat:no-repeat !important;
+background-attachment:scroll;
 }
 
-.homepage .hero {
+.homepage .hero,
+.project-page .hero {
     min-height: 100vh;
     background-image: none !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
-    background-color: transparent !important;
+    background-color: #000 !important;
     position: relative;
     overflow: hidden;
 }
@@ -813,8 +814,6 @@ backdrop-filter:blur(6px);
             min-width: 0;
         }
     }
-transition:color .35s ease, transform .35s ease;
-}
 
 .nav-link:hover{
 color:var(--gold)!important;
@@ -823,6 +822,28 @@ transform:translateY(-2px);
 
 .hero-btn:hover{
 transform:translateY(-2px);
+}
+
+@media(min-width:992px){
+    .hero .hero-text,
+    .hero .hero-content,
+    .project-hero .hero-content,
+    .project-hero .hero-copy {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 96px 24px 72px;
+    }
+
+    .hero-quick {
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    .hero-quick .quick-card {
+        flex: 1 1 200px;
+        max-width: 220px;
+    }
 }
 
 @media(max-width:992px){

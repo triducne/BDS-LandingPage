@@ -204,6 +204,29 @@ h6 {
     border-radius: 36px;
 }
 
+@media (min-width: 992px) {
+    .project-page .section {
+        padding: 72px 0;
+        border-radius: 32px;
+        overflow: hidden;
+    }
+
+    .project-page .hero-highlights {
+        padding: 0 0 8px;
+    }
+
+    .project-page .hero-highlights .hero-quick {
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .project-page .hero-highlights .quick-card {
+        flex: 1 1 180px;
+        max-width: 220px;
+    }
+}
+
 .project-page .section.bg-light{
     background: rgba(0,0,0,.72);
     border: 1px solid rgba(255,255,255,.05);
@@ -4344,7 +4367,7 @@ footer p{
 /* ensure the check mark is visible when checked */
 .project-page .form-check-input:checked[type="checkbox"] {
     background-image: var(--bs-form-check-bg-image) !important;
-
+}
 
 .project-page .hero-content,
 .project-page .hero-copy,
