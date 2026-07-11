@@ -1314,14 +1314,18 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
     align-items: stretch;
     justify-content: flex-start;
     overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x proximity;
+    overflow-y: hidden;
+    scroll-behavior: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0.25rem;
+    overscroll-behavior-x: contain;
     gap: 1rem;
     padding: 0 1rem 1rem;
     margin: 0;
     width: 100%;
     -webkit-overflow-scrolling: touch;
-    touch-action: auto;
+    touch-action: pan-x;
+    will-change: scroll-position;
 }
 
 .project-carousel-track::-webkit-scrollbar {
@@ -1389,13 +1393,17 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
     align-items: stretch;
     justify-content: flex-start;
     overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x proximity;
+    overflow-y: hidden;
+    scroll-behavior: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0.25rem;
+    overscroll-behavior-x: contain;
     gap: 1rem;
     padding: 0 1rem 1rem;
     width: 100%;
     -webkit-overflow-scrolling: touch;
-    touch-action: auto;
+    touch-action: pan-x;
+    will-change: scroll-position;
 }
 
 .news-carousel-track::-webkit-scrollbar {

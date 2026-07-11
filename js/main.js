@@ -509,46 +509,73 @@ document.addEventListener("DOMContentLoaded", async () => {
             next.disabled = activePage >= pages - 1;
         };
 
-        const scrollToPage = (page, smooth = true) => {
-            activePage = Math.max(0, Math.min(page, pages - 1));
-            const index = activePage * groupSize;
-            const card = cards[index];
-            if (card) {
-                track.scrollTo({ left: card.offsetLeft, behavior: smooth ? 'smooth' : 'auto' });
+        let activeObserver;
+        const observeCards = () => {
+            if (activeObserver) {
+                activeObserver.disconnect();
             }
-            updateButtons();
-            updateDots();
-        };
 
-        prev.addEventListener('click', () => scrollToPage(activePage - 1));
-        next.addEventListener('click', () => scrollToPage(activePage + 1));
+            activeObserver = new IntersectionObserver((entries) => {
+                const visibleEntry = entries
+                    .filter((entry) => entry.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-        let pendingScroll = false;
-        track.addEventListener('scroll', () => {
-            if (pendingScroll) return;
-            pendingScroll = true;
-            requestAnimationFrame(() => {
-                const pageWidth = track.clientWidth;
-                const newPage = Math.round(track.scrollLeft / pageWidth);
+                if (!visibleEntry) return;
+
+                const index = cards.indexOf(visibleEntry.target);
+                if (index < 0) return;
+
+                const newPage = Math.floor(index / groupSize);
                 if (newPage !== activePage) {
                     activePage = Math.max(0, Math.min(newPage, pages - 1));
                     updateButtons();
                     updateDots();
                 }
-                pendingScroll = false;
+            }, {
+                root: track,
+                threshold: [0.55, 0.75]
             });
-        }, { passive: true });
+
+            cards.forEach((card) => activeObserver.observe(card));
+        };
+
+        const scrollToPage = (page, smooth = true) => {
+            activePage = Math.max(0, Math.min(page, pages - 1));
+            const index = activePage * groupSize;
+            const card = cards[Math.min(index, cards.length - 1)];
+            if (card) {
+                card.scrollIntoView({
+                    behavior: smooth ? 'smooth' : 'auto',
+                    inline: 'start',
+                    block: 'nearest'
+                });
+            }
+            updateButtons();
+            updateDots();
+        };
+
+        prev.addEventListener('click', () => {
+            if (!prev.disabled) {
+                scrollToPage(activePage - 1);
+            }
+        });
+        next.addEventListener('click', () => {
+            if (!next.disabled) {
+                scrollToPage(activePage + 1);
+            }
+        });
 
         // Recompute groupSize/pages on resize
         let resizeTimeout;
         const recompute = () => {
             groupSize = window.innerWidth < 768 ? 1 : 2;
             pages = Math.max(1, Math.ceil(cards.length / groupSize));
-            // recreate dots and clamp activePage
             if (activePage >= pages) activePage = pages - 1;
             createDots();
-            scrollToPage(activePage, false);
             updateButtons();
+            updateDots();
+            observeCards();
+            scrollToPage(activePage, false);
         };
 
         window.addEventListener('resize', () => {
@@ -557,6 +584,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
         createDots();
+        observeCards();
         scrollToPage(0, false);
         updateButtons();
     };
