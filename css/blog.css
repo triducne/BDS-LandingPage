@@ -7,6 +7,15 @@
     --blog-muted: #d8cfbe;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+}
+
 body.blog-article {
     background: linear-gradient(180deg, #12120f 0%, #050505 100%);
     color: #f7efe0;
