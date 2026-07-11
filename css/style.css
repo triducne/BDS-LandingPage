@@ -460,6 +460,30 @@ background-attachment:scroll;
     background-color: #000;
 }
 
+.hero .hero-text {
+    max-width: 860px;
+    padding: 0 16px;
+    margin-top: 0;
+}
+
+.hero h1,
+.hero .hero-title {
+    margin-bottom: 10px;
+}
+
+.hero .hero-subtitle {
+    margin: 0 auto 16px;
+}
+
+.hero .hero-actions {
+    margin-top: 0;
+    gap: 12px;
+}
+
+.hero .hero-actions .btn {
+    margin-top: 0;
+}
+
 /* Shared project-style hero that can be applied via class `project-hero` */
 .project-hero{
     position:relative;
@@ -535,8 +559,8 @@ background-attachment:scroll;
 @media (max-width: 768px) {
     .hero {
         min-height: 70vh !important;
-        padding-top: 38px !important;
-        padding-bottom: 28px !important;
+        padding-top: 24px !important;
+        padding-bottom: 24px !important;
         background-position: top center !important;
     }
 }
@@ -544,29 +568,31 @@ background-attachment:scroll;
 @media (max-width: 576px) {
     .hero {
         min-height: 56vh !important;
-        padding-top: 32px !important;
-        padding-bottom: 24px !important;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
     }
 
     .hero .hero-text {
-        padding: 0 16px;
+        padding: 0 14px;
+        margin-top: -4px;
     }
 
     .hero h1,
     .hero .hero-title {
         font-size: 2rem !important;
         line-height: 1.1;
+        margin-bottom: 8px;
     }
 
     .hero .hero-subtitle {
         font-size: 0.95rem;
-        margin: 12px auto 18px;
+        margin: 0 auto 14px;
         max-width: 100%;
     }
 
     .hero .hero-actions {
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
     }
 
     .hero .hero-actions .btn {

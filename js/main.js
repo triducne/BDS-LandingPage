@@ -78,20 +78,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await loadHTMLIncludes();
 
-    // Force scroll to top after includes load
-    window.scrollTo(0, 0);
-    
-    // Prevent scroll during initialization
-    const preventScrollDuringInit = (e) => {
-        if (window.scrollY > 0) {
-            e.preventDefault();
-            window.scrollTo(0, 0);
-        }
-    };
-    window.addEventListener('scroll', preventScrollDuringInit, { passive: false });
-    setTimeout(() => {
-        window.removeEventListener('scroll', preventScrollDuringInit);
-    }, 500);
+    // Keep the initial viewport position intact while the page content loads.
+    // Forcing scroll to top during this phase can cause visible jumpiness on mobile Safari.
 
     // Only clear #news when the URL actually contains it on load.
     const NAVBAR_OFFSET = 96;
@@ -588,7 +576,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             updateButtons();
             updateDots();
             observeCards();
-            scrollToPage(activePage, false);
         };
 
         window.addEventListener('resize', () => {
@@ -598,8 +585,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         createDots();
         observeCards();
-        scrollToPage(0, false);
         updateButtons();
+        updateDots();
     };
 
     initCarousel('projects');
