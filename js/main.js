@@ -566,22 +566,28 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         });
 
-        // Recompute groupSize/pages on resize
+        // Recompute groupSize/pages on resize - debounced and performance optimized
         let resizeTimeout;
+        let isRecomputing = false;
         const recompute = () => {
-            groupSize = window.innerWidth < 768 ? 1 : 2;
-            pages = Math.max(1, Math.ceil(cards.length / groupSize));
-            if (activePage >= pages) activePage = pages - 1;
-            createDots();
-            updateButtons();
-            updateDots();
-            observeCards();
+            if (isRecomputing) return;
+            isRecomputing = true;
+            requestAnimationFrame(() => {
+                groupSize = window.innerWidth < 768 ? 1 : 2;
+                pages = Math.max(1, Math.ceil(cards.length / groupSize));
+                if (activePage >= pages) activePage = pages - 1;
+                createDots();
+                updateButtons();
+                updateDots();
+                observeCards();
+                isRecomputing = false;
+            });
         };
 
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(recompute, 150);
-        });
+            resizeTimeout = setTimeout(recompute, 200);
+        }, { passive: true });
 
         createDots();
         observeCards();
@@ -592,8 +598,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     initCarousel('projects');
     initCarousel('news');
 
-    // init single-panel payment switcher
-    initPaymentTabs();
+    // init single-panel payment switcher - defer to idle time on mobile
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => initPaymentTabs(), { timeout: 2000 });
+    } else {
+        initPaymentTabs();
+    }
 
 });
 
@@ -693,9 +703,14 @@ function initFaqProgress(){
             fill.style.width = pct + '%';
         }
 
-        scrollEl.addEventListener('scroll', update, { passive: true });
-        // update on resize and initial
-        window.addEventListener('resize', update);
+        scrollEl.addEventListener('scroll', update, { passive: true, capture: false });
+        // update on resize and initial - with debounce
+        let resizeTimeout;
+        const debouncedUpdate = () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(update, 150);
+        };
+        window.addEventListener('resize', debouncedUpdate, { passive: true });
         update();
     }catch(err){ console.error('initFaqProgress', err); }
 }

@@ -2,17 +2,22 @@
 <html lang="vi">
 
 <head>
-<!-- Google tag (gtag.js) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Preconnect to external domains -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<!-- Google tag (gtag.js) - async after critical resources -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18252476545"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-18252476545');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
     // Immediate scroll prevention - must run BEFORE any other script
@@ -60,19 +65,24 @@ content="Trí Đức Realty">
 <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180x180.png">
 <link rel="shortcut icon" href="images/favicon-32x32.png">
 
+<!-- Critical inline CSS for above-fold content -->
+<style>
+  :root{--gold:#d4af37;--bg:#000;--page-text:#f4efe3;}
+  html,body{margin:0;padding:0;width:100%;font-family:'Poppins',sans-serif;background:#000;color:#f4efe3;overflow-x:hidden;}
+  .navbar{background:rgba(0,0,0,.96);position:fixed;top:0;width:100%;z-index:999;}
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background-color:#000;}
+  img{max-width:100%;height:auto;}
+</style>
+<!-- Async stylesheet loading -->
 <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="css/style.css">
-<link rel="preload" as="image" href="images/hero-banner.webp" imagesrcset="images/hero-banner.webp 1600w" fetchpriority="high">
-
 <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@500;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@500;700;800&display=swap"></noscript>
+<noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+<link rel="stylesheet" href="css/style.css">
+<!-- Optimized Google Fonts -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Montserrat:wght@700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Montserrat:wght@700;800&display=swap"></noscript>
+<!-- LCP image preload with responsive sizes -->
+<link rel="preload" as="image" href="images/hero-banner.webp" fetchpriority="high">
 </head>
 
 <body class="homepage">
@@ -134,7 +144,7 @@ aria-label="Toggle navigation">
 <!-- HERO -->
 
 <section class="hero">
-    <img class="hero-lcp" src="images/hero-banner.webp" alt="" aria-hidden="true" width="1600" height="900" loading="eager" fetchpriority="high">
+    <img class="hero-lcp" src="images/hero-banner.webp" alt="" aria-hidden="true" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async">
 
 <div class="hero-text">
 
@@ -163,7 +173,7 @@ GIỚI THIỆU
 
 <div class="col-md-4 text-center">
 
-<img loading="lazy" src="images/avatar.webp"
+<img loading="lazy" decoding="async" src="images/avatar.webp"
 alt="Trí Đức Realty"
 width="1254" height="1254"
 class="avatar">
@@ -258,7 +268,7 @@ DỰ ÁN NỔI BẬT
                 <div class="card project">
                     <div class="project-img-container">
     <img loading="lazy" decoding="async" src="images/thewincity/wincity.webp" alt="" aria-hidden="true" class="project-img-blur" width="2561" height="1429">
-    <img loading="lazy" src="images/thewincity/wincity.webp" alt="The Win City" class="project-img-main" width="2561" height="1429">
+    <img loading="lazy" decoding="async" src="images/thewincity/wincity.webp" alt="The Win City" class="project-img-main" width="2561" height="1429">
 </div>
 
 <div class="card-body">
@@ -284,7 +294,7 @@ DỰ ÁN NỔI BẬT
 
 <div class="project-img-container">
     <img loading="lazy" decoding="async" src="images/arcadia/arcadia-at-lavila.webp" alt="" aria-hidden="true" class="project-img-blur" width="2048" height="1132">
-    <img loading="lazy" src="images/arcadia/arcadia-at-lavila.webp" alt="Arcadia At Lavila" class="project-img-main" width="2048" height="1132" onerror="this.style.display='none'">
+    <img loading="lazy" decoding="async" src="images/arcadia/arcadia-at-lavila.webp" alt="Arcadia At Lavila" class="project-img-main" width="2048" height="1132" onerror="this.style.display='none'">
 </div>
 
 <div class="card-body">
@@ -311,7 +321,7 @@ class="text-decoration-none text-white">
 
 <div class="project-img-container">
     <img loading="lazy" decoding="async" src="images/vlasta/vlasta.webp" alt="" aria-hidden="true" class="project-img-blur" width="1824" height="1026">
-    <img loading="lazy" src="images/vlasta/vlasta.webp" alt="Vlasta Premier" class="project-img-main" width="1824" height="1026">
+    <img loading="lazy" decoding="async" src="images/vlasta/vlasta.webp" alt="Vlasta Premier" class="project-img-main" width="1824" height="1026">
 </div>
 
 <div class="card-body">
@@ -339,7 +349,7 @@ class="text-decoration-none text-white">
 
 <div class="project-img-container">
     <img loading="lazy" decoding="async" src="images/peakgarden/peakgarden.webp" alt="" aria-hidden="true" class="project-img-blur" width="7000" height="6153">
-    <img loading="lazy" src="images/peakgarden/peakgarden.webp" alt="The Peak Garden" class="project-img-main" width="7000" height="6153">
+    <img loading="lazy" decoding="async" src="images/peakgarden/peakgarden.webp" alt="The Peak Garden" class="project-img-main" width="7000" height="6153">
 </div>
 
 <div class="card-body">
@@ -591,9 +601,14 @@ NHẬN TƯ VẤN MIỄN PHÍ
 
 </footer>
 
+<!-- Defer non-critical scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer crossorigin="anonymous"></script>
-
 <script src="js/main.js" defer></script>
+<script src="js/mobile-performance.js" defer></script>
+<!-- Performance: Reduce paint and layout shifts -->
+<script>
+if('requestIdleCallback' in window){requestIdleCallback(function(){var link=document.createElement('link');link.rel='prefetch';link.href='/thewincity.html';document.head.appendChild(link);});}else{setTimeout(function(){var link=document.createElement('link');link.rel='prefetch';link.href='/thewincity.html';document.head.appendChild(link);},2000);}
+</script>
 
 </body>
 </html>

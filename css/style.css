@@ -247,19 +247,34 @@ img,
 .btn-gold,
 .carousel-item,
 .carousel-caption{
-transition:.35s ease;
+transition:.15s ease;
 }
 
 img {
     transition: none !important;
+    contain: layout style paint;
 }
 
-/* NAVBAR */
+/* NAVBAR - optimized for mobile */
 
 .navbar{
 background:rgba(0,0,0,.96);
-backdrop-filter:blur(12px);
-box-shadow:0 10px 35px rgba(0,0,0,.4);
+backdrop-filter:blur(8px);
+box-shadow:0 8px 20px rgba(0,0,0,.3);
+will-change: transform;
+}
+
+@supports (backdrop-filter: blur(8px)) {
+    .navbar {
+        backdrop-filter: blur(8px);
+    }
+}
+
+@supports not (backdrop-filter: blur(8px)) {
+    .navbar {
+        background: rgba(0,0,0,.98);
+        backdrop-filter: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -437,6 +452,11 @@ background-attachment:scroll;
     overflow: hidden;
 }
 
+.hero {
+    background-color: #000;
+    contain: layout style paint;
+}
+
 .hero .hero-lcp,
 .project-hero .hero-lcp {
     position: absolute;
@@ -448,6 +468,8 @@ background-attachment:scroll;
     z-index: 0;
     display: block;
     background-color: #0b0b0b;
+    will-change: auto;
+    contain: strict;
 }
 
 .hero .hero-text,
