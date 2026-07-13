@@ -47,12 +47,20 @@ body.blog-article .section.bg-secondary {
 
 body.blog-article .hero.project-hero,
 body.blog-article .hero.hero-blog {
-    background-color: #000 !important;
+    background-color: rgba(0,0,0,.40) !important;
+    background-blend-mode: multiply !important;
     background-image: url('../images/blog/hero-banner.webp') !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     color: var(--blog-text);
+    filter: none !important;
+}
+
+body.project-page.arcadia-at-lavila.blog-article .hero.project-hero,
+body.project-page.vlasta.blog-article .hero.project-hero,
+body.project-page.victory-hermes.blog-article .hero.project-hero {
+    filter: brightness(0.80);
 }
 
 body.project-page.arcadia-at-lavila.blog-article .hero.project-hero {
@@ -195,7 +203,7 @@ body.blog-article .contact-form .form-check-input:checked {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,.16);
+    background: rgba(0,0,0,.25);
     z-index: 1;
 }
 

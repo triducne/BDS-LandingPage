@@ -231,13 +231,18 @@ body.news-article main.section {
 .news-article .hero {
     background: none !important;
 }
-
+.hero-banner,
+.hero.hero-vd3 {
+    background-color: rgba(0,0,0,.40);
+    background-blend-mode: multiply;
+    filter: none;
+}
 .hero-banner::before,
 .hero.hero-vd3::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.42));
+    background: rgba(0,0,0,.25);
     z-index: 1;
 }
 

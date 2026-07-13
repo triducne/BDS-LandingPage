@@ -367,6 +367,11 @@ h6 {
     background-repeat:no-repeat;
 }
 
+.project-page .hero .hero-lcp {
+    filter: brightness(0.60);
+    transition: filter 0.3s ease;
+}
+
 .project-page .hero::before{
     content:'';
     position:absolute;

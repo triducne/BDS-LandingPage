@@ -468,6 +468,7 @@ background-attachment:scroll;
     z-index: 0;
     display: block;
     background-color: #0b0b0b;
+    filter: brightness(0.60);
     will-change: auto;
     contain: strict;
 }
