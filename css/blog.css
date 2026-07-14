@@ -512,6 +512,71 @@ body.blog-article .contact-form .form-check-input:checked {
     padding: 1.3rem;
 }
 
+/* Ensure blog hero quick cards are centered on desktop (overrides global style) */
+@media (min-width: 992px) {
+    .hero-highlights .container {
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .hero-highlights .container > .hero-quick {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .hero-quick .quick-card {
+        box-sizing: border-box;
+        flex: 0 0 calc(33.333% - 16px);
+        max-width: calc(33.333% - 16px);
+        padding: 14px 16px;
+        align-items: center;
+        text-align: left;
+        margin: 0;
+    }
+
+    .hero-quick .quick-card > div { white-space: normal; overflow: visible; }
+    .hero-quick .quick-card i { width: 44px; height: 44px; font-size: 1.6rem; }
+}
+
+/* Remove borders and heavy outlines on blog quick-cards and hero-highlights */
+.hero-highlights,
+.hero-highlights .hero-quick,
+.hero-highlights .hero-quick .quick-card {
+    border: none !important;
+}
+
+.hero-highlights .hero-quick .quick-card {
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Strong override to ensure 3x3 grid on desktop regardless of other CSS */
+@media (min-width: 992px) {
+    .hero-highlights .container > .hero-quick,
+    .hero-highlights > .hero-quick {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 24px !important;
+        width: 100% !important;
+        max-width: 1100px !important;
+        margin: 0 auto !important;
+    }
+
+    .hero-highlights .hero-quick .quick-card {
+        flex: 0 0 calc(33.333% - 16px) !important;
+        max-width: calc(33.333% - 16px) !important;
+        box-sizing: border-box !important;
+    }
+}
+
 .voucher-summary h4 {
     color: #fff;
     margin-bottom: 0.7rem;
