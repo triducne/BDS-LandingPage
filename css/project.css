@@ -692,13 +692,13 @@ body.project-page.peakgarden .hero-actions {
 }
 
 .hero-highlights .hero-quick{
-    max-width:1140px;
     margin:0 auto;
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns:repeat(3, 1fr);
     gap:18px;
     align-items:stretch;
-    padding:0 16px;
+    padding:0 20px;
+    max-width:920px;
 }
 
 /* Project-specific: enforce 3 columns x 2 rows and responsive sizing for hero-quick */
@@ -707,7 +707,7 @@ body.project-page.peakgarden .hero-actions {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap:18px;
-        padding:10px 16px;
+        padding:10px 20px;
         align-items:stretch;
     }
     .hero-highlights .hero-quick .quick-card{
@@ -741,7 +741,7 @@ body.project-page.peakgarden .hero-actions {
     .hero-highlights .hero-quick{
         grid-template-columns: repeat(3, 1fr);
         gap:10px;
-        padding:6px 8px;
+        padding:6px 12px;
     }
     .hero-highlights .hero-quick .quick-card{
         height:65px;
@@ -915,11 +915,14 @@ body.homepage .hero .hero-label {
     border-radius:16px;
     padding:12px 10px;
     display:flex;
+    flex-direction:column;
     align-items:center;
+    justify-content:center;
     gap:10px;
     color:#f2efe9;
     box-shadow:0 20px 45px rgba(0,0,0,.22);
     min-height:70px;
+    text-align:center;
     transition:transform .25s ease, box-shadow .25s ease;
 }
 
