@@ -154,18 +154,6 @@ h1 {
     color: var(--bio-gold);
 }
 
-.link.primary {
-    border-color: var(--bio-gold);
-    background: var(--bio-gold);
-    color: #111;
-}
-
-.link.primary:hover,
-.link.primary:focus-visible {
-    background: #e5c54e;
-    color: #111;
-}
-
 .icon {
     width: 22px;
     font-size: 1.1rem;
