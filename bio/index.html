@@ -17,40 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root { color-scheme: dark; --gold: #d4af37; --paper: #f4efe3; --muted: #b7b0a2; }
-        * { box-sizing: border-box; }
-        body { min-height: 100vh; margin: 0; padding: 28px 16px; display: grid; place-items: center; overflow-x: hidden; color: var(--paper); font-family: 'DM Sans', sans-serif; background: radial-gradient(ellipse at 50% -10%, rgba(212,175,55,.18), transparent 42%), #090909; }
-        .bio-card { position: relative; width: min(100%, 460px); padding: 32px 24px 22px; overflow: hidden; border: 1px solid rgba(212,175,55,.25); border-radius: 26px; background: rgba(18,18,17,.9); box-shadow: 0 28px 90px rgba(0,0,0,.55); text-align: center; }
-        .bio-card::before { position: absolute; inset: 0 18% auto; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); content: ''; }
-        .brand { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 23px; color: var(--gold); font: 800 .75rem 'Manrope', sans-serif; letter-spacing: .15em; text-decoration: none; }
-        .brand img { width: 30px; height: 30px; object-fit: contain; }
-        .avatar-wrap { width: 112px; height: 112px; margin: 0 auto 17px; padding: 4px; border: 1px solid var(--gold); border-radius: 50%; box-shadow: 0 0 35px rgba(212,175,55,.16); }
-        .avatar { display: block; width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
-        h1 { margin: 0 0 5px; font: 800 clamp(1.55rem, 6vw, 2rem) 'Manrope', sans-serif; letter-spacing: -.04em; }
-        .role { margin: 0 0 14px; color: var(--gold); font-size: .92rem; font-weight: 700; }
-        .intro { max-width: 360px; margin: 0 auto 21px; color: var(--muted); font-size: .92rem; line-height: 1.65; }
-        .stats { display: flex; gap: 9px; margin-bottom: 23px; }
-        .stat { flex: 1; padding: 10px 6px; border: 1px solid rgba(255,255,255,.08); border-radius: 13px; background: rgba(255,255,255,.035); }
-        .stat strong { display: block; color: var(--gold); font: 700 1rem 'Manrope', sans-serif; }
-        .stat span { color: var(--muted); font-size: .68rem; }
-        .links, .projects { display: grid; gap: 10px; }
-        .link, .project { display: flex; min-height: 52px; align-items: center; justify-content: center; gap: 10px; padding: 12px 15px; border: 1px solid rgba(212,175,55,.32); border-radius: 14px; background: rgba(255,255,255,.035); color: var(--paper); font-weight: 700; text-decoration: none; transition: .18s ease; }
-        .link:hover, .link:focus-visible, .project:hover, .project:focus-visible { transform: translateY(-2px); border-color: var(--gold); color: var(--gold); }
-        .link.primary { border-color: var(--gold); background: var(--gold); color: #111; }
-        .link.primary:hover, .link.primary:focus-visible { background: #e5c54e; color: #111; }
-        .icon { width: 22px; font-size: 1.1rem; text-align: center; }
-        .link-label { flex: 1; text-align: center; }
-        .spacer { width: 22px; }
-        .section-label { margin: 24px 0 10px; color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
-        .projects { grid-template-columns: 1fr 1fr; gap: 8px; }
-        .project { min-height: 44px; padding: 9px 6px; border-color: rgba(255,255,255,.09); font-size: .8rem; }
-        footer { margin-top: 22px; color: #847e73; font-size: .72rem; }
-        footer a { color: var(--muted); text-decoration: none; }
-        footer a:hover { color: var(--gold); }
-        @media (max-width: 360px) { body { padding: 14px 10px; } .bio-card { padding: 26px 15px 18px; } }
-        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
-    </style>
+    <link rel="stylesheet" href="bio.css">
 </head>
 <body>
     <main class="bio-card">
