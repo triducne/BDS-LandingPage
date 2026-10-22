@@ -181,6 +181,17 @@ h1 {
     width: 22px;
 }
 
+.webview-hint {
+    margin: 12px 4px 0;
+    color: var(--bio-muted);
+    font-size: .76rem;
+    line-height: 1.55;
+}
+
+.webview-hint strong {
+    color: var(--bio-paper);
+}
+
 .section-label {
     margin: 24px 0 10px;
     color: var(--bio-muted);
