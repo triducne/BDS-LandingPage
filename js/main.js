@@ -607,12 +607,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 });
 
-// Hide empty .info-box elements on initial load and when content changes
+// Hide empty .info-box elements, but keep boxes containing embedded media.
 (() => {
     const hideEmptyInfoBoxes = () => {
         document.querySelectorAll('.info-box').forEach(el => {
             const text = (el.innerText || el.textContent || '').replace(/\u00A0/g, '').trim();
-            if (text.length === 0) {
+            const hasEmbeddedMedia = el.querySelector('iframe, video, audio, object, embed') !== null;
+            if (text.length === 0 && !hasEmbeddedMedia) {
                 el.classList.add('empty');
             } else {
                 el.classList.remove('empty');
@@ -736,4 +737,3 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('carousel image load handler error', err);
     }
 });
-
