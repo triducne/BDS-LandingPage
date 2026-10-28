@@ -1413,9 +1413,19 @@ justify-content:space-between;
 
 .project .card-body h5{
 color:var(--gold);
-font-size:1.15rem;
+font-size:1.5rem;
+font-weight:800;
 letter-spacing:.4px;
 margin-bottom:10px;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .project .card-body h5 {
+        font-size: 1.8rem;
+        font-weight: 900;
+        -webkit-text-stroke: .35px currentColor;
+    }
 }
 
 .project .card-body p{
