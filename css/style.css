@@ -2042,8 +2042,6 @@ html, body, .site-wrapper, .section, .bg-light, .bg-secondary, .card, .card-body
 }
 
 #leadForm input.form-control,
-#leadForm select.form-select,
-#leadForm select.form-select option,
 #leadForm textarea.form-control {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 16px;
@@ -2053,6 +2051,7 @@ html, body, .site-wrapper, .section, .bg-light, .bg-secondary, .card, .card-body
 
 #leadForm select.form-select,
 #leadForm select.form-select option {
+    font-size: 13px;
     text-transform: uppercase;
 }
 
