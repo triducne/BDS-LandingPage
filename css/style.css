@@ -345,7 +345,7 @@ will-change: transform;
 }
 
 .navbar-logo {
-    height: 38px;
+    height: 50px;
     width: auto;
     display: inline-block;
 }
@@ -414,6 +414,13 @@ margin-left:16px;
 font-size:15px;
 font-weight:500;
 font-family:'Poppins',sans-serif;
+}
+
+.navbar .nav-link{
+    font-family:'Poppins',sans-serif;
+    font-size:14px;
+    font-weight:700;
+    text-transform:uppercase;
 }
 
 .nav-link:hover{
@@ -2243,5 +2250,3 @@ margin-top:10px;
         white-space: normal !important;
     }
 }
-
-

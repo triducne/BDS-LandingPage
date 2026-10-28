@@ -673,11 +673,11 @@ body.project-page.peakgarden .hero-actions {
     letter-spacing:1px;
 }
 
-.nav-link{
+.project-page .navbar .nav-link{
     color:#fff!important;
     margin-left:16px;
-    font-size:15px;
-    font-weight:500;
+    font-size:14px;
+    font-weight:700;
 }
 
 .nav-link:hover{
@@ -4205,7 +4205,6 @@ footer p{
         font-size: 1.15rem;
     }
     .navbar .nav-link {
-        font-size: 0.9rem;
         padding: 0.65rem 0.75rem;
     }
     .hero {
