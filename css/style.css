@@ -2041,18 +2041,18 @@ html, body, .site-wrapper, .section, .bg-light, .bg-secondary, .card, .card-body
     color: var(--page-text) !important;
 }
 
-#form input.form-control,
-#form select.form-select,
-#form select.form-select option,
-#form textarea.form-control {
+#leadForm input.form-control,
+#leadForm select.form-select,
+#leadForm select.form-select option,
+#leadForm textarea.form-control {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
 }
 
-#form select.form-select,
-#form select.form-select option {
+#leadForm select.form-select,
+#leadForm select.form-select option {
     text-transform: uppercase;
 }
 
