@@ -2334,6 +2334,10 @@ body .hero-title {
         font-size:clamp(26px,6vw,32px) !important;
     }
 
+    #about h3 {
+        font-size:clamp(24px,6vw,28px);
+    }
+
     body .hero h1,
     body .hero-title {
         font-size:clamp(40px,10vw,50px) !important;
