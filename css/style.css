@@ -1082,8 +1082,13 @@ transform:translateY(-2px);
         font-size:0.75rem;
     }
     .homepage .hero{
-        min-height:56vh;
-        padding:32px 16px 24px;
+        min-height:70vh !important;
+        min-height:70svh !important;
+        padding:84px 16px 20px !important;
+    }
+    .homepage .hero .hero-text {
+        margin:0 auto;
+        padding:0 14px;
     }
     .hero h1{
         font-size:1.9rem;
