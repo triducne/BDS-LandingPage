@@ -534,7 +534,7 @@ body.news-article .news-card h4 {
 
 .news-main h2 {
     color: #fff;
-    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-size: clamp(1.7rem, 2.4vw, 2.2rem);
     margin-bottom: 0.9rem;
 }
 
@@ -684,7 +684,7 @@ body.news-article .news-card h4 {
         padding: 20px 16px 60px;
     }
     .news-main .article-header h2 {
-        font-size: 2rem;
+        font-size: 1.55rem;
     }
     .news-meta {
         flex-direction: column;
