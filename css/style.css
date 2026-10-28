@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=Cormorant+Garamond:wght@700&display=swap');
+
 :root {
     --gold: #d4af37;
     --gold-dark: #b8882c;
@@ -217,10 +219,10 @@ scroll-behavior:auto;
 }
 
 body{
-font-family:'Poppins',sans-serif;
+font-family:'Be Vietnam Pro',sans-serif;
 font-size:16px;
 line-height:1.7;
-font-weight:400;
+font-weight:500;
 overflow-x:hidden;
 background: var(--bg);
 color:var(--page-text);
@@ -413,14 +415,24 @@ color:#fff!important;
 margin-left:16px;
 font-size:15px;
 font-weight:500;
-font-family:'Poppins',sans-serif;
+font-family:'Be Vietnam Pro',sans-serif;
 }
 
 .navbar .nav-link{
-    font-family:'Poppins',sans-serif;
+    font-family:'Be Vietnam Pro',sans-serif;
     font-size:14px;
-    font-weight:700;
+    font-weight:600;
+    letter-spacing:0.6px;
     text-transform:uppercase;
+}
+
+.stats h2{
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-size:1.5rem;
+    font-weight:800;
+    font-variant-numeric:lining-nums tabular-nums;
+    font-feature-settings:"lnum" 1,"tnum" 1;
+    line-height:1;
 }
 
 .nav-link:hover{
@@ -542,7 +554,7 @@ background-attachment:scroll;
 
 .project-hero h1,
 .project-hero .hero-title{
-    font-family:'Poppins',sans-serif;
+    font-family:'Cormorant Garamond',serif;
     font-size:clamp(2.8rem,4.8vw,4rem);
     color:var(--gold);
     font-weight:700;
@@ -557,7 +569,7 @@ background-attachment:scroll;
 
 .project-hero p,
 .project-hero .hero-subtitle{
-    font-family:'Poppins',sans-serif;
+    font-family:'Be Vietnam Pro',sans-serif;
     font-size:1rem;
     font-weight:500;
     color:rgba(255,255,255,.92);
@@ -706,7 +718,7 @@ background-attachment:scroll;
 }
 
 .hero h1{
-    font-family:'Poppins',sans-serif;
+    font-family:'Cormorant Garamond',serif;
     font-size:clamp(2.6rem,4.4vw,3.8rem);
     color:var(--gold);
     font-weight:800;
@@ -721,7 +733,7 @@ background-attachment:scroll;
 
 .hero-subtitle,
 .hero p{
-    font-family:'Poppins',sans-serif;
+    font-family:'Be Vietnam Pro',sans-serif;
     font-size:1rem;
     font-weight:500;
     color:rgba(255,255,255,.95);
@@ -1038,7 +1050,7 @@ transform:translateY(-2px);
         margin-bottom:0;
     }
     .stats h2{
-        font-size:2rem;
+        font-size:1.35rem;
         margin-bottom:0.25rem;
     }
     .stats p{
@@ -1274,7 +1286,7 @@ margin-bottom:0;
 }
 
 #about h3{
-font-family:'Poppins',sans-serif;
+font-family:'Cormorant Garamond',serif;
 font-size:2rem;
 font-weight:900;
 letter-spacing:-.4px;
@@ -1839,7 +1851,7 @@ box-shadow:0 30px 80px rgba(212,175,55,.22);
 
 .project-card-slide .card-body .project-description {
     color: rgba(242,238,233,.86);
-    font-weight: 400;
+    font-weight: 500;
     font-size: 0.95rem;
     line-height: 1.6;
     margin-top: 0.35rem;
@@ -2248,5 +2260,45 @@ margin-top:10px;
     body.news-article .hero-highlights .quick-card > div {
         text-align: center !important;
         white-space: normal !important;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family:'Cormorant Garamond',serif;
+    font-weight:700;
+    font-variant-numeric:lining-nums;
+    font-feature-settings:"lnum" 1;
+}
+
+body h1,
+body .title,
+body .hero-title {
+    font-family:'Cormorant Garamond',serif !important;
+    font-size:clamp(30px,2.8vw,38px) !important;
+    font-weight:700 !important;
+    line-height:1.08;
+    -webkit-text-stroke:0.45px currentColor;
+}
+
+body .hero h1,
+body .hero-title {
+    font-size:clamp(52px,5vw,64px) !important;
+    -webkit-text-stroke:0.7px currentColor;
+}
+
+@media (max-width: 767px) {
+    body .title,
+    body h1:not(.hero-title) {
+        font-size:clamp(26px,6vw,32px) !important;
+    }
+
+    body .hero h1,
+    body .hero-title {
+        font-size:clamp(40px,10vw,50px) !important;
     }
 }

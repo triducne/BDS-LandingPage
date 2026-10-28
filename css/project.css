@@ -75,7 +75,7 @@ h6 {
 .project-page .contact-form .form-control::placeholder {
     color: rgba(255,255,255,.92) !important;
     font-size: 16px !important;
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Be Vietnam Pro', sans-serif !important;
     line-height: 1.7 !important;
 }
 
@@ -345,7 +345,7 @@ h6 {
 .project-page .payment-content li,
 .project-page .form-check-label,
 .project-page .form-text {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Be Vietnam Pro', sans-serif !important;
     font-size: 16px !important;
     line-height: 1.7 !important;
     letter-spacing: 0 !important;
@@ -390,7 +390,7 @@ h6 {
 
 .project-page .hero h1,
 .project-page .hero .hero-title{
-    font-family:'Poppins',sans-serif;
+    font-family:'Cormorant Garamond',serif;
     font-size:clamp(2.8rem,4.8vw,4rem);
     color:var(--gold) !important;
     font-weight:700;
@@ -405,7 +405,7 @@ h6 {
 
 .project-page .hero p,
 .project-page .hero .hero-subtitle{
-    font-family:'Poppins',sans-serif;
+    font-family:'Be Vietnam Pro',sans-serif;
     font-size:1rem;
     font-weight:500;
     color:rgba(255,255,255,.92);
@@ -428,7 +428,7 @@ h6 {
 }
 
 body.project-page .hero .hero-label {
-    font-family:'Montserrat', 'Poppins', sans-serif;
+    font-family:'Cormorant Garamond',serif;
     font-size:2.4rem !important;
     font-weight:800 !important;
     letter-spacing:2px !important;
@@ -677,7 +677,8 @@ body.project-page.peakgarden .hero-actions {
     color:#fff!important;
     margin-left:16px;
     font-size:14px;
-    font-weight:700;
+    font-weight:600;
+    letter-spacing:0.6px;
 }
 
 .nav-link:hover{
@@ -1938,7 +1939,7 @@ body.sunshine-sky-city .spec-table tbody td:last-child{
     font-weight: 800;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .legal-schedule ul{
@@ -1955,7 +1956,7 @@ body.sunshine-sky-city .spec-table tbody td:last-child{
     gap:12px;
     align-items:flex-start;
     color:#e8e2d8;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.98rem;
 }
 
@@ -1991,7 +1992,7 @@ body.sunshine-sky-city .spec-table tbody td:last-child{
 
 .schedule-description{
     color:#e8e2d8;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.96rem;
     line-height:1.75;
 }
@@ -2102,8 +2103,8 @@ body.sunshine-sky-city .spec-table tbody td:last-child{
     color: #e4ddcf;
     font-size: 1.02rem;
     line-height: 1.85;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 500;
 }
 
 #legal .info-box p.section-note {
@@ -2118,9 +2119,9 @@ body.sunshine-sky-city .spec-table tbody td:last-child{
     display: grid;
     grid-template-columns: repeat(2, minmax(220px, 1fr));
     gap: 16px 28px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 500;
     color: #e6dfd0;
     justify-items: start;
 }
@@ -2135,7 +2136,7 @@ body.sunshine-sky-city .spec-table tbody td:last-child{
     margin-bottom:14px;
     color:#e8e2d8;
     line-height:1.75;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .info-box li strong{
@@ -4035,7 +4036,7 @@ footer p{
     justify-content: center;
     min-width: 68px;
     padding: 6px 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--gold);
@@ -4228,6 +4229,34 @@ footer p{
     .hero .hero-btn {
         width: 100%;
         padding: 14px 18px;
+    }
+}
+
+body.project-page .hero h1,
+body.project-page .hero .hero-title,
+body.project-page:not(.thewincity) .hero h1,
+body.project-page:not(.thewincity) .hero .hero-title,
+body.project-page .title {
+    font-size:clamp(30px,2.8vw,38px) !important;
+    -webkit-text-stroke:0.45px currentColor;
+}
+
+@media (max-width: 767px) {
+    body.project-page .title {
+        font-size:clamp(26px,6vw,32px) !important;
+    }
+}
+
+body.project-page .hero h1,
+body.project-page .hero .hero-title {
+    font-size:clamp(52px,5vw,64px) !important;
+    -webkit-text-stroke:0.7px currentColor;
+}
+
+@media (max-width: 767px) {
+    body.project-page .hero h1,
+    body.project-page .hero .hero-title {
+        font-size:clamp(40px,10vw,50px) !important;
     }
     .hero-highlights .hero-quick {
         padding: 0 12px;
