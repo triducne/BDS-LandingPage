@@ -49,10 +49,39 @@ body { margin: 0; padding: 0; }
 .khai-hoan-prime #schedule .schedule-video-frame iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-width: none; border: 0; }
 .khai-hoan-prime #payment .payment-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; border-radius: 24px; }
 .khai-hoan-prime #payment .tab-btn { display: flex; align-items: center; justify-content: center; width: 100%; min-width: 0; min-height: 56px; padding: 12px; line-height: 1.35; }
+.khai-hoan-prime #legal .title,
+.khai-hoan-prime #legal .legal-info-single,
+.khai-hoan-prime #legal .legal-info-single p,
+.khai-hoan-prime #legal .legal-info-single li { text-align: left; }
+.khai-hoan-prime #legal .legal-info-single { justify-items: start; }
 .khai-hoan-prime #handover .handover-video-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; min-height: 220px; overflow: hidden; background: #000; }
 .khai-hoan-prime #handover .handover-video-frame iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-width: none; border: 0; }
 @media (max-width: 768px) {
     .khai-hoan-prime #payment .payment-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 576px) {
+    .khai-hoan-prime img[src*="images/khai-hoan-prime/"]:not(.carousel-img-blur):not(.hero-lcp) {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+    }
+    .khai-hoan-prime .hero-lcp {
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+    .khai-hoan-prime .carousel-inner,
+    .khai-hoan-prime .carousel-item,
+    .khai-hoan-prime .carousel-img-container {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        aspect-ratio: auto !important;
+    }
+    .khai-hoan-prime .carousel-inner {
+        overflow: visible !important;
+    }
 }
 </style>
 </head>
@@ -347,9 +376,9 @@ body { margin: 0; padding: 0; }
     <div class="container">
         <h2 class="title">THÔNG TIN PHÁP LÝ KHẢI HOÀN PRIME</h2>
         <div class="info-box card-dark legal-info-single">
-            <p>Theo thông tin công bố, dự án đã được thông báo đủ điều kiện bán nhà ở hình thành trong tương lai đối với 1.296 căn hộ theo văn bản của Sở Xây dựng TP.HCM ngày 26/12/2025.</p>
+            <p>Dự án đã đủ điều kiện bán nhà ở hình thành trong tương lai đối với 1.296 căn hộ theo văn bản của Sở Xây dựng TP.HCM ngày 26/12/2025.</p>
             <ul class="mt-3">
-                <li>Văn bản đủ điều kiện bán nhà ở hình thành trong tương lai.</li><li>Giấy phép xây dựng và hồ sơ pháp lý liên quan.</li><li>Hồ sơ chủ đầu tư, quyền sử dụng đất và quy hoạch được phê duyệt.</li><li>Thỏa thuận bảo lãnh ngân hàng nếu thuộc trường hợp áp dụng.</li><li>Hợp đồng mua bán và phụ lục chính sách áp dụng cho căn hộ.</li>
+                <li>Quy hoạch chi tiết 1/500.</li><li>Chủ trương quyết định đầu tư.</li><li>Giấy phép xây dựng.</li><li>Chuyển đổi mục đích sử dụng đất.</li><li>Thỏa thuận bảo lãnh ngân hàng </li>
             </ul>
         </div>
         <div id="legalCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
