@@ -45,6 +45,8 @@ body.khai-hoan-prime .carousel-caption { display: none !important; }
 body { margin: 0; padding: 0; }
 .khai-hoan-prime .overview-video-frame { position: relative; width: 100%; max-width: 1140px; aspect-ratio: 16 / 9; margin: 0 auto; overflow: hidden; background: #000; border-radius: 28px; }
 .khai-hoan-prime .overview-video-frame iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-width: none; border: 0; }
+.khai-hoan-prime #schedule .schedule-video-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; margin-top: 24px; overflow: hidden; background: #000; border-radius: 20px; }
+.khai-hoan-prime #schedule .schedule-video-frame iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-width: none; border: 0; }
 .khai-hoan-prime #handover .handover-video-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; min-height: 220px; overflow: hidden; background: #000; }
 .khai-hoan-prime #handover .handover-video-frame iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-width: none; border: 0; }
 </style>
@@ -160,7 +162,7 @@ body { margin: 0; padding: 0; }
         <h2 class="title">CHỦ ĐẦU TƯ VÀ ĐỐI TÁC PHÁT TRIỂN</h2>
         <div class="row g-4">
             <div class="col-md-6"><div class="info-box h-100"><h4>CHỦ ĐẦU TƯ VÀ ĐƠN VỊ PHÁT TRIỂN</h4><ul class="mt-3">
-                <li><strong>Công ty TNHH Giao Hưởng Xanh:</strong> Chủ đầu tư dự án Khải Hoàn Prime theo thông tin được cung cấp.</li>
+                <li><strong>Công ty TNHH Giao Hưởng Xanh:</strong> Chủ đầu tư dự án Khải Hoàn Prime.</li>
                 <li><strong>Khải Hoàn Land:</strong> Đơn vị phát triển dự án, triển khai hoạt động kinh doanh và truyền thông theo phạm vi được giao.</li>
                 <li>Khách hàng nên kiểm tra hồ sơ pháp lý và vai trò của các bên trong tài liệu chính thức.</li>
             </ul></div></div>
@@ -235,13 +237,12 @@ body { margin: 0; padding: 0; }
         <div id="apartmentCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner rounded-4 shadow">
                 <div class="carousel-item active"><div class="carousel-img-container"><img loading="lazy" decoding="async" src="images/khai-hoan-prime/apartment-1-bedroom.webp" alt="" aria-hidden="true" class="carousel-img-blur"><img loading="lazy" src="images/khai-hoan-prime/apartment-1-bedroom.webp" class="carousel-img-main" alt="Thiết kế căn hộ một phòng ngủ Khải Hoàn Prime"></div><div class="carousel-caption"><h4>CĂN HỘ 1 PHÒNG NGỦ</h4><p>Lựa chọn cho người độc thân hoặc gia đình trẻ.</p></div></div>
-                <div class="carousel-item"><div class="carousel-img-container"><img loading="lazy" decoding="async" src="images/khai-hoan-prime/apartment-1-bedroom-plus.webp" alt="" aria-hidden="true" class="carousel-img-blur"><img loading="lazy" src="images/khai-hoan-prime/apartment-1-bedroom-plus.webp" class="carousel-img-main" alt="Thiết kế căn hộ một phòng ngủ cộng Khải Hoàn Prime"></div><div class="carousel-caption"><h4>CĂN HỘ 1 PHÒNG NGỦ CỘNG</h4><p>Tối ưu công năng theo nhu cầu sử dụng.</p></div></div>
                 <div class="carousel-item"><div class="carousel-img-container"><img loading="lazy" decoding="async" src="images/khai-hoan-prime/apartment-2-bedroom.webp" alt="" aria-hidden="true" class="carousel-img-blur"><img loading="lazy" src="images/khai-hoan-prime/apartment-2-bedroom.webp" class="carousel-img-main" alt="Thiết kế căn hộ hai phòng ngủ Khải Hoàn Prime"></div><div class="carousel-caption"><h4>CĂN HỘ 2 PHÒNG NGỦ</h4><p>Không gian phù hợp với gia đình trẻ.</p></div></div>
                 <div class="carousel-item"><div class="carousel-img-container"><img loading="lazy" decoding="async" src="images/khai-hoan-prime/apartment-3-bedroom.webp" alt="" aria-hidden="true" class="carousel-img-blur"><img loading="lazy" src="images/khai-hoan-prime/apartment-3-bedroom.webp" class="carousel-img-main" alt="Thiết kế căn hộ ba phòng ngủ Khải Hoàn Prime"></div><div class="carousel-caption"><h4>CĂN HỘ 3 PHÒNG NGỦ</h4><p>Lựa chọn cho gia đình nhiều thành viên.</p></div></div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#apartmentCarousel" data-bs-slide="prev" aria-label="Previous slide"><span class="carousel-control-prev-icon"></span></button>
             <button class="carousel-control-next" type="button" data-bs-target="#apartmentCarousel" data-bs-slide="next" aria-label="Next slide"><span class="carousel-control-next-icon"></span></button>
-            <div class="carousel-tracker"><div class="carousel-progress-bar-track"><div class="carousel-progress-bar-fill" id="apartmentCarousel-progress"></div></div><div class="carousel-counter mt-2 text-center" id="apartmentCarousel-counter">1 / 4</div></div>
+            <div class="carousel-tracker"><div class="carousel-progress-bar-track"><div class="carousel-progress-bar-fill" id="apartmentCarousel-progress"></div></div><div class="carousel-counter mt-2 text-center" id="apartmentCarousel-counter">1 / 3</div></div>
         </div>
     </div>
 </section>
@@ -252,8 +253,9 @@ body { margin: 0; padding: 0; }
         <div class="info-box">
             <p>Theo thông tin Khải Hoàn Land công bố ngày 19/10/2026, giá tham khảo từ <strong>66 triệu đồng/m²</strong>.</p>
             <p>Giá thực tế phụ thuộc diện tích, vị trí căn, tầng, hướng nhìn, phương thức thanh toán và chính sách tại thời điểm giao dịch.</p>
-            <p>Khách hàng nên yêu cầu bảng giá chi tiết và bảng tính tổng chi phí theo từng đợt thanh toán.</p>
-            <a href="#form" class="btn btn-gold btn-lg mt-2">NHẬN BẢNG GIÁ CHI TIẾT</a>
+            <div class="text-center">
+                <a href="#form" class="btn btn-gold btn-lg mt-2">NHẬN BẢNG GIÁ CHI TIẾT</a>
+            </div>
         </div>
     </div>
 </section>
@@ -322,15 +324,15 @@ body { margin: 0; padding: 0; }
                 <div class="schedule-card"><div class="schedule-date">Sau cất nóc</div><div class="schedule-description">Triển khai các hoạt động hoàn thiện và chuẩn bị bàn giao theo tiến độ dự án.</div></div>
                 <div class="schedule-card"><div class="schedule-date">Quý II/2027</div><div class="schedule-description">Thời gian dự kiến bàn giao căn hộ; thời gian thực tế căn cứ nghiệm thu và hợp đồng mua bán.</div></div>
             </div>
-            <div id="scheduleCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
-                <div class="carousel-inner rounded-4 shadow">
-                    <div class="carousel-item active"><div class="carousel-img-container"><img loading="lazy" decoding="async" src="images/khai-hoan-prime/progress-topping-out-2026-07.webp" alt="" aria-hidden="true" class="carousel-img-blur"><img loading="lazy" src="images/khai-hoan-prime/progress-topping-out-2026-07.webp" class="carousel-img-main" alt="Hình ảnh lễ cất nóc Khải Hoàn Prime tháng 7 năm 2026"></div></div>
-                    <div class="carousel-item"><div class="carousel-img-container"><img loading="lazy" decoding="async" src="images/khai-hoan-prime/progress-finishing.webp" alt="" aria-hidden="true" class="carousel-img-blur"><img loading="lazy" src="images/khai-hoan-prime/progress-finishing.webp" class="carousel-img-main" alt="Hình ảnh hoàn thiện Khải Hoàn Prime"></div></div>
-                    <div class="carousel-item"><div class="carousel-img-container"><img loading="lazy" decoding="async" src="images/khai-hoan-prime/progress-handover.webp" alt="" aria-hidden="true" class="carousel-img-blur"><img loading="lazy" src="images/khai-hoan-prime/progress-handover.webp" class="carousel-img-main" alt="Hình ảnh chuẩn bị bàn giao Khải Hoàn Prime"></div></div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#scheduleCarousel" data-bs-slide="prev" aria-label="Previous slide"><span class="carousel-control-prev-icon"></span></button>
-                <button class="carousel-control-next" type="button" data-bs-target="#scheduleCarousel" data-bs-slide="next" aria-label="Next slide"><span class="carousel-control-next-icon"></span></button>
-                <div class="carousel-tracker mt-3"><div class="carousel-progress-bar-track"><div class="carousel-progress-bar-fill" id="scheduleCarousel-progress"></div></div><div class="carousel-counter mt-2 text-center" id="scheduleCarousel-counter">1 / 3</div></div>
+            <div class="schedule-video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/kngfcXt7GqM?si=d1rysWylAxNGRYbi"
+                    title="Video tiến độ xây dựng Khải Hoàn Prime"
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </div>
@@ -369,7 +371,7 @@ body { margin: 0; padding: 0; }
                 <details class="faq-item"><summary>2. Chủ đầu tư và đơn vị phát triển là ai?</summary><p>Chủ đầu tư là Công ty TNHH Giao Hưởng Xanh; Khải Hoàn Land là đơn vị phát triển dự án.</p></details>
                 <details class="faq-item"><summary>3. Dự án có quy mô bao nhiêu?</summary><p>Thông tin công bố giới thiệu quy mô khoảng 19.820 m², gồm 3 tòa tháp Vinci, Mika, Gali với 1.296 căn hộ.</p></details>
                 <details class="faq-item"><summary>4. Khải Hoàn Prime có những loại căn hộ nào?</summary><p>Các lựa chọn được giới thiệu gồm căn 1 phòng ngủ, 1 phòng ngủ cộng, 2 phòng ngủ và 3 phòng ngủ. Diện tích và mã căn cần đối chiếu bảng hàng chính thức.</p></details>
-                <details class="faq-item"><summary>5. Giá bán tham khảo hiện tại là bao nhiêu?</summary><p>Theo thông tin Khải Hoàn Land công bố ngày 19/10/2026, giá tham khảo từ 66 triệu đồng/m². Giá cụ thể tùy căn và chính sách đang áp dụng.</p></details>
+                <details class="faq-item"><summary>5. Giá bán tham khảo hiện tại là bao nhiêu?</summary><p>Giá tham khảo từ 66 triệu đồng/m². Giá cụ thể tùy căn và chính sách đang áp dụng.</p></details>
                 <details class="faq-item"><summary>6. Có hỗ trợ vay ngân hàng không?</summary><p>Tài liệu giới thiệu phương án vay tối đa 75%, lãi suất 0% trong 18 tháng và ân hạn nợ gốc 36 tháng. Điều kiện thực tế cần xác nhận với ngân hàng và đơn vị bán hàng.</p></details>
                 <details class="faq-item"><summary>7. Khi nào dự kiến bàn giao căn hộ?</summary><p>Thời gian dự kiến là Quý II/2027; thời gian thực tế căn cứ thông báo chính thức, nghiệm thu và hợp đồng mua bán.</p></details>
                 <details class="faq-item"><summary>8. Tình trạng pháp lý dự án thế nào?</summary><p>Theo thông tin công bố, dự án được thông báo đủ điều kiện bán 1.296 căn hộ theo văn bản Sở Xây dựng TP.HCM ngày 26/12/2025. Khách hàng nên kiểm tra hồ sơ gốc trước khi giao dịch.</p></details>
