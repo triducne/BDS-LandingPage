@@ -212,6 +212,29 @@ table {
         padding: 32px 24px;
     }
 
+    body.news-article .project-hero {
+        min-height: clamp(560px, 70svh, 720px);
+        padding: 32px 24px;
+    }
+
+    body.news-article .project-hero .hero-text {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px;
+    }
+
+    body.news-article .project-hero.hero-vd3 .hero-text h1 {
+        font-size: clamp(2rem, 4vw, 3rem) !important;
+        line-height: 1.08;
+    }
+
+    body.news-article .project-hero .hero-subtitle {
+        max-width: 760px;
+        font-size: clamp(1rem, 1.8vw, 1.2rem);
+        line-height: 1.6;
+    }
+
     body.project-page .project-hero .hero-content {
         width: 100%;
         max-width: 760px;
@@ -354,6 +377,11 @@ table {
     .hero .hero-subtitle {
         font-size: clamp(.95rem, 3.8vw, 1.05rem);
         line-height: 1.55;
+    }
+
+    body.news-article .project-hero.hero-vd3 .hero-text h1 {
+        font-size: clamp(1.75rem, 7vw, 2.4rem) !important;
+        line-height: 1.1;
     }
 
     .hero-content,
