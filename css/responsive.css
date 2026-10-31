@@ -1,0 +1,722 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: clip;
+    font-size: clamp(15px, calc(14px + .2vw), 16px);
+    line-height: 1.6;
+}
+
+body #leadForm select.form-select,
+body #leadForm select.form-select option {
+    font-size: 16px;
+}
+
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+.container,
+.container-fluid,
+.row,
+[class*="col-"],
+.project-carousel,
+.project-carousel-track,
+.news-carousel-track,
+.news-layout,
+.news-main,
+.news-sidebar,
+.blog-copy,
+.article-body,
+.info-box,
+.payment-frame,
+.payment-content,
+.pay-panel {
+    min-width: 0;
+}
+
+p,
+li,
+td,
+th,
+.nav-link,
+.btn {
+    overflow-wrap: break-word;
+}
+
+pre,
+code {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    max-width: 100%;
+}
+
+.table-responsive {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.youtube-video,
+.video-frame,
+.overview-video-frame,
+.schedule-video-frame,
+.handover-video-frame {
+    max-width: 100%;
+}
+
+@media (max-width: 1199.98px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .contact .form-control,
+    .contact .form-select,
+    body form input.form-control,
+    body form select.form-select,
+    body form textarea.form-control {
+        height: auto !important;
+        min-height: 52px !important;
+        padding: 12px 16px !important;
+    }
+
+    .contact .form-select,
+    body form select.form-select {
+        padding-right: 40px !important;
+    }
+
+    body .contact form .btn-gold,
+    body .contact form .btn-warning,
+    body .contact-form .btn,
+    body.project-page .contact form .btn,
+    body.project-page .contact-form .btn,
+    body form .btn {
+        height: auto !important;
+        min-height: 52px !important;
+        padding: 12px 18px !important;
+        font-size: 16px !important;
+    }
+
+    .news-layout,
+    .blog-article .news-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    body .navbar > .container {
+        flex-wrap: nowrap;
+        column-gap: clamp(8px, 1.2vw, 16px);
+    }
+
+    body .navbar .navbar-brand {
+        flex: 0 0 auto;
+        max-width: clamp(116px, 14vw, 150px);
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    body .navbar .navbar-logo {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    body .navbar .navbar-collapse {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    body .navbar .navbar-nav {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        align-items: center;
+        justify-content: initial;
+        gap: 0;
+    }
+
+    body .navbar .navbar-nav {
+        width: auto;
+        grid-template-columns: repeat(var(--tablet-nav-columns, 8), max-content);
+        column-gap: clamp(12px, 1.2vw, 20px);
+        margin-left: auto;
+    }
+
+    body .navbar .navbar-nav .nav-item,
+    body .navbar .navbar-nav .nav-link {
+        width: auto;
+    }
+
+    body .navbar .navbar-nav .nav-link {
+        padding-right: 4px;
+        padding-left: 4px;
+    }
+
+    body.homepage .navbar .navbar-nav {
+        --tablet-nav-columns: 5;
+    }
+
+    body .navbar .navbar-nav .nav-item {
+        width: 100%;
+        min-width: 0;
+    }
+
+    body .navbar .navbar-nav .nav-link,
+    body.project-page .navbar .navbar-nav .nav-link {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: .5rem 2px;
+        font-size: clamp(10px, 1.1vw, 12px);
+        line-height: 1.25;
+        letter-spacing: 0;
+        white-space: nowrap;
+    }
+
+    body.project-page .project-hero {
+        min-height: clamp(560px, 70svh, 720px);
+        padding: 32px 24px;
+    }
+
+    body.project-page .project-hero .hero-content {
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 24px;
+    }
+
+    body.homepage .hero {
+        min-height: clamp(560px, 70svh, 720px);
+        padding: clamp(100px, 12svh, 140px) 24px 48px;
+    }
+
+    body.homepage .hero .hero-text {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    body.homepage .hero h1,
+    body.homepage .hero .hero-title {
+        font-size: clamp(2.25rem, 4.8vw, 3.5rem) !important;
+        line-height: 1.08;
+    }
+
+    body.homepage .hero .hero-subtitle {
+        max-width: 760px;
+        font-size: clamp(1rem, 1.8vw, 1.2rem);
+        line-height: 1.6;
+    }
+
+    body .title,
+    body h1:not(.hero-title) {
+        font-size: clamp(1.75rem, 3.2vw, 2.4rem) !important;
+        line-height: 1.15;
+    }
+
+    body .form-label,
+    body .form-check-label,
+    body form label {
+        font-size: clamp(.9rem, .25vw + .82rem, 1rem);
+        line-height: 1.5;
+    }
+
+    body input,
+    body select,
+    body textarea,
+    body button,
+    body form .btn {
+        font-size: clamp(1rem, .25vw + .92rem, 1.0625rem);
+        line-height: 1.5;
+    }
+
+    body form input.form-control,
+    body form select.form-select,
+    body form textarea.form-control {
+        min-height: 52px;
+    }
+
+    body #leadForm input.form-control,
+    body #leadForm select.form-select,
+    body #leadForm textarea.form-control {
+        font-size: clamp(1rem, .25vw + .92rem, 1.0625rem);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .project-page .section {
+        border-radius: 24px;
+    }
+
+    .hero-highlights .hero-quick {
+        justify-content: center;
+    }
+
+    .contact-card,
+    .contact form,
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .news-main .article-header,
+    .news-main .article-body {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .news-sidebar {
+        position: static;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .container,
+    .container-fluid {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .section {
+        padding-top: clamp(32px, 8vw, 56px);
+        padding-bottom: clamp(32px, 8vw, 56px);
+    }
+
+    .project-page .section {
+        border-radius: 20px;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    body .title,
+    body h1:not(.hero-title) {
+        font-size: clamp(1.625rem, 6vw, 2rem) !important;
+        line-height: 1.15;
+    }
+
+    body .section p,
+    body .section li,
+    body .article-body p,
+    body .article-body li {
+        font-size: .95rem;
+        line-height: 1.65;
+    }
+
+    .hero {
+        min-height: min(760px, 88svh);
+        padding: 104px 16px 40px;
+    }
+
+    body .hero .hero-title,
+    body .hero h1 {
+        font-size: clamp(2rem, 7vw, 2.8rem) !important;
+        line-height: 1.08;
+        overflow-wrap: anywhere;
+    }
+
+    .hero .hero-subtitle {
+        font-size: clamp(.95rem, 3.8vw, 1.05rem);
+        line-height: 1.55;
+    }
+
+    .hero-content,
+    .hero-copy,
+    .hero-text {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .hero .hero-subtitle,
+    .hero .hero-text p {
+        max-width: 42rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .hero-actions .btn,
+    .hero-actions .hero-btn {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .hero-highlights .hero-quick {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        gap: 12px;
+    }
+
+    .hero-highlights .quick-card {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        margin: 0;
+        padding: 14px 12px;
+        box-sizing: border-box;
+    }
+
+    .hero-highlights .quick-card > div {
+        min-width: 0;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .overview-stack,
+    .row.g-4,
+    .row.g-5 {
+        min-width: 0;
+    }
+
+    .info-box,
+    .contact-card,
+    .payment-frame,
+    .legal-schedule,
+    .news-main,
+    .news-sidebar,
+    .article-body,
+    .related-links {
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .payment-tabs {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .payment-tabs .tab-btn {
+        width: 100%;
+        min-width: 0;
+        min-height: 48px;
+        padding: 10px;
+        line-height: 1.35;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .payment-content,
+    .pay-panel {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .project-page .overview-img,
+    .project-page .unified-img,
+    .project-page #location img,
+    .project-page .carousel-img-main,
+    .blog-article .article-body img,
+    .news-article .article-body img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: none;
+        object-fit: contain;
+    }
+
+    .project-page .carousel-inner,
+    .project-page .carousel-item,
+    .project-page .carousel-img-container {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+    }
+
+    .project-page .carousel-inner {
+        overflow: visible;
+    }
+
+    .news-main .article-header {
+        padding: 20px 20px 0;
+    }
+
+    .news-main .article-body {
+        padding: 20px;
+    }
+
+    .blog-article .news-layout {
+        gap: 20px;
+        padding: 0;
+    }
+
+    .blog-article .article-body {
+        padding: 20px;
+    }
+
+    .blog-article .article-body img {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .featured-projects-summary,
+    .featured-projects-item {
+        min-width: 0;
+        padding: 16px;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-form .row {
+        --bs-gutter-x: 12px;
+        --bs-gutter-y: 12px;
+    }
+
+    .form-control,
+    .form-select,
+    .contact-form .btn,
+    .contact form .btn {
+        min-height: 46px;
+        max-width: 100%;
+    }
+
+    .contact .form-control,
+    .contact .form-select,
+    body form input.form-control,
+    body form select.form-select,
+    body form textarea.form-control {
+        min-height: 48px !important;
+        padding: 10px 12px !important;
+    }
+
+    body .contact form .btn-gold,
+    body .contact form .btn-warning,
+    body .contact-form .btn,
+    body.project-page .contact form .btn,
+    body.project-page .contact-form .btn,
+    body form .btn {
+        min-height: 48px !important;
+        padding: 10px 14px !important;
+        font-size: 16px !important;
+    }
+
+    body input,
+    body select,
+    body textarea,
+    body button,
+    body form .btn {
+        font-size: 16px;
+        line-height: 1.45;
+    }
+
+    body form input.form-control,
+    body form select.form-select,
+    body form textarea.form-control,
+    body form button,
+    body form .btn {
+        min-height: 48px;
+    }
+
+    body #leadForm input.form-control,
+    body #leadForm select.form-select,
+    body #leadForm textarea.form-control,
+    body #leadForm select.form-select option {
+        font-size: 16px;
+    }
+
+    body .form-label,
+    body .form-check-label,
+    body form label {
+        font-size: .95rem;
+        line-height: 1.5;
+    }
+
+    .floating {
+        right: 10px;
+        bottom: calc(10px + env(safe-area-inset-bottom));
+        gap: 8px;
+        max-width: calc(100vw - 20px);
+    }
+
+    .floating-btn {
+        min-width: 0;
+        max-width: 48vw;
+        min-height: 44px;
+        padding: 11px 14px;
+        gap: 8px;
+        font-size: .9rem;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 12%;
+    }
+
+    .faq-scroll {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .faq-item summary {
+        overflow-wrap: anywhere;
+    }
+
+    .navbar-logo {
+        max-width: min(42vw, 180px);
+        height: auto;
+    }
+
+    footer {
+        padding-right: 16px;
+        padding-left: 16px;
+        overflow-wrap: anywhere;
+    }
+
+    .bio-card {
+        width: 100%;
+        max-width: 460px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .container,
+    .container-fluid {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .hero {
+        min-height: min(700px, 86svh);
+        padding: 96px 14px 32px;
+    }
+
+    .hero-actions .btn,
+    .hero-actions .hero-btn {
+        width: 100%;
+    }
+
+    .hero-highlights .hero-quick {
+        gap: 10px;
+    }
+
+    .hero-highlights .quick-card {
+        padding: 12px 10px;
+    }
+
+    .section .title,
+    .section h2.title {
+        margin-bottom: 24px;
+        overflow-wrap: anywhere;
+    }
+
+    .info-box,
+    .contact-card,
+    .payment-frame,
+    .legal-schedule,
+    .news-main,
+    .news-sidebar,
+    .article-body,
+    .related-links {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .news-main .article-header {
+        padding: 18px 16px 0;
+    }
+
+    .news-main .article-body,
+    .blog-article .article-body {
+        padding: 16px;
+    }
+
+    .navbar-brand {
+        max-width: calc(100% - 72px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .navbar-toggler {
+        flex: 0 0 auto;
+        width: 46px;
+        height: 46px;
+    }
+
+    .floating-btn {
+        max-width: 46vw;
+        padding: 10px 12px;
+        font-size: .82rem;
+    }
+
+    .schedule-grid,
+    .amenity-card ul,
+    .legal-info-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .bio-card {
+        padding: 16px 12px;
+    }
+}
+
+@media (max-width: 359.98px) {
+    .container,
+    .container-fluid {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .hero-highlights .hero-quick,
+    .payment-tabs {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero-highlights .quick-card {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .floating-btn span {
+        display: none;
+    }
+}
