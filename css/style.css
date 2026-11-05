@@ -1288,6 +1288,7 @@ margin-bottom:0;
 
 #about .contact-list-item .contact-link-zalo {
   color: #6ea8fe;
+  font-size: .9rem;
 }
 
 #about .contact-list-item .contact-link-facebook {
@@ -2272,7 +2273,7 @@ margin-top:10px;
 
 .site-footer-phone strong {
     color: #f4efe3;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     letter-spacing: .04em;
 }
 

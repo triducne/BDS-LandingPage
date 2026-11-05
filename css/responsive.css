@@ -20,9 +20,12 @@ body {
     line-height: 1.6;
 }
 
-body #leadForm select.form-select,
-body #leadForm select.form-select option {
+body #leadForm select.form-select {
     font-size: 16px;
+}
+
+body #leadForm select.form-select option {
+    font-size: 13px;
 }
 
 body #leadForm select#project:has(> option[value=""]:checked) {
@@ -590,8 +593,7 @@ table {
 
     body #leadForm input.form-control,
     body #leadForm select.form-select,
-    body #leadForm textarea.form-control,
-    body #leadForm select.form-select option {
+    body #leadForm textarea.form-control {
         font-size: 16px;
     }
 
@@ -606,18 +608,16 @@ table {
         right: 10px;
         bottom: calc(10px + env(safe-area-inset-bottom));
         gap: 8px;
-        max-width: calc(100vw - 20px);
-    }
-
-    .homepage .floating {
         width: min(190px, calc(100vw - 20px));
+        max-width: calc(100vw - 20px);
         align-items: stretch;
     }
 
-    .homepage .floating-btn {
+    .floating-btn {
         width: 100%;
         flex: 0 0 48px;
         box-sizing: border-box;
+        max-width: 100%;
         min-width: 0;
         padding: 11px 14px;
         gap: 8px;
