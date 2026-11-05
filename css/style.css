@@ -1286,6 +1286,14 @@ margin-bottom:0;
   text-decoration: none;
 }
 
+#about .contact-list-item .contact-link-zalo {
+  color: #6ea8fe;
+}
+
+#about .contact-list-item .contact-link-facebook {
+  color: #6ea8fe;
+}
+
 #about .contact-list-item a:hover {
   text-decoration: underline;
 }
