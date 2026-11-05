@@ -78,6 +78,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await loadHTMLIncludes();
 
+    if (document.body.classList.contains('homepage')) {
+        const floatingActions = document.querySelector('.floating');
+        const footer = document.querySelector('.site-footer');
+
+        if (floatingActions && footer && 'IntersectionObserver' in window) {
+            const footerObserver = new IntersectionObserver(([entry]) => {
+                floatingActions.classList.toggle('is-hidden', entry.isIntersecting);
+            });
+            footerObserver.observe(footer);
+        }
+    }
+
     const businessDisclosure = 'Chuyên viên tư vấn bất động sản tại Star Group.';
     document.querySelectorAll('form#leadForm').forEach((leadForm) => {
         if (leadForm.querySelector('.business-form-disclosure')) return;

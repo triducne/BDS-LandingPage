@@ -2020,6 +2020,15 @@ display:flex;
 flex-direction:column;
 gap:14px;
 align-items:flex-end;
+transition:opacity .2s ease, transform .2s ease, visibility 0s linear;
+}
+
+.homepage .floating.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    visibility: hidden;
+    transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
 }
 
 .floating-btn{
@@ -2159,6 +2168,11 @@ margin-top:10px;
 
 .homepage .site-footer {
     background: #050505;
+}
+
+.homepage .site-footer-bottom {
+    justify-content: center;
+    text-align: center;
 }
 
 .site-footer-inner {
