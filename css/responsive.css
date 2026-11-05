@@ -25,6 +25,10 @@ body #leadForm select.form-select option {
     font-size: 16px;
 }
 
+body #leadForm select#project:has(> option[value=""]:checked) {
+    font-size: 12px !important;
+}
+
 img,
 svg,
 video,
@@ -750,7 +754,6 @@ table {
 }
 
 @media (max-width: 576px) {
-    body select#project,
     body select#project option {
         font-size: 13px !important;
     }
