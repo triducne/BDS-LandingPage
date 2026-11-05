@@ -78,6 +78,38 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await loadHTMLIncludes();
 
+    const businessDisclosure = 'Nguyễn Trí Đức · Chuyên viên tư vấn bất động sản tại Star Group.';
+    document.querySelectorAll('form#leadForm').forEach((leadForm) => {
+        if (leadForm.querySelector('.business-form-disclosure')) return;
+
+        const notice = document.createElement('p');
+        notice.className = 'form-text small business-form-disclosure mb-3';
+        notice.append(document.createTextNode(`Để lại thông tin, tôi sẽ liên hệ tư vấn dự án và cập nhật giá bán, chính sách mới nhất. ${businessDisclosure} `));
+
+        const privacyLink = document.createElement('a');
+        privacyLink.href = '/privacy-policy.html';
+        privacyLink.textContent = 'Xem Chính sách quyền riêng tư.';
+        notice.append(privacyLink);
+
+        leadForm.prepend(notice);
+    });
+
+    document.querySelectorAll('footer').forEach((footer) => {
+        if (footer.querySelector('.business-identity-disclosure')) return;
+
+        const notice = document.createElement('p');
+        notice.className = 'business-identity-disclosure';
+        notice.textContent = `Kênh tư vấn độc lập, không thuộc chủ đầu tư. Địa điểm làm việc: StarGroup, 150 Bis Lê Thị Hồng Gấm, TP.HCM.`;
+        footer.append(notice);
+
+        const privacyLink = document.createElement('a');
+        privacyLink.href = '/privacy-policy.html';
+        privacyLink.textContent = 'Chính sách quyền riêng tư';
+        const privacyParagraph = document.createElement('p');
+        privacyParagraph.append(privacyLink);
+        footer.append(privacyParagraph);
+    });
+
     // Keep the initial viewport position intact while the page content loads.
     // Forcing scroll to top during this phase can cause visible jumpiness on mobile Safari.
 

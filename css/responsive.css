@@ -748,3 +748,10 @@ table {
         display: none;
     }
 }
+
+@media (max-width: 576px) {
+    body select#project,
+    body select#project option {
+        font-size: 13px !important;
+    }
+}
