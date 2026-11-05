@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await loadHTMLIncludes();
 
-    const businessDisclosure = 'Nguyễn Trí Đức · Chuyên viên tư vấn bất động sản tại Star Group.';
+    const businessDisclosure = 'Chuyên viên tư vấn bất động sản tại Star Group.';
     document.querySelectorAll('form#leadForm').forEach((leadForm) => {
         if (leadForm.querySelector('.business-form-disclosure')) return;
 
@@ -86,12 +86,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         notice.className = 'form-text small business-form-disclosure mb-3';
         notice.append(document.createTextNode(`Để lại thông tin, tôi sẽ liên hệ tư vấn dự án và cập nhật giá bán, chính sách mới nhất. ${businessDisclosure} `));
 
+        const privacyNotice = document.createElement('p');
+        privacyNotice.className = 'form-text small text-center mt-2 mb-0 business-privacy-link';
         const privacyLink = document.createElement('a');
         privacyLink.href = '/privacy-policy.html';
         privacyLink.textContent = 'Xem Chính sách quyền riêng tư.';
-        notice.append(privacyLink);
+        privacyNotice.append(privacyLink);
 
         leadForm.prepend(notice);
+        leadForm.append(privacyNotice);
     });
 
     document.querySelectorAll('footer').forEach((footer) => {
