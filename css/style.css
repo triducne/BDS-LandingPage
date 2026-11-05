@@ -2280,6 +2280,35 @@ margin-top:10px;
     font-size: inherit;
 }
 
+.site-footer-bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.privacy-policy-page .privacy-policy-navbar {
+    background: rgba(5,5,5,.96);
+    border-bottom: 1px solid rgba(212,175,55,.2);
+    box-shadow: 0 8px 28px rgba(0,0,0,.28);
+}
+
+.privacy-policy-navbar .navbar-nav {
+    gap: 8px;
+}
+
+.privacy-policy-navbar .nav-link {
+    margin-left: 0;
+    padding: 10px 12px;
+}
+
+.privacy-policy-page .site-footer {
+    background: linear-gradient(180deg, #080808, #030303);
+}
+
+.privacy-policy-page .site-footer-phone {
+    display: none;
+}
+
 @media (max-width: 700px) {
     .site-footer {
         padding: 36px 20px 18px;
@@ -2309,6 +2338,10 @@ margin-top:10px;
     .site-footer-bottom {
         flex-direction: column;
         gap: 8px;
+    }
+
+    .site-footer-bottom-links {
+        gap: 14px;
     }
 }
 
