@@ -2189,13 +2189,13 @@ margin-top:10px;
 
 .site-footer-brand h4 {
     margin: 0 0 12px;
-    color: #f4efe3;
+    color: var(--gold);
     font-size: 1.2rem;
     letter-spacing: .12em;
 }
 
 .site-footer-brand h4 span {
-    color: var(--gold);
+    color: inherit;
 }
 
 .site-footer-tagline {

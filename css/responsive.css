@@ -26,7 +26,7 @@ body #leadForm select.form-select option {
 }
 
 body #leadForm select#project:has(> option[value=""]:checked) {
-    font-size: 12px !important;
+    font-size: 14px !important;
 }
 
 img,
@@ -609,11 +609,16 @@ table {
         max-width: calc(100vw - 20px);
     }
 
-    .floating-btn {
+    .homepage .floating {
         width: min(190px, calc(100vw - 20px));
+        align-items: stretch;
+    }
+
+    .homepage .floating-btn {
+        width: 100%;
+        flex: 0 0 48px;
         box-sizing: border-box;
         min-width: 0;
-        min-height: 48px;
         padding: 11px 14px;
         gap: 8px;
         font-size: .9rem;
