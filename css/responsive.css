@@ -759,3 +759,47 @@ table {
         font-size: 13px !important;
     }
 }
+
+.business-form-disclosure {
+    font-size: 1rem !important;
+    line-height: 1.6;
+}
+
+body.homepage .site-footer-contact h5,
+body.homepage .site-footer-location h5 {
+    font-size: 1.2rem;
+    line-height: 1.35;
+}
+
+body.homepage .site-footer-phone strong {
+    font-size: 1rem;
+}
+
+body.homepage #about .contact-link-zalo {
+    font-size: 1rem;
+}
+
+body .navbar,
+body.homepage .navbar,
+body.project-page .navbar,
+body.news-article .navbar,
+body.privacy-policy-page .navbar {
+    background: linear-gradient(180deg, rgba(0, 0, 0, .98), rgba(0, 0, 0, .9));
+    border-bottom: 0;
+}
+
+body .navbar .navbar-brand,
+body.project-page .navbar .navbar-brand,
+body.news-article .navbar .navbar-brand,
+body.privacy-policy-page .navbar .navbar-brand {
+    color: var(--gold) !important;
+}
+
+body .navbar .nav-link {
+    color: var(--page-text, #f4efe3) !important;
+}
+
+body .navbar .nav-link:hover,
+body .navbar .nav-link:focus {
+    color: var(--gold) !important;
+}
