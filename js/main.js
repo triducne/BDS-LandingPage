@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         privacyNotice.className = 'form-text small text-center mt-2 mb-0 business-privacy-link';
         const privacyLink = document.createElement('a');
         privacyLink.href = '/privacy-policy.html';
-        privacyLink.textContent = 'Xem Chính sách quyền riêng tư.';
+        privacyLink.textContent = 'Chính sách quyền riêng tư';
         privacyNotice.append(privacyLink);
 
         leadForm.prepend(notice);
